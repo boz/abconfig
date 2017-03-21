@@ -25,7 +25,6 @@ if dein#load_state(s:bundledir)
 
   call dein#add('altercation/vim-colors-solarized',{'merged': 0})
   call dein#source('vim-colors-solarized')
-  colorscheme solarized
 
   "call dein#add('vim-airline/vim-airline')
 
@@ -36,3 +35,5 @@ end
 if dein#check_install()
   call dein#install()
 endif
+
+colorscheme solarized
