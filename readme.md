@@ -1,10 +1,12 @@
 ## Gathering facts for testing.
 
 ```sh
-$ ansible -i hosts all -m setup > facts/satellite-arch.json
+$ ansible -i hosts all -m setup > facts/system.json
 ```
 
 ### mbp-arch
+
+Arch on 2013 Macbook Pro (11,3)
 
 ```json
 {
@@ -13,14 +15,12 @@ $ ansible -i hosts all -m setup > facts/satellite-arch.json
   "ansible_os_family": "Archlinux",
   "ansible_pkg_mgr": "pacman",
   "ansible_service_mgr": "systemd",
-
-  "ansible_hostname": "satellite",
-  "ansible_form_factor": "Notebook",
-  "ansible_nodename": "satellite"
 }
 ```
 
 ### mbp-osx
+
+OSX on 2013 Macbook Pro (11,3)
 
 ```json
 {
@@ -28,9 +28,21 @@ $ ansible -i hosts all -m setup > facts/satellite-arch.json
   "ansible_distribution": "MacOSX",
   "ansible_os_family": "Darwin",
   "ansible_pkg_mgr": "homebrew",
-
-  "ansible_hostname": "Adams-MacBook-Pro-4",
   "ansible_service_mgr": "/sbin/launchd"
+}
+```
+
+### tower-ubuntu
+
+Ubuntu on i7 tower.
+
+```json
+{
+  "ansible_system": "Linux",
+  "ansible_distribution": "Ubuntu",
+  "ansible_os_family": "Debian",
+  "ansible_pkg_mgr": "apt",
+  "ansible_service_mgr": "systemd"
 }
 ```
 
