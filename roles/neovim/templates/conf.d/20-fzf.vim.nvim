@@ -1,0 +1,11 @@
+if dein#tap('fzf.vim')
+  let g:fzf_command_prefix = 'FZF'
+
+  nmap <leader><tab> <plug>(fzf-maps-n)
+  xmap <leader><tab> <plug>(fzf-maps-x)
+  omap <leader><tab> <plug>(fzf-maps-o)
+
+  nmap <C-p>     :FZFFiles<cr>
+  nmap <Leader>b :FZFBuffers<cr>
+  "nmap <Leader>gg :FZFGrep expand('<cword>')<cr>
+end

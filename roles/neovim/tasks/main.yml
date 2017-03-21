@@ -4,5 +4,37 @@
   with_items:
     - python-neovim
     - neovim
-  tags: [config-install,neovim]
   when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,neovim]
+
+- name: create directories
+  file: path={{item}} state=directory
+  with_items:
+    - "{{neovim.basedir}}"
+    - "{{neovim.confdir}}"
+    - "{{neovim.dein.basedir}}"
+    - "{{neovim.dein.bundledir}}"
+  tags: [config-install,neovim]
+
+- name: check dein install
+  stat: path={{neovim.dein.installdir}}
+  register: have_dein
+  tags: [config-install,neovim,dein]
+
+- name: install dein
+  git: repo={{ neovim.dein.repository }}
+       dest={{ neovim.dein.installdir }}
+  when: not have_dein.stat.exists
+  tags: [config-install,neovim,dein]
+
+- name: install init.vim
+  template: src=init.vim
+            dest={{neovim.basedir}}/init.vim
+  tags: [config,neovim]
+
+- name: install conf.d components
+  template: src={{item}}
+            dest={{neovim.confdir}}/{{item | basename}}
+  with_fileglob:
+    - "../templates/conf.d/*.nvim"
+  tags: [config,neovim]

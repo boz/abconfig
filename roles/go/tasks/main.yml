@@ -4,8 +4,8 @@
   with_items:
     - go
     - go-tools
-  tags: [config-install,go]
   when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,go]
 
 - name: create gopath
   file: path={{gopath}} state=directory

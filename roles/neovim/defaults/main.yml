@@ -1,0 +1,10 @@
+---
+neovim:
+  basedir:   "{{homedir}}/.config/nvim"
+  confdir:   "{{homedir}}/.config/nvim/conf.d"
+  initpath:  "{{homedir}}/.config/nvim/init.vim"
+  dein:
+    repository: "git@github.com:Shougo/dein.vim.git"
+    basedir:    "{{homedir}}/.config/nvim/boot"
+    installdir: "{{homedir}}/.config/nvim/boot/dein.vim"
+    bundledir:  "{{homedir}}/.dein-bundle"

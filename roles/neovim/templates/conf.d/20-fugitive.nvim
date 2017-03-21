@@ -1,0 +1,7 @@
+if dein#tap('vim-fugitive')
+  set statusline=[%t]
+  set statusline+=%m
+  set statusline+=[%c\ %l/%L\ (%P)]
+  set statusline+=%=
+  set statusline+=%{fugitive#statusline()}
+end

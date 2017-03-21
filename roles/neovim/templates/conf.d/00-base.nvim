@@ -1,0 +1,46 @@
+set hidden
+set autowrite
+
+set history=10000
+set nobackup
+set noswapfile
+set autowrite
+
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set backspace=indent,eol,start
+
+set showmatch
+set incsearch
+set nohlsearch
+set ignorecase
+set smartcase
+
+set cursorline
+set laststatus=2
+set cmdheight=2
+set winwidth=80
+set numberwidth=5
+set scrolloff=3
+set showcmd
+set visualbell
+
+set switchbuf=useopen
+
+set updatetime=100
+set completeopt-=preview
+
+set background=dark
+
+nnoremap <silent> <f2> :split  $MYVIMRC<cr>
+nnoremap <silent> <f3> :source $MYVIMRC<cr>
+
+" map <C-n> :lne<CR>
+" map <C-N> :lp<CR>
+
+nmap ZZ :w<CR>
+
+autocmd BufEnter *.nvim :setlocal filetype=vim

@@ -1,0 +1,8 @@
+if dein#tap('ctrlp.vim')
+  let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v(bin)$',
+    \ 'file': '\v\.(exe|so|dll|a)$',
+    \ }
+  nmap <Leader>b :CtrlPBuffer<CR>
+  nmap <Leader>gg :Ggrep <cword><CR><CR>
+end

@@ -1,0 +1,31 @@
+if dein#tap('vim-go')
+  au FileType go nmap <Leader>i <Plug>(go-info)
+  au FileType go nmap <Leader>s <Plug>(go-sameids)
+  au FileType go nmap <Leader>S <Plug>(go-sameids-toggle)
+  au FileType go nmap <Leader>c <Plug>(go-build)
+  au FileType go nmap <Leader>r <Plug>(go-rename)
+
+  au FileType go nmap <Leader>t <Plug>(go-test)
+  au FileType go nmap <Leader>T <Plug>(go-test-compile)
+  au FileType go nmap <Leader>tf <Plug>(go-test-func)
+
+  au FileType go nmap <Leader>gd <Plug>(go-def)
+  au FileType go nmap <Leader>Gd <Plug>(go-def-split)
+  au FileType go nmap <Leader>gds <Plug>(go-def-stack)
+  au FileType go nmap <Leader>gdp <Plug>(go-def-stack-pop)
+  au FileType go nmap <Leader>gdS <Plug>(go-def-stack-clear)
+
+  au FileType go nmap <Leader>I <Plug>(go-implements)
+  au FileType go nmap <Leader>C <Plug>(go-callees)
+  au FileType go nmap <Leader>gr <Plug>(go-referrers)
+
+  let g:go_fmt_command         = "goimports"
+  let g:go_snippet_engine      = "neosnippet"
+  let g:go_def_mode            = "godef"
+
+  let g:go_highlight_functions = 1
+  let g:go_highlight_methods   = 0
+  let g:go_highlight_types     = 0
+  let g:go_highlight_fields    = 0
+  let g:go_dispatch_enabled    = 1
+end

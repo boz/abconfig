@@ -1,0 +1,38 @@
+let s:deindir   = "{{neovim.dein.installdir}}"
+let s:bundledir = "{{neovim.dein.bundledir}}"
+
+let &runtimepath .= ',' . s:deindir
+
+if dein#load_state(s:bundledir)
+  call dein#begin(s:bundledir)
+
+  if g:hasfzf
+    call dein#add('junegunn/fzf.vim')
+  else
+    call dein#add('ctrlpvim/ctrlp.vim')
+  end
+
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('zchee/deoplete-go', {'build': 'make'})
+
+  call dein#add('Shougo/neosnippet')
+  call dein#add('Shougo/neosnippet-snippets')
+
+  call dein#add('fatih/vim-go',{'merged':0})
+  call dein#add('tpope/vim-dispatch')
+  call dein#add('tpope/vim-fugitive.git')
+  call dein#add('scrooloose/nerdcommenter')
+
+  call dein#add('altercation/vim-colors-solarized',{'merged': 0})
+  call dein#source('vim-colors-solarized')
+  colorscheme solarized
+
+  "call dein#add('vim-airline/vim-airline')
+
+  call dein#end()
+  call dein#save_state()
+end
+
+if dein#check_install()
+  call dein#install()
+endif
