@@ -3,11 +3,12 @@ unsetopt share_history \
          autocd        \
          beep          \
          extendedglob  \
-         nomatch
+         nomatch       \
+         noclobber
 
-setopt appendhistory \
-       notify        \
-       clobber
+setopt appendhistory    \
+       incappendhistory \
+       notify
 
 alias -L gb >/dev/null && unalias gb
 alias rm='nocorrect rm '

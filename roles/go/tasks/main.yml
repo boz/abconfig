@@ -1,5 +1,5 @@
 ---
-- name: install go
+- name: install go (pacman)
   pacaur: name={{item}}
   with_items:
     - go
@@ -7,11 +7,18 @@
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,go]
 
+- name: install go (apt)
+  apt: name={{item}}
+  with_items:
+    - golang
+  when: ansible_pkg_mgr == "apt"
+  tags: [config-install,go]
+
 - name: create gopath
   file: path={{gopath}} state=directory
   tags: [config-install,go]
 
 - name: configure shell $GOPATH
-  copy: dest={{ profiledir }}/10-gopath.sh
-        content="export GOPATH={{gopath}}\n"
+  template: dest={{ profiledir }}/10-gopath.sh
+            src=gopath.sh
   tags: [config,go]

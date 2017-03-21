@@ -1,11 +1,21 @@
 ---
 
-- name: install zsh
+- name: install zsh (pacman)
   pacaur: name={{item}}
   with_items:
     - zsh
     - zsh-completions
   when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,zsh]
+
+- name: install zsh (apt)
+  apt: name={{item}}
+  with_items:
+    - zsh
+    - zsh-common
+    - zsh-doc
+  become: true
+  when: ansible_pkg_mgr == "apt"
   tags: [config-install,zsh]
 
 - name: check zprezto repository presence
@@ -42,4 +52,3 @@
         dest={{ profiledir }}/{{item | basename}}
   with_fileglob: "*.zsh"
   tags: [config,zsh]
-

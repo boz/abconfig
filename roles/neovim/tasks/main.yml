@@ -1,10 +1,17 @@
 ---
-- name: install neovim
+- name: install neovim (pacman)
   pacaur: name={{item}}
   with_items:
     - python-neovim
     - neovim
   when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,neovim]
+
+- name: install neovim (apt)
+  apt: name={{item}}
+  with_items:
+    - neovim
+  when: ansible_pkg_mgr == "apt"
   tags: [config-install,neovim]
 
 - name: create directories
