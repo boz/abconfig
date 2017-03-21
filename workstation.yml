@@ -6,4 +6,5 @@
     - go
     - fzf
     - neovim
+    - ovrclk
 - hosts: all
