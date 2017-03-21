@@ -1,0 +1,9 @@
+---
+- hosts: all
+  roles:
+    - package-manager
+    - zsh
+    - go
+    - fzf
+    - neovim
+- hosts: all

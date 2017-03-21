@@ -1,0 +1,8 @@
+---
+homedir: "{{ lookup('env', 'HOME') }}"
+
+zprezto:
+  dir: "{{ homedir }}/.zprezto"
+  repo: git@github.com:boz/prezto.git
+
+profiledir: "{{ homedir }}/.profile.d"

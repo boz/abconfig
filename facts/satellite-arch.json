@@ -1,0 +1,358 @@
+{
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "192.168.0.104"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::bae8:56ff:fe30:ceba"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "12/23/2016", 
+        "ansible_bios_version": "MBP112.88Z.0138.B21.1612230939", 
+        "ansible_cmdline": {
+            "add_efi_memmap": true, 
+            "initrd": "initramfs-linux.img", 
+            "root": "PARTUUID=8b174b77-3577-451f-84bd-4bc26e4ff422", 
+            "rootfstype": "ext4", 
+            "rw": true
+        }, 
+        "ansible_date_time": {
+            "date": "2017-03-20", 
+            "day": "20", 
+            "epoch": "1490042936", 
+            "hour": "13", 
+            "iso8601": "2017-03-20T20:48:56Z", 
+            "iso8601_basic": "20170320T134856363666", 
+            "iso8601_basic_short": "20170320T134856", 
+            "iso8601_micro": "2017-03-20T20:48:56.363730Z", 
+            "minute": "48", 
+            "month": "03", 
+            "second": "56", 
+            "time": "13:48:56", 
+            "tz": "PDT", 
+            "tz_offset": "-0700", 
+            "weekday": "Monday", 
+            "weekday_number": "1", 
+            "weeknumber": "12", 
+            "year": "2017"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.0.104", 
+            "alias": "wlp3s0", 
+            "broadcast": "192.168.0.255", 
+            "gateway": "192.168.0.1", 
+            "interface": "wlp3s0", 
+            "macaddress": "b8:e8:56:30:ce:ba", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.0.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "sda": {
+                "holders": [], 
+                "host": "SATA controller: Samsung Electronics Co Ltd Apple PCIe SSD (rev 01)", 
+                "model": "APPLE SSD SM0512", 
+                "partitions": {
+                    "sda1": {
+                        "holders": [], 
+                        "sectors": "409600", 
+                        "sectorsize": 512, 
+                        "size": "200.00 MB", 
+                        "start": "40", 
+                        "uuid": "67E3-17ED"
+                    }, 
+                    "sda2": {
+                        "holders": [], 
+                        "sectors": "781382880", 
+                        "sectorsize": 512, 
+                        "size": "372.59 GB", 
+                        "start": "409640", 
+                        "uuid": null
+                    }, 
+                    "sda3": {
+                        "holders": [], 
+                        "sectors": "1269536", 
+                        "sectorsize": 512, 
+                        "size": "619.89 MB", 
+                        "start": "781792520", 
+                        "uuid": "fae69805-1d5a-3eaa-90ba-68fa83ce3709"
+                    }, 
+                    "sda4": {
+                        "holders": [], 
+                        "sectors": "193780827", 
+                        "sectorsize": 512, 
+                        "size": "92.40 GB", 
+                        "start": "783324200", 
+                        "uuid": "f8c9fa5a-7b97-40de-bd1a-b244194e02a7"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "0", 
+                "sas_address": null, 
+                "sas_device_handle": null, 
+                "scheduler_mode": "cfq", 
+                "sectors": "977105060", 
+                "sectorsize": "512", 
+                "size": "465.92 GB", 
+                "support_discard": "4096", 
+                "vendor": "ATA"
+            }, 
+            "sdb": {
+                "holders": [], 
+                "host": "USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB xHCI (rev 05)", 
+                "model": "SD Card Reader", 
+                "partitions": {}, 
+                "removable": "1", 
+                "rotational": "1", 
+                "sas_address": null, 
+                "sas_device_handle": null, 
+                "scheduler_mode": "cfq", 
+                "sectors": "0", 
+                "sectorsize": "512", 
+                "size": "0.00 Bytes", 
+                "support_discard": "0", 
+                "vendor": "APPLE"
+            }
+        }, 
+        "ansible_distribution": "Archlinux", 
+        "ansible_distribution_major_version": "NA", 
+        "ansible_distribution_release": "NA", 
+        "ansible_distribution_version": "NA", 
+        "ansible_dns": {
+            "nameservers": [
+                "8.8.8.8", 
+                "8.8.4.4"
+            ]
+        }, 
+        "ansible_domain": "localdomain", 
+        "ansible_env": {
+            "COLORFGBG": "12;8", 
+            "COLORTERM": "rxvt", 
+            "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/1000/bus", 
+            "DESKTOP_STARTUP_ID": "i3/i3-sensible-terminal/479-18-satellite_TIME1619949", 
+            "DISPLAY": ":0", 
+            "EDITOR": "vim", 
+            "GOPATH": "/home/abozanich/ovrclk-go", 
+            "GREP_COLOR": "37;45", 
+            "GREP_COLORS": "mt=37;45", 
+            "HOME": "/home/abozanich", 
+            "LANG": "en_US.UTF-8", 
+            "LESS": "-F -g -i -M -R -S -w -X -z-4", 
+            "LESS_TERMCAP_mb": "\u001b[01;31m", 
+            "LESS_TERMCAP_md": "\u001b[01;31m", 
+            "LESS_TERMCAP_me": "\u001b[0m", 
+            "LESS_TERMCAP_se": "\u001b[0m", 
+            "LESS_TERMCAP_so": "\u001b[00;47;30m", 
+            "LESS_TERMCAP_ue": "\u001b[0m", 
+            "LESS_TERMCAP_us": "\u001b[01;32m", 
+            "LOGNAME": "abozanich", 
+            "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:", 
+            "MAIL": "/var/spool/mail/abozanich", 
+            "MOZ_PLUGIN_PATH": "/usr/lib/mozilla/plugins", 
+            "OLDPWD": "/home/abozanich/code", 
+            "OTS_CHANNEL": "boz", 
+            "OTS_RELEASE": "latest", 
+            "OVRCLK_HOME": "/home/abozanich/ovrclk-go/src/github.com/ovrclk", 
+            "PAGER": "less", 
+            "PATH": "/home/abozanich/dotfiles/bin:/usr/local/go/bin:/home/abozanich/ovrclk-go/src/github.com/ovrclk/ots/bin:/home/abozanich/ovrclk-go/src/github.com/ovrclk/cli/bin:/home/abozanich/ovrclk-go/src/github.com/ovrclk/walker:/home/abozanich/ovrclk-go/src/github.com/ovrclk/walker/_support/bin:/home/abozanich/ovrclk-go/bin:/home/abozanich/dotfiles/bin:/usr/local/go/bin:/home/abozanich/ovrclk-go/src/github.com/ovrclk/ots/bin:/home/abozanich/ovrclk-go/src/github.com/ovrclk/cli/bin:/home/abozanich/ovrclk-go/src/github.com/ovrclk/walker:/home/abozanich/ovrclk-go/src/github.com/ovrclk/walker/_support/bin:/home/abozanich/ovrclk-go/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/abozanich/bin:/home/abozanich/bin", 
+            "PWD": "/home/abozanich/code/abconfig", 
+            "SHELL": "/bin/zsh", 
+            "SHLVL": "6", 
+            "SSH_AGENT_PID": "434", 
+            "SSH_AUTH_SOCK": "/tmp/abozanich/ssh-agent.sock", 
+            "TERM": "rxvt-unicode-256color", 
+            "TMPDIR": "/tmp/abozanich", 
+            "USER": "abozanich", 
+            "VISUAL": "vim", 
+            "WALKER_BOX_DEFAULT_PROVIDER": "virtualbox", 
+            "WALKER_HOME": "/home/abozanich/ovrclk-go/src/github.com/ovrclk/walker/_support", 
+            "WALKER_PUBLIC_DOMAIN": "ovrclk2.com", 
+            "WINDOWID": "37748745", 
+            "WINDOWPATH": "1", 
+            "XAUTHORITY": "/home/abozanich/.Xauthority", 
+            "XDG_RUNTIME_DIR": "/run/user/1000", 
+            "XDG_SEAT": "seat0", 
+            "XDG_SESSION_ID": "c1", 
+            "XDG_VTNR": "1", 
+            "_": "/usr/bin/python"
+        }, 
+        "ansible_fips": false, 
+        "ansible_form_factor": "Notebook", 
+        "ansible_fqdn": "satellite.localdomain", 
+        "ansible_gather_subset": [
+            "network", 
+            "hardware", 
+            "virtual"
+        ], 
+        "ansible_hostname": "satellite", 
+        "ansible_interfaces": [
+            "wlp3s0", 
+            "lo"
+        ], 
+        "ansible_kernel": "4.10.3-1-ARCH", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "features": {}, 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "broadcast": "host", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "type": "loopback"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_machine_id": "1ab801892f4a4079be1168ff1b64815f", 
+        "ansible_memfree_mb": 12561, 
+        "ansible_memory_mb": {
+            "nocache": {
+                "free": 13556, 
+                "used": 2404
+            }, 
+            "real": {
+                "free": 12561, 
+                "total": 15960, 
+                "used": 3399
+            }, 
+            "swap": {
+                "cached": 0, 
+                "free": 0, 
+                "total": 0, 
+                "used": 0
+            }
+        }, 
+        "ansible_memtotal_mb": 15960, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/sda4", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,relatime,data=ordered", 
+                "size_available": 82709684224, 
+                "size_total": 97120157696, 
+                "uuid": "f8c9fa5a-7b97-40de-bd1a-b244194e02a7"
+            }, 
+            {
+                "device": "/dev/sda1", 
+                "fstype": "vfat", 
+                "mount": "/boot", 
+                "options": "rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro", 
+                "size_available": 112020480, 
+                "size_total": 206472192, 
+                "uuid": "67E3-17ED"
+            }
+        ], 
+        "ansible_nodename": "satellite", 
+        "ansible_os_family": "Archlinux", 
+        "ansible_pkg_mgr": "pacman", 
+        "ansible_processor": [
+            "GenuineIntel", 
+            "Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz", 
+            "GenuineIntel", 
+            "Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz", 
+            "GenuineIntel", 
+            "Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz", 
+            "GenuineIntel", 
+            "Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz", 
+            "GenuineIntel", 
+            "Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz", 
+            "GenuineIntel", 
+            "Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz", 
+            "GenuineIntel", 
+            "Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz", 
+            "GenuineIntel", 
+            "Intel(R) Core(TM) i7-4960HQ CPU @ 2.60GHz"
+        ], 
+        "ansible_processor_cores": 4, 
+        "ansible_processor_count": 1, 
+        "ansible_processor_threads_per_core": 2, 
+        "ansible_processor_vcpus": 8, 
+        "ansible_product_name": "MacBookPro11,3", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "1.0", 
+        "ansible_python": {
+            "executable": "/usr/bin/python", 
+            "has_sslcontext": true, 
+            "type": null, 
+            "version": {
+                "major": 3, 
+                "micro": 0, 
+                "minor": 6, 
+                "releaselevel": "final", 
+                "serial": 0
+            }, 
+            "version_info": [
+                3, 
+                6, 
+                0, 
+                "final", 
+                0
+            ]
+        }, 
+        "ansible_python_version": "3.6.0", 
+        "ansible_selinux": false, 
+        "ansible_service_mgr": "systemd", 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBANX43uhY/jxRTqR6G7ttEe7dzOYvzxSKyGLdXw5u6uKF0SCG93LpmSi4VIKFsFuMftBMnkwbdYgZW78klDiWbhYT3VNlkHibkGsiPf7QOtXNx3HFR5wLN3f24D+SLDtnBy/R0gmX1csfDbm5xF4PaIEuHa8di72Aq3RemKo2YLMVAAAAFQCkoW96mrA4gtGy/h523GpjC9yE4wAAAIEAxbPr9Cav3PqTNDeJiGqBIlpPpyayiRzLoywWlFdL5aShGMhcSKcKta7S4j4APXNjZDe6k74xaMkXUfcH72v5a9089h68pfZIvEbmmvNICzignYxu4vr538OBWXqE8q9AlHzIUtwecVMmqPBi4dmHfndUyUNrvSvAGyiZfCpmXDYAAACBAJ3UlXaWlKVOxPorJIhXBzSK7A9SldLG0MU2UkIKdMzMu2UngC4PT6jxyucltMqZY2WWt6pN6JhpHYCZ945dZpWXL53UTXmbyX6qy8SAsw78+rWey9Yd74zFVvo5I3cVL/JB/giP8hm79buxLwKbWbL/MHcggaAu4t/Sh4/8hT8B", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH6GdAIzVb2IX4z4mc1xVdfOlQv/t2aQCeKnKBJ7hIDypfAcVR5BZxs56lICPYgrwQJQLkiwlGMpl2FKu6sNFmU=", 
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIK8rUq06FZBJ2bdkvM5anq+ntSVN3kFW5621F851bd73", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDkurWRNB3kf73higni81qSRfTZVSAI6gwE6QSiROIiih/cQmZl2lVyU9+UDWyrCDRORXssHQystB5qH8KX9/CIBWfnAqcnvleldSbyQcTZo5kBRlVwt95xoEDKz569CsfEBUU3tBv60uO01SWxTY42A30THsOFv/GzSt6TmUjZZkKMmk5SHz9sao0TT1dYr+laROMthzBsT8qK3D9cMkeCcc8wXlkhU8FUXiLlg9xQwZmz16kxpjWuoqcaoI0QP3QOCCIH3MOvawLFR8BWmseNtrKj8SBalxxVLByEx94v0jsYwC36xFE+ceynz0D0znfL3Z3axjDqxLYkSGiPEnpD", 
+        "ansible_swapfree_mb": 0, 
+        "ansible_swaptotal_mb": 0, 
+        "ansible_system": "Linux", 
+        "ansible_system_capabilities": [
+            ""
+        ], 
+        "ansible_system_capabilities_enforced": "True", 
+        "ansible_system_vendor": "Apple Inc.", 
+        "ansible_uptime_seconds": 3620, 
+        "ansible_user_dir": "/home/abozanich", 
+        "ansible_user_gecos": "", 
+        "ansible_user_gid": 1000, 
+        "ansible_user_id": "abozanich", 
+        "ansible_user_shell": "/bin/zsh", 
+        "ansible_user_uid": 1000, 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "host", 
+        "ansible_virtualization_type": "kvm", 
+        "ansible_wlp3s0": {
+            "active": true, 
+            "device": "wlp3s0", 
+            "features": {}, 
+            "ipv4": {
+                "address": "192.168.0.104", 
+                "broadcast": "192.168.0.255", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::bae8:56ff:fe30:ceba", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "b8:e8:56:30:ce:ba", 
+            "module": "wl", 
+            "mtu": 1500, 
+            "pciid": "0000:03:00.0", 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "module_setup": true
+    }, 
+    "changed": false
+}

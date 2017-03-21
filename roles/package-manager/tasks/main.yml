@@ -1,0 +1,8 @@
+---
+- name: install pacaur
+  aur: name={{item}} user={{ansible_user}}
+  with_items:
+    - cower
+    - pacaur-git
+  tags: [bootstrap,package-manager]
+  when: ansible_pkg_mgr == "pacman"

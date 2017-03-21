@@ -1,0 +1,15 @@
+---
+- name: check installed
+  stat: path={{fzf.binpath}}
+  register: have_zprezto
+  tags: [config-install,fzf]
+
+- name: install
+  command: go get {{fzf.package}}
+  when: not have_zprezto.stat.exists
+  tags: [config-install,fzf]
+
+- name: configure
+  template: dest={{profiledir}}/20-fzf.zsh
+            src=fzf.zsh
+  tags: [config-install,fzf]
