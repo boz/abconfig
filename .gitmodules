@@ -1,3 +1,0 @@
-[submodule "group_vars"]
-	path = group_vars
-	url = ./group_vars
