@@ -1,0 +1,13 @@
+---
+- name: install awscli (apt)
+  apt: name={{item}}
+  with_items:
+    - awscli
+  become: true
+  when: ansible_pkg_mgr == "apt"
+  tags: [config-install,awscli]
+
+- name: configure shell environment vars
+  template: dest={{profiledir}}/50-awscli.sh
+            src=awscli.sh
+  tags: [config,awscli]

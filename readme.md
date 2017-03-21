@@ -65,3 +65,27 @@ Ubuntu on Mac Pro (5,1) tower.
 ```sh
 $ ansible-playbook -i hosts workstation.yml
 ```
+
+# Secrets
+
+```sh
+$ export ANSIBLE_VAULT_PASSWORD_FILE="path-to-your-password-file"
+$ git clone https://github.com/path-to-your-secrets group_vars
+```
+
+The `group_vars` directory must contain:
+
+* `group_vars/all/awscli`:
+
+```yaml
+---
+aws_access_key_id:     "your-access-key-id"
+aws_secret_access_key: "your-secret-access-key"
+```
+
+* `group_vars/all/ots`:
+
+```yaml
+---
+ots_registry_token: "your-registry-token"
+```
