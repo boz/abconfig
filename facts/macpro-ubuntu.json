@@ -1,0 +1,417 @@
+{
+    "ansible_facts": {
+        "ansible_all_ipv4_addresses": [
+            "172.17.0.1", 
+            "192.168.0.148"
+        ], 
+        "ansible_all_ipv6_addresses": [
+            "fe80::14f4:2572:db72:c8c4"
+        ], 
+        "ansible_architecture": "x86_64", 
+        "ansible_bios_date": "10/07/10", 
+        "ansible_bios_version": "MP51.88Z.007F.B03.1010071432", 
+        "ansible_cmdline": {
+            "BOOT_IMAGE": "/boot/vmlinuz-4.4.0-64-generic.efi.signed", 
+            "quiet": true, 
+            "ro": true, 
+            "root": "UUID=db483dba-37ab-4e18-b8e9-797701d18863", 
+            "splash": true, 
+            "vt.handoff": "7"
+        }, 
+        "ansible_date_time": {
+            "date": "2017-03-21", 
+            "day": "21", 
+            "epoch": "1490126386", 
+            "hour": "12", 
+            "iso8601": "2017-03-21T19:59:46Z", 
+            "iso8601_basic": "20170321T125946447363", 
+            "iso8601_basic_short": "20170321T125946", 
+            "iso8601_micro": "2017-03-21T19:59:46.447487Z", 
+            "minute": "59", 
+            "month": "03", 
+            "second": "46", 
+            "time": "12:59:46", 
+            "tz": "PDT", 
+            "tz_offset": "-0700", 
+            "weekday": "Tuesday", 
+            "weekday_number": "2", 
+            "weeknumber": "12", 
+            "year": "2017"
+        }, 
+        "ansible_default_ipv4": {
+            "address": "192.168.0.148", 
+            "alias": "enp9s0", 
+            "broadcast": "192.168.0.255", 
+            "gateway": "192.168.0.1", 
+            "interface": "enp9s0", 
+            "macaddress": "00:25:00:f0:57:45", 
+            "mtu": 1500, 
+            "netmask": "255.255.255.0", 
+            "network": "192.168.0.0", 
+            "type": "ether"
+        }, 
+        "ansible_default_ipv6": {}, 
+        "ansible_devices": {
+            "sda": {
+                "holders": [], 
+                "host": "SATA controller: Intel Corporation 82801JI (ICH10 Family) SATA AHCI Controller", 
+                "model": "WDC WD1001FALS-4", 
+                "partitions": {
+                    "sda1": {
+                        "sectors": "1048576", 
+                        "sectorsize": 512, 
+                        "size": "512.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "sda2": {
+                        "sectors": "1885384704", 
+                        "sectorsize": 512, 
+                        "size": "899.02 GB", 
+                        "start": "1050624"
+                    }, 
+                    "sda3": {
+                        "sectors": "67088384", 
+                        "sectorsize": 512, 
+                        "size": "31.99 GB", 
+                        "start": "1886435328"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "1", 
+                "scheduler_mode": "deadline", 
+                "sectors": "1953525168", 
+                "sectorsize": "512", 
+                "size": "931.51 GB", 
+                "support_discard": "0", 
+                "vendor": "ATA"
+            }, 
+            "sdb": {
+                "holders": [], 
+                "host": "SATA controller: Intel Corporation 82801JI (ICH10 Family) SATA AHCI Controller", 
+                "model": "Samsung SSD 850", 
+                "partitions": {
+                    "sdb1": {
+                        "sectors": "1048576", 
+                        "sectorsize": 512, 
+                        "size": "512.00 MB", 
+                        "start": "2048"
+                    }, 
+                    "sdb2": {
+                        "sectors": "431978496", 
+                        "sectorsize": 512, 
+                        "size": "205.98 GB", 
+                        "start": "1050624"
+                    }, 
+                    "sdb3": {
+                        "sectors": "67088384", 
+                        "sectorsize": 512, 
+                        "size": "31.99 GB", 
+                        "start": "433029120"
+                    }
+                }, 
+                "removable": "0", 
+                "rotational": "0", 
+                "scheduler_mode": "deadline", 
+                "sectors": "500118192", 
+                "sectorsize": "512", 
+                "size": "238.47 GB", 
+                "support_discard": "512", 
+                "vendor": "ATA"
+            }, 
+            "sr0": {
+                "holders": [], 
+                "host": "SATA controller: Intel Corporation 82801JI (ICH10 Family) SATA AHCI Controller", 
+                "model": "DVD-RW GH61N", 
+                "partitions": {}, 
+                "removable": "1", 
+                "rotational": "1", 
+                "scheduler_mode": "deadline", 
+                "sectors": "2097151", 
+                "sectorsize": "512", 
+                "size": "1024.00 MB", 
+                "support_discard": "0", 
+                "vendor": "HL-DT-ST"
+            }
+        }, 
+        "ansible_distribution": "Ubuntu", 
+        "ansible_distribution_major_version": "16", 
+        "ansible_distribution_release": "xenial", 
+        "ansible_distribution_version": "16.04", 
+        "ansible_dns": {
+            "nameservers": [
+                "127.0.1.1"
+            ], 
+            "search": [
+                "hq.ovrclk.net"
+            ]
+        }, 
+        "ansible_docker0": {
+            "active": false, 
+            "device": "docker0", 
+            "id": "8000.02424b0dcefc", 
+            "interfaces": [], 
+            "ipv4": {
+                "address": "172.17.0.1", 
+                "broadcast": "global", 
+                "netmask": "255.255.0.0", 
+                "network": "172.17.0.0"
+            }, 
+            "macaddress": "02:42:4b:0d:ce:fc", 
+            "mtu": 1500, 
+            "promisc": false, 
+            "stp": false, 
+            "type": "bridge"
+        }, 
+        "ansible_domain": "", 
+        "ansible_enp10s0": {
+            "active": false, 
+            "device": "enp10s0", 
+            "macaddress": "00:25:00:f0:6a:60", 
+            "module": "e1000e", 
+            "mtu": 1500, 
+            "pciid": "0000:0a:00.0", 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_enp9s0": {
+            "active": true, 
+            "device": "enp9s0", 
+            "ipv4": {
+                "address": "192.168.0.148", 
+                "broadcast": "192.168.0.255", 
+                "netmask": "255.255.255.0", 
+                "network": "192.168.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "fe80::14f4:2572:db72:c8c4", 
+                    "prefix": "64", 
+                    "scope": "link"
+                }
+            ], 
+            "macaddress": "00:25:00:f0:57:45", 
+            "module": "e1000e", 
+            "mtu": 1500, 
+            "pciid": "0000:09:00.0", 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "ansible_env": {
+            "HOME": "/home/abozanich", 
+            "LANG": "en_US.UTF-8", 
+            "LC_ALL": "en_US.UTF-8", 
+            "LC_MESSAGES": "en_US.UTF-8", 
+            "LOGNAME": "abozanich", 
+            "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:", 
+            "MAIL": "/var/mail/abozanich", 
+            "OLDPWD": "/home/abozanich/code", 
+            "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games", 
+            "PWD": "/home/abozanich/code/abconfig", 
+            "SHELL": "/bin/zsh", 
+            "SHLVL": "1", 
+            "SSH_CLIENT": "204.14.157.230 38112 22", 
+            "SSH_CONNECTION": "204.14.157.230 38112 192.168.0.148 22", 
+            "SSH_TTY": "/dev/pts/8", 
+            "TERM": "rxvt-unicode", 
+            "USER": "abozanich", 
+            "XDG_RUNTIME_DIR": "/run/user/1001", 
+            "XDG_SESSION_ID": "1865", 
+            "_": "/usr/bin/ansible"
+        }, 
+        "ansible_fips": false, 
+        "ansible_form_factor": "Tower", 
+        "ansible_fqdn": "nightgate", 
+        "ansible_hostname": "nightgate", 
+        "ansible_interfaces": [
+            "wls5", 
+            "docker0", 
+            "lo", 
+            "enp10s0", 
+            "enp9s0"
+        ], 
+        "ansible_kernel": "4.4.0-64-generic", 
+        "ansible_lo": {
+            "active": true, 
+            "device": "lo", 
+            "ipv4": {
+                "address": "127.0.0.1", 
+                "broadcast": "host", 
+                "netmask": "255.0.0.0", 
+                "network": "127.0.0.0"
+            }, 
+            "ipv6": [
+                {
+                    "address": "::1", 
+                    "prefix": "128", 
+                    "scope": "host"
+                }
+            ], 
+            "mtu": 65536, 
+            "promisc": false, 
+            "type": "loopback"
+        }, 
+        "ansible_lsb": {
+            "codename": "xenial", 
+            "description": "Ubuntu 16.04.2 LTS", 
+            "id": "Ubuntu", 
+            "major_release": "16", 
+            "release": "16.04"
+        }, 
+        "ansible_machine": "x86_64", 
+        "ansible_machine_id": "68897d8b098342ec8ff0186f5b3324f9", 
+        "ansible_memfree_mb": 24164, 
+        "ansible_memory_mb": {
+            "nocache": {
+                "free": 27963, 
+                "used": 4200
+            }, 
+            "real": {
+                "free": 24164, 
+                "total": 32163, 
+                "used": 7999
+            }, 
+            "swap": {
+                "cached": 0, 
+                "free": 32757, 
+                "total": 32757, 
+                "used": 0
+            }
+        }, 
+        "ansible_memtotal_mb": 32163, 
+        "ansible_mounts": [
+            {
+                "device": "/dev/sdb2", 
+                "fstype": "ext4", 
+                "mount": "/", 
+                "options": "rw,noatime,discard,errors=remount-ro,data=ordered", 
+                "size_available": 138853732352, 
+                "size_total": 217568305152, 
+                "uuid": "db483dba-37ab-4e18-b8e9-797701d18863"
+            }, 
+            {
+                "device": "/dev/sdb1", 
+                "fstype": "vfat", 
+                "mount": "/boot/efi", 
+                "options": "rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro", 
+                "size_available": 532033536, 
+                "size_total": 535805952, 
+                "uuid": "75DD-EEFE"
+            }, 
+            {
+                "device": "/dev/sda2", 
+                "fstype": "ext4", 
+                "mount": "/mnt/hdd", 
+                "options": "rw,noatime,discard,errors=remount-ro,data=ordered", 
+                "size_available": 876279615488, 
+                "size_total": 950034497536, 
+                "uuid": "4de13e0f-ebe6-448e-b7e8-2c46d74300a5"
+            }, 
+            {
+                "device": "/dev/sdb2", 
+                "fstype": "ext4", 
+                "mount": "/var/lib/docker/aufs", 
+                "options": "rw,noatime,discard,errors=remount-ro,data=ordered", 
+                "size_available": 138853732352, 
+                "size_total": 217568305152, 
+                "uuid": "db483dba-37ab-4e18-b8e9-797701d18863"
+            }
+        ], 
+        "ansible_nodename": "nightgate", 
+        "ansible_os_family": "Debian", 
+        "ansible_pkg_mgr": "apt", 
+        "ansible_processor": [
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz", 
+            "GenuineIntel", 
+            "Intel(R) Xeon(R) CPU           X5690  @ 3.47GHz"
+        ], 
+        "ansible_processor_cores": 6, 
+        "ansible_processor_count": 2, 
+        "ansible_processor_threads_per_core": 2, 
+        "ansible_processor_vcpus": 24, 
+        "ansible_product_name": "MacPro5,1", 
+        "ansible_product_serial": "NA", 
+        "ansible_product_uuid": "NA", 
+        "ansible_product_version": "0.0", 
+        "ansible_python_version": "2.7.12", 
+        "ansible_selinux": {
+            "status": "disabled"
+        }, 
+        "ansible_service_mgr": "systemd", 
+        "ansible_ssh_host_key_dsa_public": "AAAAB3NzaC1kc3MAAACBAIAe4EFDXzYQqiZkDpmtHo/hB7jxjD5eNSyrzfszXG4wUSH9+BaAhxt/OwM0DQDUpZ6LPfGwTB+QketaKcpUZBMfOWfv2YolDJxnlef/d4r31TtQvSlsSWc5Jj2K3RonZVTKwrxPUgN9dpkb0C+2bXNne4uDRHU52tD59V8zsHP7AAAAFQC5HVo6puc3BvmH79IStNOsbdSqnQAAAIA4H6Gf1ZPmvbiY20cdLvCrbwOsyUbfCoLZ9zqikhA+Lj7f6LuYOLcvNLZRLPugeOYiH6iaXX3TpAZZGklAQfpWABFzheUegW5WP9nqgBED2yqs/1+EEUTjPBMA8jxzQIj7BNa989fLFhKPmpi9O/oew0Ewtz/eLH+CCD1xJKXDjAAAAIBs6+XwsKa4Vod/+0YSg/sx2gXoU2Ur+MHU/hWlxvepJzppcEWc5z22n1E2HJs3qQoQoualivr90c/mumiC0OMi+aFbY+7OWCF07T8XsIBouVihiLMkF51aZCTM0I/9/SgkkVcHxJlZkAW/K5v37PRZbGtdZljO0ogs2W8T3WrgfQ==", 
+        "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHyGbDJSA75nNB+DHwdjQaDBGcSGu2BCT5Fm/cS3o/ZQG3Z9185kMnGi956Wncg14yjddUGN2oB9S2/MoqyqrH0=", 
+        "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAINS7YhJhnPYA6bjcBA01P7X2tS3msU90fa9/ag3DJ1zI", 
+        "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQCuahQAld0R3ohIc9Ba1YMkWoE0U4VwCsjGv3Wa2i/F2UJ/IQeqxrdrFTq7oXBGOEaukdphsmnvwBDpmsrU1qShzcYbluhWZsuHl2lcEztWnZkzTHcsZPxVviMwxoahL9YCI/6usQfHWO7S773EmgN9UmrLXn/DrK6i3Yd8JC3NZe40jiPGk/+5581lkjpWrJsY1y+DVMN2uS44+Z94I8uRksteXDBPMCwgIIH2gmCksqGyOC0ZKs2u9OgitQdqpnT+fmhG2vpzAYuVB1gsU7p6dyMefIdbK/doDK4KS5tT+jWzUz0/TpmnQRBbph1UZ66O/mmzYnoyvc5mdCnGNrst", 
+        "ansible_swapfree_mb": 32757, 
+        "ansible_swaptotal_mb": 32757, 
+        "ansible_system": "Linux", 
+        "ansible_system_vendor": "Apple Inc.", 
+        "ansible_uptime_seconds": 931815, 
+        "ansible_user_dir": "/home/abozanich", 
+        "ansible_user_gecos": "", 
+        "ansible_user_gid": 1001, 
+        "ansible_user_id": "abozanich", 
+        "ansible_user_shell": "/bin/zsh", 
+        "ansible_user_uid": 1001, 
+        "ansible_userspace_architecture": "x86_64", 
+        "ansible_userspace_bits": "64", 
+        "ansible_virtualization_role": "host", 
+        "ansible_virtualization_type": "kvm", 
+        "ansible_wls5": {
+            "active": true, 
+            "device": "wls5", 
+            "macaddress": "00:26:82:1a:a4:df", 
+            "module": "wl", 
+            "mtu": 1500, 
+            "pciid": "0000:0d:00.0", 
+            "promisc": false, 
+            "type": "ether"
+        }, 
+        "module_setup": true
+    }, 
+    "changed": false
+}

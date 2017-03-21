@@ -46,6 +46,20 @@ Ubuntu on i7 tower.
 }
 ```
 
+### macpro-ubuntu
+
+Ubuntu on Mac Pro (5,1) tower.
+
+```json
+{
+  "ansible_system": "Linux", 
+  "ansible_distribution": "Ubuntu", 
+  "ansible_os_family": "Debian", 
+  "ansible_pkg_mgr": "apt", 
+  "ansible_service_mgr": "systemd"
+}
+```
+
 ## install/configure the system.
 
 ```sh
