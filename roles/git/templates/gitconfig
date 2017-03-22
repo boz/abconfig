@@ -3,7 +3,7 @@
 	email = {{git_user_email}}
 
 [push]
-	default = simple
+	default = current
 
 [alias]
 	co = checkout
