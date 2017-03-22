@@ -15,6 +15,7 @@ export PATH="$WALKER_HOME/bin:$PATH"
 export PATH="$WALKER_HOME/contrib:$PATH"
 export PATH="$OVRCLK_HOME/ots/_support/bin:$PATH"
 export PATH="$OVRCLK_HOME/cli/_support/bin:$PATH"
+export PATH="$OVRCLK_HOME/walker-integration:$PATH"
 
 if [ "$(uname)" != "Darwin" ]; then
   export WALKER_BOX_DEFAULT_PROVIDER=virtualbox
