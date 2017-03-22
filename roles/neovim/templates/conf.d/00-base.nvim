@@ -35,6 +35,10 @@ set completeopt-=preview
 
 set background=dark
 
+filetype plugin indent on
+
+autocmd BufEnter *.nvim :setlocal filetype=vim
+
 nnoremap <silent> <f2> :split  $MYVIMRC<cr>
 nnoremap <silent> <f3> :source $MYVIMRC<cr>
 
@@ -42,5 +46,3 @@ nnoremap <silent> <f3> :source $MYVIMRC<cr>
 " map <C-N> :lp<CR>
 
 nmap ZZ :w<CR>
-
-autocmd BufEnter *.nvim :setlocal filetype=vim
