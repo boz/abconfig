@@ -11,6 +11,9 @@ The following "secret" variables must be defined:
 aws_access_key_id:     "your-access-key-id"
 aws_secret_access_key: "your-secret-access-key"
 ots_registry_token:    "your-registry-token"
+git_credentials:
+  - an array of
+  - git credentials
 ```
 
 One way to do this is to create a `group_vars/all/secrets` file:

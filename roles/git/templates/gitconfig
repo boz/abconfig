@@ -1,0 +1,17 @@
+[user]
+	name  = {{git_user_name }}
+	email = {{git_user_email}}
+
+[push]
+	default = simple
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	p = pull
+
+[credential]
+	helper = store

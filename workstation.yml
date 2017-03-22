@@ -3,6 +3,7 @@
   roles:
     - package-manager
     - zsh
+    - git
     - go
     - fzf
     - neovim

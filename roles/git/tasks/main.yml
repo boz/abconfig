@@ -1,0 +1,19 @@
+---
+- name: install git (apt)
+  apt: name={{item}}
+  with_items:
+    - git
+    - git-man
+  become: true
+  when: ansible_pkg_mgr == "apt"
+  tags: [config-install,git]
+
+- name: configure gitconfig
+  template: dest={{homedir}}/.gitconfig
+            src=gitconfig
+  tags: [config,git]
+
+- name: configure git credentials
+  template: dest={{homedir}}/.git-credentials
+            src=git-credentials
+  tags: [config,git]
