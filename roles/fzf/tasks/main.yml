@@ -8,6 +8,8 @@
   command: go get {{fzf.package}}
   when: not have_zprezto.stat.exists
   tags: [config-install,fzf]
+  environment:
+    GOPATH: "{{gopath}}"
 
 - name: configure
   template: dest={{profiledir}}/20-fzf.zsh
