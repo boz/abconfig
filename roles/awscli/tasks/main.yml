@@ -10,4 +10,17 @@
 - name: configure shell environment vars
   template: dest={{profiledir}}/50-awscli.sh
             src=awscli.sh
+            mode=0600
+  tags: [config,awscli]
+
+- name: create aws conf dir
+  file: state=directory
+        path={{homedir}}/.aws
+        mode=0700
+  tags: [config,awscli]
+
+- name: write aws credentials
+  template: dest={{homedir}}/.aws/credentials
+            src=credentials
+            mode=0600
   tags: [config,awscli]
