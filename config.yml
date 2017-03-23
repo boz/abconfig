@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+    - name: build host configuration
+      include_vars: "{{item}}"
+      with_items:
+        - config.yml
+        - "{{ansible_hostname}}.yml"

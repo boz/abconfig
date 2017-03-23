@@ -16,4 +16,5 @@
 - name: configure git credentials
   template: dest={{homedir}}/.git-credentials
             src=git-credentials
+            mode=0600
   tags: [config,git]

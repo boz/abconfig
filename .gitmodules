@@ -1,0 +1,3 @@
+[submodule "vars"]
+	path = vars
+	url = git@github.com:boz/abconfig-vars.git
