@@ -6,6 +6,7 @@
   roles:
     - package-manager
     - zsh
+    - abconfig
     - git
     - go
     - fzf

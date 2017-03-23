@@ -1,0 +1,6 @@
+---
+- name: install abconfig environment
+  copy:
+    dest: "{{profiledir}}/05-abconfig.sh"
+    content: "export ANSIBLE_VAULT_PASSWORD_FILE={{abconfig_vaultpw}}\n"
+  tags: [config,abconfig]
