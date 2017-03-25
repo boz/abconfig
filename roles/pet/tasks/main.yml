@@ -1,0 +1,30 @@
+---
+- name: install peco
+  pacaur: name={{item}}
+  with_items:
+    - peco
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,pet]
+
+- name: install pet
+  command: go get github.com/knqyf263/pet
+  tags: [config-install,pet]
+
+- name: create pet config directory
+  file:
+    path: "{{homedir}}/.config/pet"
+    state: directory
+  tags: [config-install,pet]
+
+- name: configure
+  template:
+    dest: "{{homedir}}/.config/pet/config.toml"
+    src: config.toml
+    mode: "0600"
+  tags: [config-install,pet]
+
+- name: install zsh binding
+  copy:
+    dest: "{{profiledir}}/50-pet.zsh"
+    src: pet.zsh
+  tags: [config-install,pet]

@@ -13,4 +13,5 @@
     - neovim
     - awscli
     - ovrclk
+    - pet
 - hosts: all

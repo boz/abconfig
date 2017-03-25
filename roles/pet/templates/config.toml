@@ -1,0 +1,11 @@
+[General]
+	snippetfile = "{{homedir}}/.config/pet/snippet.toml"
+	editor = "nvim"
+	column = 40
+	selectcmd = "peco"
+
+[Gist]
+	file_name = "pet-snippet.toml"
+	access_token = "{{pet_access_token}}"
+	gist_id = "{{pet_gist_id}}"
+	public = false

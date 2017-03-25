@@ -6,3 +6,4 @@
       with_items:
         - config.yml
         - "{{ansible_hostname}}.yml"
+      tags: always
