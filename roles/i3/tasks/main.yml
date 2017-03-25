@@ -1,0 +1,25 @@
+---
+- name: check xcwd
+  stat: path={{homedir}}/bin/xcwd
+  register: have_xcwd
+  tags: [config-install,xcwd,i3]
+
+- name: download xcwd
+  git:
+    repo: https://github.com/boz/i3ci.git
+    dest: "{{homedir}}/code/i3ci"
+    force: true
+  when: not have_xcwd.stat.exists
+  tags: [config-install,xcwd,i3]
+
+- name: compile xcwd
+  command: make
+  args:
+    chdir: "{{homedir}}/code/i3ci/xcwd"
+  when: not have_xcwd.stat.exists
+  tags: [config-install,xcwd,i3]
+
+- name: install xcwd
+  command: install "{{homedir}}/code/i3ci/xcwd/xcwd" "{{homedir}}/bin"
+  when: not have_xcwd.stat.exists
+  tags: [config-install,xcwd,i3]

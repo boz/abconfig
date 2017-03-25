@@ -19,3 +19,7 @@ SAVEHIST=100000
 
 export VISUAL=vim
 export EDITOR=vim
+
+if [ -d ~/bin ]; then
+  export PATH=$PATH:~/bin
+fi

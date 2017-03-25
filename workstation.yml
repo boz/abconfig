@@ -16,4 +16,6 @@
     - ovrclk
     - pet
     - wrk
+
 - hosts: all
+    - i3

@@ -43,6 +43,12 @@
     - zshrc
   tags: [config-install,zsh,zprezto]
 
+- name: create bin dir
+  file:
+    path: "{{homedir}}/bin"
+    state: directory
+  tags: [config-install,zsh]
+
 - name: create profile dir
   file: path={{profiledir}} state=directory
   tags: [config-install,zsh]
