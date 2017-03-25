@@ -23,4 +23,7 @@ fi
 
 alias cdo="cd $OVRCLK_HOME"
 alias cdw="cd $OVRCLK_HOME/walker"
+alias cdots="cd $OVRCLK_HOME/ots"
+alias cdocli="cd $OVRCLK_HOME/cli"
+alias cdoapi="cd $OVRCLK_HOME/api"
 alias cdwh="cd $WALKER_HOME"
