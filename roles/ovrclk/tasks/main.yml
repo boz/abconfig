@@ -1,12 +1,12 @@
 ---
 - name: check golang sources
-  stat: path={{ovrclk.sourcedir}}
+  stat: path={{ovrclk_sourcedir}}
   register: have_ovrclk
   tags: [config-install,ovrclk]
 
 - name: install golang sources
-  git: repo={{ovrclk.repository}}
-       dest={{ovrclk.sourcedir}}
+  git: repo={{ovrclk_repository}}
+       dest={{ovrclk_sourcedir}}
        recursive=true
   when: not have_ovrclk.stat.exists
   tags: [config-install,ovrclk]

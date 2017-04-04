@@ -1,10 +1,9 @@
-export WALKER_PUBLIC_DOMAIN="{{ovrclk.publicdomain}}"
+export WALKER_PUBLIC_DOMAIN="{{ovrclk_public_domain}}"
 export WALKER_PUBLIC_HOSTNAME="local.$WALKER_PUBLIC_DOMAIN"
 export WALKER_DEVPOD=1
 
-export OTS_VERSION="{{ovrclk.ots.version}}"
-export OTS_CHANNEL="{{ovrclk.ots.channel}}"
-
+export OTS_CHANNEL="{{ots_channel}}"
+export OTS_VERSION="{{ots_version}}"
 export OTS_REGISTRY_TOKEN="{{ots_registry_token}}"
 
 export OVRCLK_HOME="$GOPATH/src/github.com/ovrclk"

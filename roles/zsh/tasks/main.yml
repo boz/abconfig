@@ -19,20 +19,20 @@
   tags: [config-install,zsh]
 
 - name: check zprezto repository presence
-  stat: path={{ zprezto.dir }}
+  stat: path={{ zprezto_dir }}
   register: have_zprezto
   tags: [config-install,zsh,zprezto]
 
 - name: clone zprezto
-  git: repo={{ zprezto.repo }}
-       dest={{ zprezto.dir }}
+  git: repo={{ zprezto_repo }}
+       dest={{ zprezto_dir }}
        recursive=true
   when: not have_zprezto.stat.exists
   tags: [config-install,zsh,zprezto]
 
 - name: install zprezto
   file: state=link
-        src={{ zprezto.dir }}/runcoms/{{item}}
+        src={{ zprezto_dir }}/runcoms/{{item}}
         dest={{ homedir }}/.{{item}}
   with_items:
     - zlogin

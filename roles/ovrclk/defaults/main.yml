@@ -1,8 +1,0 @@
----
-ovrclk:
-  repository: git@github.com:ovrclk/golang-packages.git
-  sourcedir: "{{gopath}}/src/github.com/ovrclk"
-  publicdomain: ovrclk2.com
-  ots:
-    channel: boz
-    version: latest
