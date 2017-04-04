@@ -19,6 +19,12 @@
   file: path={{gopath}} state=directory
   tags: [config-install,go]
 
+- name: install glide
+  command: go get github.com/Masterminds/glide
+  environment:
+    GOPATH: "{{gopath}}"
+  tags: [config-install,go,glide]
+
 - name: configure shell $GOPATH
   template: dest={{ profiledir }}/10-gopath.sh
             src=gopath.sh

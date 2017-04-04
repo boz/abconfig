@@ -1,10 +1,41 @@
 ---
+- name: check peco exists
+  stat:
+    path: "{{gopath}}/bin/peco"
+  register: have_peco
+  tags: [config-install,pet,peco]
+
+- name: install peco sources
+  command: go get -d github.com/peco/peco
+  when: not have_peco.stat.exists
+  tags: [config-install,pet,peco]
+
+- name: install peco deps
+  command: glide install
+  args:
+    chdir: "{{gopath}}/src/github.com/peco/peco"
+  environment:
+    GOPATH: "{{gopath}}"
+  when: not have_peco.stat.exists
+  tags: [config-install,pet,peco]
+
+- name: compile peco
+  command: go build cmd/peco/peco.go
+  args:
+    chdir: "{{gopath}}/src/github.com/peco/peco"
+    creates: "{{gopath}}/src/github.com/peco/peco"
+  environment:
+    GOPATH: "{{gopath}}"
+  when: not have_peco.stat.exists
+  tags: [config-install,pet,peco]
+
 - name: install peco
-  pacaur: name={{item}}
-  with_items:
-    - peco
-  when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,pet]
+  command: install "peco" "{{gopath}}/bin"
+  args:
+    chdir: "{{gopath}}/src/github.com/peco/peco"
+    creates: "{{gopath}}/bin/peco"
+  when: not have_peco.stat.exists
+  tags: [config-install,pet,peco]
 
 - name: install pet
   command: go get github.com/knqyf263/pet
