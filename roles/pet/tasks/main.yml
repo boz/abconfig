@@ -54,6 +54,17 @@
     mode: "0600"
   tags: [config-install,pet]
 
+- name: check snippet.toml
+  stat:
+    path: "{{homedir}}/.config/pet/snippet.toml"
+  register: have_pet_snippet
+  tags: [config-install,pet]
+
+- name: sync
+  command: pet sync
+  when: not have_pet_snippet.stat.exists
+  tags: [config-install,pet]
+
 - name: install zsh binding
   copy:
     dest: "{{profiledir}}/50-pet.zsh"
