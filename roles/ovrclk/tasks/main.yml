@@ -15,3 +15,15 @@
   template: src=ovrclk.sh
             dest={{ profiledir }}/20-ovrclk.sh
   tags: [config,ovrclk]
+
+- name: install ssh config
+  blockinfile:
+    name: "{{homedir}}/.ssh/config"
+    marker: "# {mark} OVRCLK HELPERS"
+    create: yes
+    mode: "0600"
+    block: |
+      Host *.ovrclk?.com
+        UserKnownHostsFile=/dev/null
+        StrictHostKeyChecking=no
+  tags: [config,ovrclk]
