@@ -1,0 +1,7 @@
+# 1920x1080 for HDMI-0
+#xrandr --output HDMI-0 --mode 1920x1080
+
+# 80 clicks per second after 250 ms delay
+xset r rate 250 80
+xsetroot -solid '#222222'
+xrandr --output DP-0 --primary
