@@ -11,6 +11,7 @@
     - go
     - fzf
     - neovim
+    - rbenv
     - awscli
     - ovrclk
     - pet
