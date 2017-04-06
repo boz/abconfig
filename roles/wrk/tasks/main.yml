@@ -1,0 +1,21 @@
+---
+- name: checkout source
+  git:
+    repo: https://github.com/wg/wrk.git
+    update: no
+    dest: "{{codedir}}/wrk"
+  tags: [config-install,wrk]
+
+- name: build
+  command: make
+  args:
+    chdir: "{{codedir}}/wrk"
+    creates: "{{codedir}}/wrk/wrk"
+  tags: [config-install,wrk]
+
+- name: install
+  command: install ./wrk {{homedir}}/bin
+  args:
+    chdir: "{{codedir}}/wrk"
+    creates: "{{homedir}}/bin/wrk"
+  tags: [config-install,wrk]

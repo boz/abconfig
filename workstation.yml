@@ -15,4 +15,5 @@
     - awscli
     - ovrclk
     - pet
+    - wrk
 - hosts: all
