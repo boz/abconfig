@@ -3,6 +3,10 @@
 - include: config.yml
 
 - hosts: all
+  tasks:
+    - group_by: key=os_{{ansible_system | lower}}
+
+- hosts: all
   roles:
     - package-manager
     - zsh
@@ -17,6 +21,6 @@
     - pet
     - wrk
 
-- hosts: all
+- hosts: os_linux
   roles:
     - i3
