@@ -18,4 +18,5 @@
     - wrk
 
 - hosts: all
+  roles:
     - i3

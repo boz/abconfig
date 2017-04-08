@@ -15,13 +15,14 @@
 - name: compile xcwd
   command: make
   args:
-    chdir: "{{homedir}}/code/xcwd"
-  creates: "{{homedir}}/code/xcwd/xcwd"
+    chdir:   "{{homedir}}/code/xcwd"
+    creates: "{{homedir}}/code/xcwd/xcwd"
   when: not have_xcwd.stat.exists
   tags: [config-install,xcwd,i3]
 
 - name: install xcwd
-  command: install "{{homedir}}/code/xcwd" "{{homedir}}/bin"
-  creates: "{{homedir}}/bin/xcwd"
+  command: install "{{homedir}}/code/xcwd/xcwd" "{{homedir}}/bin"
+  args:
+    creates: "{{homedir}}/bin/xcwd"
   when: not have_xcwd.stat.exists
   tags: [config-install,xcwd,i3]

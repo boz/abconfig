@@ -23,7 +23,7 @@
   command: go build cmd/peco/peco.go
   args:
     chdir: "{{gopath}}/src/github.com/peco/peco"
-    creates: "{{gopath}}/src/github.com/peco/peco"
+    creates: "{{gopath}}/src/github.com/peco/peco/peco"
   environment:
     GOPATH: "{{gopath}}"
   when: not have_peco.stat.exists
