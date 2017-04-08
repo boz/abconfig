@@ -19,13 +19,31 @@
   file: path={{gopath}} state=directory
   tags: [config-install,go]
 
-- name: install glide
-  command: go get github.com/Masterminds/glide
-  environment:
-    GOPATH: "{{gopath}}"
-  tags: [config-install,go,glide]
-
 - name: configure shell $GOPATH
   template: dest={{ profiledir }}/10-gopath.sh
             src=gopath.sh
   tags: [config,go]
+
+- name: install glide
+  command: go get github.com/Masterminds/glide
+  environment:
+    GOPATH: "{{gopath}}"
+  args:
+    creates: "{{gopath}}/bin/glide"
+  tags: [config-install,go,glide]
+
+- name: install govendor
+  command: go get github.com/kardianos/govendor
+  environment:
+    GOPATH: "{{gopath}}"
+  args:
+    creates: "{{gopath}}/bin/govendor"
+  tags: [config-install,go,govendor]
+
+- name: install delve
+  command: go get github.com/derekparker/delve/cmd/dlv
+  args:
+    creates: "{{gopath}}/bin/dlv"
+  environment:
+    GOPATH: "{{gopath}}"
+  tags: [config-install,go,delve]
