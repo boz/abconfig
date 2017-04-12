@@ -1,0 +1,27 @@
+---
+- name: install repository key (apt)
+  apt_key:
+    url: http://archive.getdeb.net/getdeb-archive.key
+  become: true
+  when: ansible_pkg_mgr == "apt"
+  tags: [config-install,polybar]
+
+- name: install repository (apt)
+  apt_repository:
+    repo: deb http://archive.getdeb.net/ubuntu {{ansible_distribution_release}}-getdeb apps
+    update_cache: true
+  become: true
+  when: ansible_pkg_mgr == "apt"
+  tags: [config-install,polybar]
+
+- name: install (apt)
+  apt:
+    name: polybar
+  become: true
+  when: ansible_pkg_mgr == "apt"
+  tags: [config-install,polybar]
+
+- name: install (arch)
+  shell: echo install ascii; false
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,polybar]

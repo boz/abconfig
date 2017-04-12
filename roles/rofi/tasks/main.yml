@@ -1,11 +1,11 @@
 ---
 - name: install (apt)
-  apt: name=i3
+  apt: name=rofi
   become: true
   when: ansible_pkg_mgr == "apt"
-  tags: [config-install,i3]
+  tags: [config-install,rofi]
 
 - name: install (arch)
   shell: echo install ascii; false
   when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,i3]
+  tags: [config-install,rofi]

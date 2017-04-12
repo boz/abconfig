@@ -1,10 +1,5 @@
 ---
-
 - include: config.yml
-
-- hosts: all
-  tasks:
-    - group_by: key=os_{{ansible_system | lower}}
 
 - hosts: all
   roles:
@@ -21,7 +16,3 @@
     - pet
     - wrk
     - cli-extras
-
-- hosts: os_linux
-  roles:
-    - i3

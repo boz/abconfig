@@ -1,0 +1,10 @@
+---
+
+- include: config.yml
+
+- hosts: all
+  roles:
+    - rofi
+    - xcwd
+    - polybar
+    - i3
