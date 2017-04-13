@@ -1,13 +1,11 @@
 ---
-
 - name: install (apt)
-  apt: name=rofi
-  become: true
+  shell: echo install teiler; false
   when: ansible_pkg_mgr == "apt"
-  tags: [config-install,rofi]
+  tags: [config-install,teiler]
 
 - name: install (arch)
   pacaur:
-    name: rofi-git
+    name: teiler-git
   when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,rofi]
+  tags: [config-install,teiler]

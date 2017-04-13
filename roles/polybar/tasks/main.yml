@@ -22,6 +22,7 @@
   tags: [config-install,polybar]
 
 - name: install (arch)
-  shell: echo install ascii; false
+  pacaur:
+    name: polybar-git
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,polybar]

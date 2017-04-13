@@ -6,11 +6,12 @@
   tags: [config-install,cli-extras,ascii]
 
 - name: install ascii (arch)
-  shell: echo install ascii; false
+  pacaur:
+    name: community/ascii
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,ascii]
 
-- name: install ascii (arch)
+- name: install ascii (osx)
   shell: echo install ascii; false
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,cli-extras,ascii]

@@ -4,7 +4,9 @@
 
 - hosts: all
   roles:
+    - package-manager
     - rofi
     - xcwd
     - polybar
+    - teiler
     - i3
