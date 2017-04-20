@@ -7,10 +7,38 @@
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,go]
 
-- name: install go (apt)
+- name: install gophers/archive ppa(apt)
+  apt_repository:
+    repo: ppa:gophers/archive
+  become: true
+  when: ansible_pkg_mgr == "apt"
+  tags: [config-install,go]
+
+- name: install go package (apt)
   apt: name={{item}}
   with_items:
-    - golang
+    - golang-1.8
+  become: true
+  when: ansible_pkg_mgr == "apt"
+  tags: [config-install,go]
+
+- name: enable go version (apt)
+  file:
+    src: /usr/lib/go-1.8
+    dest: /usr/lib/go
+    state: link
+    force: yes
+  become: true
+  when: ansible_pkg_mgr == "apt"
+  tags: [config-install,go]
+
+- name: install go binaries (apt)
+  file:
+    src: /usr/lib/go/bin/{{item}}
+    dest: /usr/bin/{{item}}
+    state: link
+    force: yes
+  with_items: [ gofmt, go ]
   become: true
   when: ansible_pkg_mgr == "apt"
   tags: [config-install,go]
