@@ -15,3 +15,20 @@
   shell: echo install ascii; false
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,cli-extras,ascii]
+
+- name: install asciinema (apt)
+  apt:
+    name: asciinema
+  become: true
+  when: ansible_pkg_mgr == "apt"
+  tags: [config-install,cli-extras,asciinema]
+
+- name: install asciinema (arch)
+  shell: echo install asciinema; false
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,cli-extras,asciinema]
+
+- name: install asciinema (osx)
+  shell: echo install asciinema; false
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,cli-extras,asciinema]
