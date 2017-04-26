@@ -75,3 +75,12 @@
   environment:
     GOPATH: "{{gopath}}"
   tags: [config-install,go,delve]
+
+
+- name: install goreleaser
+  command: go get github.com/goreleaser/goreleaser
+  args:
+    creates: "{{gopath}}/bin/goreleaser"
+  environment:
+    GOPATH: "{{gopath}}"
+  tags: [config-install,go,goreleaser]
