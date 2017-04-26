@@ -18,3 +18,11 @@
             src=git-credentials
             mode=0600
   tags: [config,git]
+
+- name: configure shell $GITHUB_REPO_TOKEN
+  copy:
+    dest: "{{ profiledir }}/10-github-repo.sh"
+    content: |
+      export GITHUB_REPO_TOKEN={{github_repo_token}}
+    mode: 0600
+  tags: [config,git,github]
