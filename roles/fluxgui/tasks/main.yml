@@ -1,0 +1,21 @@
+---
+- name: install repository (apt)
+  apt_repository:
+    repo: ppa:nathan-renniewaldock/flux
+    update_cache: true
+  become: true
+  when: ansible_pkg_mgr == "apt"
+  tags: [config-install,fluxgui]
+
+- name: install (apt)
+  apt:
+    name: fluxgui
+  become: true
+  when: ansible_pkg_mgr == "apt"
+  tags: [config-install,fluxgui]
+
+- name: install (arch)
+  fail:
+    ms: install fluxgui
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,fluxgui]
