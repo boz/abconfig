@@ -10,4 +10,6 @@
     - polybar
     - teiler
     - i3
-    - fluxgui
+
+# - polybar (broken)
+# - fluxgui

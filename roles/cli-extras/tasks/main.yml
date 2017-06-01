@@ -24,7 +24,8 @@
   tags: [config-install,cli-extras,asciinema]
 
 - name: install asciinema (arch)
-  shell: echo install asciinema; false
+  pacaur:
+    name: community/asciinema
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,asciinema]
 

@@ -7,11 +7,13 @@
 
 - name: install peco sources
   command: go get -d github.com/peco/peco
+  environment:
+    GOPATH: "{{gopath}}"
   when: not have_peco.stat.exists
   tags: [config-install,pet,peco]
 
 - name: install peco deps
-  command: glide install
+  command: "{{gopath}}/bin/glide install"
   args:
     chdir: "{{gopath}}/src/github.com/peco/peco"
   environment:
@@ -39,6 +41,8 @@
 
 - name: install pet
   command: go get github.com/knqyf263/pet
+  environment:
+    GOPATH: "{{gopath}}"
   tags: [config-install,pet]
 
 - name: create pet config directory
@@ -61,7 +65,7 @@
   tags: [config-install,pet]
 
 - name: sync
-  command: pet sync
+  command: "{{gopath}}/bin/pet sync"
   when: not have_pet_snippet.stat.exists
   tags: [config-install,pet]
 

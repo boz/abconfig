@@ -17,8 +17,8 @@ HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
 
-export VISUAL=vim
-export EDITOR=vim
+export VISUAL=nvim
+export EDITOR=nvim
 
 if [ -d ~/bin ]; then
   export PATH=$PATH:~/bin

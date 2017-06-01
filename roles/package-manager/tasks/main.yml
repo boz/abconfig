@@ -1,6 +1,14 @@
 ---
+
+- name: create aur directory
+  file:
+    path: "{{homedir}}/aur"
+    state: directory
+  when: ansible_pkg_mgr == "pacman"
+  tags: [bootstrap,package-manager]
+
 - name: install pacaur
-  aur: name={{item}} user={{ansible_user}}
+  aur: name={{item}} user={{ansible_user_id}} skip_pgp=yes
   with_items:
     - cower
     - pacaur-git
