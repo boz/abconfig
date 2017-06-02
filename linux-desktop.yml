@@ -5,11 +5,12 @@
 - hosts: all
   roles:
     - package-manager
-    - rofi
+    - x
     - xcwd
     - polybar
     - teiler
     - i3
 
+# - rofi (broken)
 # - polybar (broken)
 # - fluxgui
