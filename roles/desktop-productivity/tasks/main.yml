@@ -1,0 +1,6 @@
+---
+- name: install evince pdf viewer
+  pacaur:
+    name: extra/evince
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,desktop-productivity,evince]
