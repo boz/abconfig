@@ -4,5 +4,6 @@
   with_items:
     - xorg-xrandr
     - xorg-xev
+    - xorg-xsetroot
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,x]
