@@ -3,6 +3,7 @@
 
 - hosts: all
   roles:
+    - fs-trim
     - package-manager
     - zsh
     - abconfig

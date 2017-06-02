@@ -1,0 +1,8 @@
+---
+- name: enable periodic trim
+  systemd:
+    name: fstrim.timer
+    enabled: yes
+  become: true
+  when: ansible_service_mgr == "systemd"
+  tags: [config-install,fs-trim]
