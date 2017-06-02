@@ -1,0 +1,40 @@
+---
+- name: load loop module on startup
+  copy:
+    dest: "/etc/modules-load.d/loop.conf"
+    content: "loop\n"
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,docker]
+
+- name: load loop module
+  modprobe:
+    name: loop
+    state: present
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,docker]
+
+- name: install docker
+  pacaur: name={{item}}
+  with_items: [community/docker, community/docker-compose]
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,docker]
+
+- name: enable docker socket
+  systemd:
+    name: docker.socket
+    enabled: yes
+    state: started
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,docker]
+
+- name: add user to docker group
+  user:
+    append: yes
+    groups: docker
+    name: "{{ansible_user_id}}"
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,docker]

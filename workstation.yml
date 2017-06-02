@@ -6,6 +6,7 @@
     - package-manager
     - fs-trim
     - passwordstore
+    - docker
     - zsh
     - abconfig
     - git
