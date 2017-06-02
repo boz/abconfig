@@ -1,0 +1,10 @@
+---
+- name: install fonts
+  pacaur:
+    name: "{{item}}"
+  with_items:
+    - aur/ttf-font-awesome
+    - aur/ttf-unifont
+    - aur/siji-git
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,fonts]
