@@ -3,9 +3,9 @@
 
 - hosts: all
   roles:
-    - fs-trim
-    - pass
     - package-manager
+    - fs-trim
+    - passwordstore
     - zsh
     - abconfig
     - git
