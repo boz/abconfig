@@ -1,0 +1,6 @@
+---
+- name: install pass (arch)
+  pacaur:
+    name: community/pass
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,pass]
