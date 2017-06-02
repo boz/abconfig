@@ -6,6 +6,8 @@ let &runtimepath .= ',' . s:deindir
 if dein#load_state(s:bundledir)
   call dein#begin(s:bundledir)
 
+  call dein#add(s:deindir)
+
   if g:hasfzf
     call dein#add('junegunn/fzf.vim')
   else
