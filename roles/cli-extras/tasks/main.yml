@@ -33,3 +33,9 @@
   shell: echo install asciinema; false
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,cli-extras,asciinema]
+
+- name: install unzip (arch)
+  pacaur:
+    name: extra/unzip
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,cli-extras,unzip]
