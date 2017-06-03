@@ -14,6 +14,8 @@ if dein#load_state(s:bundledir)
     call dein#add('ctrlpvim/ctrlp.vim')
   end
 
+  call dein#add('tpope/vim-surround')
+  call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-rhubarb')
 
   call dein#add('Shougo/deoplete.nvim')

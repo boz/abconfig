@@ -35,6 +35,9 @@ set completeopt-=preview
 
 set background=dark
 
+set relativenumber
+"set number
+
 filetype plugin indent on
 
 autocmd BufEnter *.nvim :setlocal filetype=vim
