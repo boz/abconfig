@@ -17,6 +17,10 @@ if dein#load_state(s:bundledir)
   call dein#add('tpope/vim-surround')
   call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-rhubarb')
+  call dein#add('tpope/vim-repeat')
+  call dein#add('tpope/vim-dispatch')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-abolish')
 
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('zchee/deoplete-go', {'build': 'make'})
@@ -24,15 +28,14 @@ if dein#load_state(s:bundledir)
   call dein#add('Shougo/neosnippet')
   call dein#add('Shougo/neosnippet-snippets')
 
-  call dein#add('fatih/vim-go',{'merged':0})
-  call dein#add('tpope/vim-dispatch')
-  call dein#add('tpope/vim-fugitive.git')
-  call dein#add('scrooloose/nerdcommenter')
+  "call dein#add('vim-airline/vim-airline')
 
   call dein#add('altercation/vim-colors-solarized',{'merged': 0})
   call dein#source('vim-colors-solarized')
 
-  "call dein#add('vim-airline/vim-airline')
+  call dein#add('PotatoesMaster/i3-vim-syntax')
+
+  call dein#add('fatih/vim-go',{'merged':0})
 
   call dein#end()
   call dein#save_state()
