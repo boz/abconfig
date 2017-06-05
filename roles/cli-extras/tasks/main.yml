@@ -51,3 +51,9 @@
     name: extra/bind-tools
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,bind-tools]
+
+- name: install wget (arch)
+  pacaur:
+    name: extra/wget
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,cli-extras,wget]
