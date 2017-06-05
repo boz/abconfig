@@ -45,3 +45,9 @@
     name: community/jq
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,jq]
+
+- name: install dns-utils (arch)
+  pacaur:
+    name: extra/bind-tools
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,cli-extras,bind-tools]
