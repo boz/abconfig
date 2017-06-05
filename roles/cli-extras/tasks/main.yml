@@ -39,3 +39,9 @@
     name: extra/unzip
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,unzip]
+
+- name: install jq (arch)
+  pacaur:
+    name: community/jq
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,cli-extras,jq]
