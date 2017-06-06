@@ -3,13 +3,13 @@
   pacaur:
     name: "{{item}}"
   with_items:
-    - community/virtualbox
-    - community/virtualbox-host-modules-arch
+    - virtualbox
+    - virtualbox-host-modules-arch
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,vagrant,virtualbox]
 
 - name: install vagrant
   pacaur:
-    name: community/vagrant
+    name: vagrant
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,vagrant]

@@ -1,6 +1,6 @@
 ---
 - name: install slack-desktop
   pacaur:
-    name: aur/slack-desktop
+    name: slack-desktop
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,slack]
