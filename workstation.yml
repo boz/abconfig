@@ -19,4 +19,5 @@
     - ovrclk
     - pet
     - wrk
+    - postgres
     - cli-extras

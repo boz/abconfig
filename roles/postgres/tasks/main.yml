@@ -1,0 +1,45 @@
+- name: install psycopg2
+  pacaur:
+    name: community/python-psycopg2
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,postgres]
+
+- name: install postgres(arch)
+  pacaur:
+    name: extra/postgresql
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,postgres]
+
+- name: check pg datadir
+  stat:
+    path: /var/lib/postgres/data/PG_VERSION
+  register: have_pgdata
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,postgres]
+
+- name: init postgres data
+  command: "initdb --locale $LANG -E UTF8 -D /var/lib/postgres/data"
+  become_user: "postgres"
+  become: true
+  when: ansible_pkg_mgr == "pacman" and not have_pgdata.stat.exists
+  tags: [config-install,postgres]
+
+- name: enable postgres service 
+  systemd:
+    name: postgresql
+    enabled: yes
+    state: started
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,postgres]
+
+- name: add postgres user
+  postgresql_user:
+    name: "{{ansible_user_id}}"
+    role_attr_flags: CREATEROLE,CREATEDB
+    state: present
+  become_user: "postgres"
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,postgres]
