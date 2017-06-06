@@ -1,0 +1,14 @@
+- name: install redis (arch)
+  pacaur:
+    name: community/redis
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,redis]
+
+- name: enable redis service 
+  systemd:
+    name: redis
+    enabled: yes
+    state: started
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,redis]

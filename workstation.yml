@@ -20,4 +20,5 @@
     - pet
     - wrk
     - postgres
+    - redis
     - cli-extras
