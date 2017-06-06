@@ -7,5 +7,6 @@ if dein#tap('fzf.vim')
 
   nmap <C-p>     :FZFFiles<cr>
   nmap <Leader>b :FZFBuffers<cr>
+  nmap <F1>      :FZFHelptags<cr>
   "nmap <Leader>gg :FZFGrep expand('<cword>')<cr>
 end
