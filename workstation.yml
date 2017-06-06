@@ -5,9 +5,12 @@
   roles:
     - package-manager
     - fs-trim
-    - passwordstore
     - docker
+    - postgres
+    - redis
     - vagrant
+    - cli-extras
+    - passwordstore
     - zsh
     - abconfig
     - git
@@ -19,6 +22,3 @@
     - ovrclk
     - pet
     - wrk
-    - postgres
-    - redis
-    - cli-extras
