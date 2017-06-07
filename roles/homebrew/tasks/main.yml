@@ -1,0 +1,8 @@
+---
+- name: install homebrew github token (osx)
+  copy:
+    dest: "{{profiledir}}/10-homebrew.sh"
+    content: |
+      export HOMEBREW_GITHUB_API_TOKEN={{github_homebrew_token}}
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,homebrew]

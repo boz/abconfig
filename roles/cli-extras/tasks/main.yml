@@ -12,7 +12,8 @@
   tags: [config-install,cli-extras,ascii]
 
 - name: install ascii (osx)
-  shell: echo install ascii; false
+  debug:
+    msg: missing ascii {{ansible_pkg_mgr}}
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,cli-extras,ascii]
 
@@ -30,7 +31,8 @@
   tags: [config-install,cli-extras,asciinema]
 
 - name: install asciinema (osx)
-  shell: echo install asciinema; false
+  debug:
+    msg: missing asciinema {{ansible_pkg_mgr}}
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,cli-extras,asciinema]
 

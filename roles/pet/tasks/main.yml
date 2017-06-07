@@ -41,6 +41,8 @@
 
 - name: install pet
   command: go get github.com/knqyf263/pet
+  args:
+    creates: "{{gopath}}/bin/pet"
   environment:
     GOPATH: "{{gopath}}"
   tags: [config-install,pet]

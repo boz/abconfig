@@ -32,6 +32,12 @@
   when: ansible_pkg_mgr == "apt"
   tags: [config-install,neovim]
 
+- name: install neovim (osx)
+  homebrew:
+    name: neovim
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,neovim]
+
 - name: create directories
   file: path={{item}} state=directory
   with_items:

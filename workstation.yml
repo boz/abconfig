@@ -10,8 +10,9 @@
     - redis
     - vagrant
     - cli-extras
-    - passwordstore
     - zsh
+    - homebrew
+    - passwordstore
     - abconfig
     - git
     - go

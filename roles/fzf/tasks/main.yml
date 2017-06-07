@@ -1,12 +1,12 @@
 ---
 - name: check installed
   stat: path={{fzf.binpath}}
-  register: have_zprezto
+  register: have_fzf
   tags: [config-install,fzf]
 
 - name: install
   command: go get {{fzf.package}}
-  when: not have_zprezto.stat.exists
+  when: not have_fzf.stat.exists
   tags: [config-install,fzf]
   environment:
     GOPATH: "{{gopath}}"

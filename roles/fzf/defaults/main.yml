@@ -1,5 +1,5 @@
 ---
 fzf:
-  package: github.com/junegunn/fzf/src/fzf
+  package: github.com/junegunn/fzf
   dir:     "{{gopath}}/src/github.com/junegunn/fzf"
   binpath: "{{gopath}}/bin/fzf"
