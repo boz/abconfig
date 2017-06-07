@@ -10,9 +10,9 @@ if dein#load_state(s:bundledir)
 
   if g:hasfzf
     call dein#add('junegunn/fzf.vim')
-  else
-    call dein#add('ctrlpvim/ctrlp.vim')
   end
+
+  call dein#add('ctrlpvim/ctrlp.vim')
 
   call dein#add('tpope/vim-surround')
   call dein#add('tpope/vim-commentary')

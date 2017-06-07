@@ -19,6 +19,11 @@ if dein#tap('vim-go')
   au FileType go nmap <Leader>C <Plug>(go-callees)
   au FileType go nmap <Leader>gr <Plug>(go-referrers)
 
+  if dein#tap('ctrlp.vim')
+    au FileType go nmap <Leader>zz :GoDecls<cr>
+    au FileType go nmap <Leader>ZZ :GoDeclsDir<cr>
+  end
+
   let g:go_fmt_command         = "goimports"
   let g:go_snippet_engine      = "neosnippet"
   let g:go_def_mode            = "godef"
