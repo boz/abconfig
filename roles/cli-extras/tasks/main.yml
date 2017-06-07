@@ -59,3 +59,10 @@
     name: wget
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,wget]
+
+- name: install vim (arch)
+  pacman:
+    name: vim
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,cli-extras,vim]
