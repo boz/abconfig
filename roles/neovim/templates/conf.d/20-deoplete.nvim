@@ -2,8 +2,5 @@ if dein#tap('deoplete.nvim')
   let g:deoplete#enable_at_startup = 1
 
   " tab to complete
-  inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
-  let g:deoplete#ignore_sources = {}
-  let g:deoplete#ignore_sources._ = ["neosnippet"]
+  " inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 endif

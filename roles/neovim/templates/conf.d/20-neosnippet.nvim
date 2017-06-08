@@ -1,17 +1,4 @@
 if dein#tap('neosnippet')
-
-  function! s:neosnippet_complete()
-  	if pumvisible()
-  		return "\<c-n>"
-  	else
-  		if neosnippet#expandable_or_jumpable() 
-  			return "\<Plug>(neosnippet_expand_or_jump)"
-  		endif
-  		return "\<tab>"
-  	endif
-  endfunction
-
-  imap <expr><TAB> <SID>neosnippet_complete()
   smap <C-k> <Plug>(neosnippet_expand_or_jump)
   xmap <C-k> <Plug>(neosnippet_expand_target)
   imap <C-k> <Plug>(neosnippet_expand_or_jump)
