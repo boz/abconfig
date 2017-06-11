@@ -11,14 +11,6 @@
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,pass, gnupg]
 
-- name: configure gpg-agent (osx)
-  copy:
-    dest: "{{profiledir}}/10-gpg-agent.sh"
-    content: |
-      eval $(gpg-agent --daemon)
-  when: ansible_pkg_mgr == "homebrew"
-  tags: [config-install,pass, gnupg]
-
 - name: install pass (osx)
   homebrew:
     name: pass
