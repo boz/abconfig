@@ -27,3 +27,11 @@
         UserKnownHostsFile=/dev/null
         StrictHostKeyChecking=no
   tags: [config,ovrclk]
+
+- name: install protobuf
+  pacman:
+    name: protobuf
+    state: present
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,ovrclk,protobuf]
