@@ -1,9 +1,11 @@
 ---
 - name: install go (pacman)
-  pacaur: name={{item}}
+  pacman: name={{item}}
   with_items:
     - go
     - go-tools
+    - musl
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,go]
 
@@ -75,7 +77,6 @@
   environment:
     GOPATH: "{{gopath}}"
   tags: [config-install,go,delve]
-
 
 - name: install goreleaser
   command: go get github.com/goreleaser/goreleaser
