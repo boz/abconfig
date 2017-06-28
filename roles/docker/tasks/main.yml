@@ -16,8 +16,9 @@
   tags: [config-install,docker]
 
 - name: install docker
-  pacaur: name={{item}}
+  pacman: name={{item}}
   with_items: [docker, docker-compose]
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,docker]
 

@@ -1,12 +1,14 @@
 - name: install psycopg2
-  pacaur:
+  pacman:
     name: python-psycopg2
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,postgres]
 
 - name: install postgres(arch)
-  pacaur:
+  pacman:
     name: postgresql
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,postgres]
 

@@ -1,10 +1,11 @@
 ---
 
 - name: install zsh (pacman)
-  pacaur: name={{item}}
+  pacman: name={{item}}
   with_items:
     - zsh
     - zsh-completions
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,zsh]
 

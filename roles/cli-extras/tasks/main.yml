@@ -6,8 +6,9 @@
   tags: [config-install,cli-extras,ascii]
 
 - name: install ascii (arch)
-  pacaur:
+  pacman:
     name: ascii
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,ascii]
 
@@ -25,8 +26,9 @@
   tags: [config-install,cli-extras,asciinema]
 
 - name: install asciinema (arch)
-  pacaur:
+  pacman:
     name: asciinema
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,asciinema]
 
@@ -37,26 +39,30 @@
   tags: [config-install,cli-extras,asciinema]
 
 - name: install unzip (arch)
-  pacaur:
+  pacman:
     name: unzip
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,unzip]
 
 - name: install jq (arch)
-  pacaur:
+  pacman:
     name: jq
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,jq]
 
 - name: install dns-utils (arch)
-  pacaur:
+  pacman:
     name: bind-tools
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,bind-tools]
 
 - name: install wget (arch)
-  pacaur:
+  pacman:
     name: wget
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,wget]
 

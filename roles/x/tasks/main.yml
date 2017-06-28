@@ -1,9 +1,10 @@
 ---
 - name: install x utilities
-  pacaur: name={{item}}
+  pacman: name={{item}}
   with_items:
     - xorg-xrandr
     - xorg-xev
     - xorg-xsetroot
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,x]

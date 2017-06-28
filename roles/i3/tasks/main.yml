@@ -6,7 +6,8 @@
   tags: [config-install,i3]
 
 - name: install (arch)
-  pacaur:
+  pacman:
     name: i3-wm
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,i3]

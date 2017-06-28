@@ -1,7 +1,8 @@
 ---
 - name: install pass (arch)
-  pacaur:
+  pacman:
     name: pass
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,pass]
 
