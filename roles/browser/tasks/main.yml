@@ -1,0 +1,15 @@
+---
+- name: install chromium (arch)
+  pacman:
+    name: chromium
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,browser,chromium]
+
+- name: chromium config (arch)
+  copy:
+    dest: "{{homedir}}/.config/chromium-flags.conf"
+    content: |
+      --force-device-scale-factor=2
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,browser,chromium]
