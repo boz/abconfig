@@ -13,3 +13,12 @@
       --force-device-scale-factor=2
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,browser,chromium]
+
+- name: install firefox (arch)
+  pacman:
+    name: "{{item}}"
+  become: true
+  with_items:
+    - firefox
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,browser,firefox]
