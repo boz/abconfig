@@ -12,3 +12,10 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,desktop-productivity,libreoffice]
+
+- name: install mirage (image viewer)
+  pacman:
+    name: mirage
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,desktop-productivity,mirage]
