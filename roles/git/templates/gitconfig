@@ -12,6 +12,8 @@
 	st = status
 	unstage = reset HEAD --
 	p = pull
+  checkpt = commit -am '[ci skip] checkpt'
+
 
 [credential]
 	helper = store
