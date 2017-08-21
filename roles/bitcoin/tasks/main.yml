@@ -1,0 +1,12 @@
+---
+- name: install ethereum mist
+  pacaur:
+    name: mist
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,ethereum,mist]
+
+- name: enable ntp
+  command: timedatectl set-ntp true
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,ethereum,ntp]
