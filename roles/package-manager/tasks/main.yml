@@ -1,5 +1,39 @@
 ---
 
+- name: install pigz (aur)
+  pacman:
+    name: pigz
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [bootstrap,package-manager,pigz]
+
+- name: optimize makepkg - parallel make (aur)
+  lineinfile:
+    line: MAKEFLAGS="-j$(nproc)"
+    path: /etc/makepkg.conf
+    regexp: ^#?MAKEFLAGS=
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [bootstrap,package-manager,makepkg]
+
+- name: optimize makepkg - parallel xz (aur)
+  lineinfile:
+    line: COMPRESSXZ=(xz -c -z - --threads=0)
+    path: /etc/makepkg.conf
+    regexp: ^COMPRESSXZ=
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [bootstrap,package-manager,makepkg]
+
+- name: optimize makepkg - parallel gz (aur)
+  lineinfile:
+    line: COMPRESSGZ=(pigz -c -f -n)
+    path: /etc/makepkg.conf
+    regexp: ^COMPRESSGZ=
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [bootstrap,package-manager,makepkg]
+
 - name: create aur directory
   file:
     path: "{{homedir}}/aur"
