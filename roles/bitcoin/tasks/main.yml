@@ -27,7 +27,7 @@
   file:
     path: "{{homedir}}/.config/systemd/user"
     state: directory
-  when: ansible_pkg_mgr == "pacman"
+  when: ansible_pkg_mgr == "pacman" and ethermine_userpass is defined
   tags: [config-install,ethermine]
 
 - name: install mining service
@@ -40,5 +40,5 @@
       ExecStart=/usr/bin/ethminer --farm-recheck 200 -S us1.ethermine.org:4444 -FS us1.ethermine.org:14444 -O {{ethermine_userpass}}
       [Install]
       WantedBy=default.target
-  when: ansible_pkg_mgr == "pacman" and ethermine_userpass != None
+  when: ansible_pkg_mgr == "pacman" and ethermine_userpass is defined
   tags: [config-install,ethermine]
