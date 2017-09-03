@@ -1,4 +1,12 @@
 ---
+
+- name: install sysstat
+  pacman:
+    name: sysstat
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,system-monitor,sysstat]
+
 - name: install glances
   pacman:
     name: "{{item}}"
@@ -8,5 +16,6 @@
     - python-docker-py
     - python-matplotlib
     - python-netifaces
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,system-monitor,glances]
