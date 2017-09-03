@@ -26,3 +26,4 @@
     - wrk
     - bitcoin
     - qemu
+    - system-monitor
