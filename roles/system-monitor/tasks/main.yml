@@ -1,13 +1,13 @@
 ---
 
-- name: install sysstat
+- name: install sysstat (aur)
   pacman:
     name: sysstat
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,system-monitor,sysstat]
 
-- name: install glances
+- name: install glances (aur)
   pacman:
     name: "{{item}}"
   with_items:
@@ -17,13 +17,20 @@
     - python-matplotlib
     - python-netifaces
   become: true
-  when: ansible_pkg_mgr == "pacman"
+  when: false # FIXME ansible_pkg_mgr == "pacman"
   tags: [config-install,system-monitor,glances]
 
-- name: install ctop
+- name: install ctop (aur)
   pacaur:
     name: "{{item}}"
   with_items:
     - ctop
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,system-monitor,ctop]
+
+- name: install lsof (aur)
+  pacman:
+    name: lsof
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,system-monitor,lsof]
