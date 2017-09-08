@@ -1,7 +1,7 @@
 ---
 - name: install qemu (arch)
   pacman:
-    name: qemu-headless
+    name: qemu
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,qemu]
