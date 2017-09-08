@@ -1,0 +1,6 @@
+---
+- name: install google cloud sdk (aur)
+  pacaur:
+    name: google-cloud-sdk
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,google-cloud,google-cloud-sdk]
