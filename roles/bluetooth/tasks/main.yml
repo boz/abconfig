@@ -1,0 +1,26 @@
+---
+- name: install bluetooth support
+  pacman:
+    name: "{{item}}"
+  with_items: [bluez,bluez-utils]
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,bluetooth,bluez]
+
+- name: enable bluetooth service
+  systemd:
+    name: bluetooth
+    enabled: yes
+    state: started
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,bluetooth]
+
+- name: keep bluetooth on
+  lineinfile:
+    line: AutoEnable=true
+    path: /etc/bluetooth/main.conf
+    regexp: ^#?AutoEnable=
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [bootstrap,bluetooth]

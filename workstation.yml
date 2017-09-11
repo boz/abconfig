@@ -28,3 +28,4 @@
     - qemu
     - system-monitor
     - google-cloud
+    - bluetooth
