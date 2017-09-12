@@ -6,8 +6,6 @@
     - package-manager
     - fs-trim
     - docker
-    - postgres
-    - redis
     - vagrant
     - cli-extras
     - zsh
@@ -24,8 +22,19 @@
     - ovrclk
     - pet
     - wrk
-    - bitcoin
     - qemu
     - system-monitor
     - google-cloud
+
+- hosts: db
+  roles:
+    - postgres
+    - redis
+
+- hosts: ethereum
+  roles:
+    - ethereum
+
+- hosts: bluetooth
+  roles:
     - bluetooth

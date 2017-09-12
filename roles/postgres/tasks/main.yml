@@ -27,7 +27,7 @@
   when: ansible_pkg_mgr == "pacman" and not have_pgdata.stat.exists
   tags: [config-install,postgres]
 
-- name: enable postgres service 
+- name: enable postgres service
   systemd:
     name: postgresql
     enabled: yes

@@ -1,0 +1,11 @@
+[targets]
+monolith ansible_connection=local
+
+[db]
+monolith
+
+[bluetooth]
+monolith
+
+[ethereum]
+monolith

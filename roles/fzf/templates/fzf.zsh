@@ -6,4 +6,15 @@ if [[ -f "{{fzf.dir}}/shell/key-bindings.zsh" ]]; then
   source "{{fzf.dir}}/shell/key-bindings.zsh"
 fi
 
-alias cdgo='cd $(find $GOPATH/src -maxdepth 4 -type d | fzf --with-nth=6,7,8,9 -d/)'
+godirs() {
+  find $GOPATH/src -mindepth 2     \
+    \( -name '.git'   -prune \) -o \
+    \( -name '_*'     -prune \) -o \
+    \( -name '.*'     -prune \) -o \
+    \( -name 'vendor' -prune \) -o \
+    \( -type d        -print \)    |  fzf --with-nth=6.. -d /
+}
+
+cdgo() {
+  cd $(godirs)
+}

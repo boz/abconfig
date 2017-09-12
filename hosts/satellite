@@ -1,0 +1,2 @@
+[targets]
+satellite ansible_connection=local
