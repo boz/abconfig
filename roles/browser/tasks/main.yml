@@ -25,9 +25,16 @@
     dest: "{{homedir}}/bin/google-chrome"
     content: |
       #!/bin/sh
-      [ -f ~/.config/chromium-flags.conf ] && extflags=$(cat ~/.config/chromium-flags.conf)
-      google-chrome-stable $extflags "$@"
+      google-chrome-stable "$@"
     mode: "0755"
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,browser,chrome]
+
+- name: chrome config (arch)
+  copy:
+    dest: "{{homedir}}/.config/chrome-flags.conf"
+    content: |
+      --force-device-scale-factor=2
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,browser,chrome]
 

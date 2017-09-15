@@ -9,7 +9,7 @@ fi
 if [ $# -eq 0 ]; then
   args="workstation.yml"
 else
-  args="$@"
+  args=$@
 fi
 
-ansible-playbook -i "$hosts" "$args"
+ansible-playbook -i "$hosts" $args
