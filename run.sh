@@ -1,7 +1,7 @@
 #!/bin/sh
 
-if [ -f "hosts/$(hostname)" ]; then
-  hosts="hosts/$(hostname)"
+if [ -f "hosts/$(hostname -s)" ]; then
+  hosts="hosts/$(hostname -s)"
 else
   hosts="hosts/default"
 fi
