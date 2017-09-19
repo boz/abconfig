@@ -1,0 +1,10 @@
+---
+- name: install node (osx)
+  homebrew:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - node
+    - yarn
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,nodejs,node]
