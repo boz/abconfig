@@ -8,3 +8,13 @@
     - yarn
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,nodejs,node]
+
+- name: install node (aur)
+  pacman:
+    name: "{{item}}"
+  with_items:
+    - nodejs
+    - yarn
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,nodejs,node]
