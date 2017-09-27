@@ -1,6 +1,6 @@
 ---
 
-- include: config.yml
+- import_playbook: config.yml
 
 - hosts: all
   roles:
