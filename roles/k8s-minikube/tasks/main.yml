@@ -1,0 +1,40 @@
+---
+
+- name: download minikube (linux)
+  get_url:
+    url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    dest: "{{homedir}}/bin/minikube"
+    mode: "0755"
+  when: ansible_system == "Linux"
+  tags: [k8s-minikube,minikube]
+
+- name: download minikube (osx)
+  get_url:
+    url: https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
+    dest: "{{homedir}}/bin/minikube"
+    mode: "0755"
+  when: ansible_system == "Darwin"
+  tags: [k8s-minikube,minikube]
+
+- name: fetch current kubectl version
+  uri:
+    url: https://storage.googleapis.com/kubernetes-release/release/stable.txt
+    return_content: yes
+  register: kubectl_version
+  tags: [k8s-minikube,kubectl]
+
+- name: download kubectl (linux)
+  get_url:
+    url: https://storage.googleapis.com/kubernetes-release/release/{{kubectl_version['content'] | trim}}/bin/linux/amd64/kubectl
+    dest: "{{homedir}}/bin/kubectl"
+    mode: "0755"
+  when: ansible_system == "Linux"
+  tags: [k8s-minikube,kubectl]
+
+- name: download kubectl (osx)
+  get_url:
+    url: https://storage.googleapis.com/kubernetes-release/release/{{kubectl_version['content'] | trim}}/bin/darwin/amd64/kubectl
+    dest: "{{homedir}}/bin/kubectl"
+    mode: "0755"
+  when: ansible_system == "Darwin"
+  tags: [k8s-minikube,kubectl]

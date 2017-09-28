@@ -26,6 +26,7 @@
     - qemu
     - system-monitor
     - google-cloud
+    - k8s-minikube
 
 - hosts: db
   roles:
