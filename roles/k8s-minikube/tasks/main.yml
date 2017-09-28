@@ -38,3 +38,10 @@
     mode: "0755"
   when: ansible_system == "Darwin"
   tags: [k8s-minikube,kubectl]
+
+- name: add kubectl completion
+  copy:
+    dest: "{{profiledir}}/20-kubectl.zsh"
+    content: |
+      eval "$(kubectl completion zsh)"
+  tags: [k8s-minikube,kubectl]
