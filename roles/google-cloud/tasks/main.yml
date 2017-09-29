@@ -4,3 +4,11 @@
     name: google-cloud-sdk
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,google-cloud,google-cloud-sdk]
+
+- name: install zsh completion (aur)
+  copy:
+    dest: "{{profiledir}}/50-google-cloud.zsh"
+    content: |
+      source /opt/google-cloud-sdk/completion.zsh.inc
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,google-cloud,google-cloud-sdk]
