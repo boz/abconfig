@@ -33,9 +33,13 @@
     - postgres
     - redis
 
-- hosts: ethereum
+- hosts: ethereum-dev
   roles:
-    - ethereum
+    - ethereum-dev
+
+- hosts: ethereum-miner
+  roles:
+    - ethereum-miner
 
 - hosts: bluetooth
   roles:

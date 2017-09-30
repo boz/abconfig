@@ -6,5 +6,8 @@ monolith
 [bluetooth]
 monolith
 
-[ethereum]
+[ethereum-dev]
+monolith
+
+[ethereum-miner]
 monolith

@@ -1,0 +1,25 @@
+---
+
+- name: install ethereum mist
+  pacaur:
+    name: mist
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,ethereum-dev,mist]
+
+- name: install geth
+  pacaur:
+    name: geth
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,ethereum-dev,geth]
+
+- name: enable ntp
+  command: timedatectl set-ntp true
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,ethereum-dev,ntp]
+
+- name: install truffle
+  pacaur:
+    name: truffle
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,ethereum-dev,truffle]
