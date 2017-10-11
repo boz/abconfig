@@ -1,2 +1,15 @@
 ---
+- name: install trezord (arch)
+  pacaur:
+    name: trezord-git
+  when: ansible_pkg_mgr == "pacman"
+  tags: [trezor,trezord]
 
+- name: activate trezord (arch)
+  systemd:
+    name: trezord
+    enabled: yes
+    state: started
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [trezor,trezord]

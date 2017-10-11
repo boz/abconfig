@@ -27,6 +27,7 @@
     - system-monitor
     - google-cloud
     - k8s-minikube
+    - trezor
 
 - hosts: db
   roles:
