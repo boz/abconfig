@@ -72,3 +72,10 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,vim]
+
+- name: install pwgen (arch)
+  pacman:
+    name: pwgen
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,cli-extras,pwgen]
