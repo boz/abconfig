@@ -28,6 +28,7 @@
     - google-cloud
     - k8s-minikube
     - trezor
+    - music
 
 - hosts: db
   roles:

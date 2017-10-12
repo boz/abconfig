@@ -1,0 +1,9 @@
+---
+
+- name: install cmus (arch)
+  pacman:
+    name: cmus
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [music,cmus]
+
