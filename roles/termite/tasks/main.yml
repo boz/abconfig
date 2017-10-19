@@ -1,0 +1,10 @@
+---
+- name: install termite
+  pacman:
+    name: "{{item}}"
+  with_items:
+    - termite
+    - termite-terminfo
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [termite]
