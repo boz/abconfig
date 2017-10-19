@@ -4,6 +4,7 @@
   with_items:
     - python-neovim
     - neovim
+    - powerline-fonts
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,neovim]

@@ -29,7 +29,8 @@ if dein#load_state(s:bundledir)
   call dein#add('Shougo/neosnippet')
   call dein#add('Shougo/neosnippet-snippets')
 
-  "call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
 
   call dein#add('altercation/vim-colors-solarized',{'merged': 0})
   call dein#source('vim-colors-solarized')
