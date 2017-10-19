@@ -1,7 +1,7 @@
 if dein#tap('deoplete.nvim')
   let g:deoplete#enable_at_startup = 1
 
-  call deoplete#custom#set('_','converters',['converter_auto_paren'])
+  " call deoplete#custom#set('_','converters',['converter_auto_paren'])
 
   " tab to complete
   " inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
