@@ -41,6 +41,8 @@ if dein#load_state(s:bundledir)
 
   call dein#add('vim-scripts/DrawIt')
 
+  call dein#add('airblade/vim-gitgutter')
+
   call dein#end()
   call dein#save_state()
 end

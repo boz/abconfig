@@ -1,0 +1,5 @@
+if dein#tap('vim-gitgutter')
+  nmap <Leader>gg  :GitGutterToggle<CR>
+  nmap <Leader>ggh :GitGutterLineHighlightsToggle<CR>
+  nmap <Leader>ggs :GitGutterSignsToggle<CR>
+end
