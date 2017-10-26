@@ -48,3 +48,32 @@
     - pacaur-git
   when: ansible_pkg_mgr == "pacman"
   tags: [bootstrap,package-manager]
+
+# - name: install mas
+#   homebrew:
+#     name: mas
+#   when: ansible_pkg_mgr == "homebrew"
+#   tags: [bootstrap,package-manager,mas]
+
+# copied from https://github.com/geerlingguy/ansible-role-mas/blob/master/tasks/main.yml
+# - name: Get MAS account status
+#   shell: 'mas account'
+#   register: mas_account_result
+#   failed_when: mas_account_result.rc > 1
+#   changed_when: false
+#   when: ansible_pkg_mgr == "homebrew"
+#   tags: [bootstrap,package-manager,mas]
+
+# - name: Sign in to MAS when email and password are provided.
+#   shell: 'mas signin "{{ mas_email }}" "{{ mas_password }}"'
+#   register: mas_signin_result
+#   when: ansible_pkg_mgr == "homebrew" and mas_account_result.rc == 1 and mas_email != '' and mas_password != '' and not mas_signin_dialog
+#   tags: [bootstrap,package-manager,mas]
+
+# - name: List installed MAS apps.
+#   command: mas list
+#   register: mas_list
+#   check_mode: no
+#   changed_when: false
+#   when: ansible_pkg_mgr == "homebrew"
+#   tags: [bootstrap,package-manager,mas]

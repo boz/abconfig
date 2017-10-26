@@ -4,3 +4,9 @@
     name: slack-desktop
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,slack]
+
+- name: install slack (osx)
+  homebrew_cask:
+    name: slack
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,slack]

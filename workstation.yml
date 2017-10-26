@@ -9,9 +9,9 @@
     - vagrant
     - cli-extras
     - zsh
-    - homebrew
     - passwordstore
     - abconfig
+    - homebrew
     - git
     - go
     - node
@@ -19,8 +19,6 @@
     - neovim
     - rbenv
     - travis
-    - awscli
-    - ovrclk
     - pet
     - wrk
     - qemu
@@ -31,6 +29,16 @@
     - music
     - tex
     - racket
+
+- hosts: osx
+  roles:
+    - slack
+    - osx
+
+- hosts: ovrclk-dev
+  roles:
+    - awscli
+    - ovrclk
 
 - hosts: db
   roles:

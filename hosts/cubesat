@@ -1,0 +1,4 @@
+cubesat ansible_connection=local
+
+[osx]
+cubesat

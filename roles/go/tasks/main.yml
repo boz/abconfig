@@ -45,6 +45,12 @@
   when: ansible_pkg_mgr == "apt"
   tags: [config-install,go]
 
+- name: install go (osx)
+  homebrew:
+    name: go
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,go]
+
 - name: create gopath
   file: path={{gopath}} state=directory
   tags: [config-install,go]

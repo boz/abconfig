@@ -36,7 +36,25 @@
 
 - name: install neovim (osx)
   homebrew:
+    name: "{{item}}"
+  with_items:
+    - neovim
+    - python3
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,neovim]
+
+- name: install python-neovim (osx)
+  pip:
     name: neovim
+    extra_args: --user
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,neovim]
+
+- name: install python3-neovim (osx)
+  pip:
+    executable: pip3
+    name: neovim
+    extra_args: --user
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,neovim]
 

@@ -1,0 +1,44 @@
+---
+
+- name: install google chrome
+  homebrew_cask:
+    name: google-chrome
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,osx,google-chrome]
+
+- name: install iterm2
+  homebrew_cask:
+    name: iterm2
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,osx,iterm2]
+
+- name: install istat-menus
+  homebrew_cask:
+    name: istat-menus
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,osx,istat-menus]
+
+- name: install 1password
+  homebrew_cask:
+    name: "1password"
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,osx,1password]
+
+- name: install docker
+  homebrew_cask:
+    name: "docker"
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,osx,docker]
+
+- name: install vagrant
+  homebrew_cask:
+    name: "vagrant"
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,osx,vagrant]
+
+- name: install virtualbox
+  homebrew_cask:
+    name: "virtualbox"
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,osx,virtualbox]
+
