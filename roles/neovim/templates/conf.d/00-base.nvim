@@ -48,4 +48,4 @@ nnoremap <silent> <f3> :source $MYVIMRC<cr>
 " map <C-n> :lne<CR>
 " map <C-N> :lp<CR>
 
-nmap ZZ :w<CR>
+nmap ZZ :update<CR>
