@@ -1,0 +1,7 @@
+---
+- name: install yubikey utils (aur)
+  pacman:
+    name: yubikey-personalization
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [yubikey]
