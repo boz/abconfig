@@ -79,3 +79,16 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,pwgen]
+
+- name: install graphviz (arch)
+  pacman:
+    name: graphviz
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,cli-extras,graphviz]
+
+- name: install graphviz (osx)
+  homebrew:
+    name: graphviz
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,cli-extras,graphviz]
