@@ -29,6 +29,7 @@
     - k8s-minikube
     - trezor
     - music
+    - tex
 
 - hosts: db
   roles:
