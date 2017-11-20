@@ -6,3 +6,21 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [tex,texlive]
+
+- name: install mactex (osx)
+  homebrew_cask:
+    name: mactex
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [tex,texlive]
+
+# - name: install texpad (osx)
+#   homebrew_cask:
+#     name: texpad
+#   when: ansible_pkg_mgr == "homebrew"
+#   tags: [tex,texpad]
+
+- name: install skim (osx)
+  homebrew_cask:
+    name: skim
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [tex,skim]
