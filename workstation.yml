@@ -30,6 +30,7 @@
     - trezor
     - music
     - tex
+    - racket
 
 - hosts: db
   roles:

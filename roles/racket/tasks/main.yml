@@ -1,0 +1,8 @@
+---
+
+- name: install racket (osx)
+  homebrew_cask:
+    name: racket
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [racket]
+
