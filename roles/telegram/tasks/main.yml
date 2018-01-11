@@ -1,0 +1,13 @@
+---
+- name: install telegram-desktop
+  pacman:
+    name: telegram-desktop
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,telegram]
+
+- name: install telegram (osx)
+  homebrew_cask:
+    name: telegram
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,telegram]

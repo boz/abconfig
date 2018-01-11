@@ -1,1 +1,4 @@
 mbp ansible_connection=local
+
+[scheme-dev]
+mbp

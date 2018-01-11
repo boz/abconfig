@@ -28,11 +28,11 @@
     - trezor
     - music
     - tex
-    - racket
+    - slack
+    - telegram
 
 - hosts: osx
   roles:
-    - slack
     - osx
 
 - hosts: ovrclk-dev
@@ -44,6 +44,10 @@
   roles:
     - postgres
     - redis
+
+- hosts: scheme-dev
+  roles:
+    - racket
 
 - hosts: ethereum-dev
   roles:
