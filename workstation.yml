@@ -30,6 +30,7 @@
     - tex
     - slack
     - telegram
+    - yubikey
 
 - hosts: osx
   roles:

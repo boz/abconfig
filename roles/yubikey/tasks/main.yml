@@ -1,0 +1,15 @@
+---
+
+- name: install cli manager (arch)
+  pacman:
+    name: yubikey-manager
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [yubikey,yubikey-manager]
+
+- name: install yubico authenticator (arch)
+  pacaur:
+    name: yubico-yubioath-desktop
+  when: ansible_pkg_mgr == "pacman"
+  tags: [yubikey,yubico-authenticator]
+
