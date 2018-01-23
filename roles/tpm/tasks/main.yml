@@ -1,0 +1,9 @@
+---
+- name: install trousers (arch)
+  pacaur:
+    name: "{{item}}"
+  with_items:
+    - trousers
+    - tpm-tools
+  when: ansible_pkg_mgr == "pacman"
+  tags: [tpm,trousers,tpm-tools]
