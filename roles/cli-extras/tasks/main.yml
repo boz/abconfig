@@ -98,3 +98,10 @@
     name: graphviz
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,cli-extras,graphviz]
+
+- name: install dmidecode (arch)
+  pacman:
+    name: dmidecode
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,cli-extras,dmidecode]
