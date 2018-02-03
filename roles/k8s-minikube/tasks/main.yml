@@ -45,3 +45,9 @@
     content: |
       eval "$(kubectl completion zsh)"
   tags: [k8s-minikube,kubectl]
+
+- name: install helm (osx)
+  homebrew:
+    name: kubernetes-helm
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [k8s-minikube,helm]
