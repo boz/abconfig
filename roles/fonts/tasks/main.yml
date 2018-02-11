@@ -3,7 +3,7 @@
   pacaur:
     name: "{{item}}"
   with_items:
-    - ttf-font-awesome
+    - ttf-font-awesome-4
     - ttf-unifont
     - siji-git
   when: ansible_pkg_mgr == "pacman"

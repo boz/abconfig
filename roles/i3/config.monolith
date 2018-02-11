@@ -1,5 +1,5 @@
-set $lmon "HDMI-0"
-set $rmon "DP-0"
+# set $lmon "HDMI-0"
+# set $rmon "DP-0"
 
 # set $ws1  "1: main"      
 # set $ws2  "2: code"      
