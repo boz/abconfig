@@ -1,5 +1,15 @@
 ---
 
+- name: remove old minikube
+  shell: |
+    delta="$({{homedir}}/bin/minikube update-check | awk '{print $2}' | uniq | wc -l)"
+    if [ "$delta" != "1" ]; then
+      mv -f "{{homedir}}/bin/minikube" "{{homedir}}/bin/minikube.old"
+    fi
+  args:
+    removes: "{{homedir}}/bin/minikube"
+  tags: [k8s-minikube,minikube]
+
 - name: download minikube (linux)
   get_url:
     url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
@@ -21,6 +31,16 @@
     url: https://storage.googleapis.com/kubernetes-release/release/stable.txt
     return_content: yes
   register: kubectl_version
+  tags: [k8s-minikube,kubectl]
+
+- name: remove old kubectl
+  shell: |
+    current=$({{homedir}}/bin/kubectl version --client --short | awk '{print $3}')
+    if [ "$current" != "{{kubectl_version['content'] | trim}}" ]; then
+      mv -f "{{homedir}}/bin/kubectl" "{{homedir}}/bin/kubectl.$current"
+    fi
+  args:
+    removes: "{{homedir}}/bin/kubectl"
   tags: [k8s-minikube,kubectl]
 
 - name: download kubectl (linux)
