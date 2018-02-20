@@ -8,9 +8,9 @@
 
 - name: install geth
   pacaur:
-    name: geth
+    name: go-ethereum
   when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,ethereum-dev,geth]
+  tags: [config-install,ethereum-dev,go-ethereum]
 
 - name: enable ntp
   command: timedatectl set-ntp true
