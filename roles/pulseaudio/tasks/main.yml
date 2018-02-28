@@ -1,0 +1,22 @@
+---
+
+- name: install pulse audio (arch)
+  pacman:
+    name: "{{item}}"
+  with_items:
+    - pulseaudio
+    - pulseaudio-bluetooth
+    - pavucontrol
+    - pamixer
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [pulseaudio]
+
+- name: enable pulseaudio (arch)
+  systemd:
+    name: pulseaudio
+    enabled: yes
+    state: started
+    user: yes
+  when: ansible_pkg_mgr == "pacman"
+  tags: [pulseaudio]
