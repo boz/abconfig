@@ -34,6 +34,20 @@
   when: ansible_pkg_mgr == "pacman"
   tags: [bootstrap,package-manager,makepkg]
 
+- name: base-devel (aur)
+  pacman:
+    name: base-devel
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [bootstrap,package-manager,base-devel]
+
+- name: linux-headers (aur)
+  pacman:
+    name: linux-headers
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [bootstrap,package-manager,linux-headers]
+
 - name: create aur directory
   file:
     path: "{{homedir}}/aur"

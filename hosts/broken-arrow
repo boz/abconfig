@@ -1,0 +1,10 @@
+broken-arrow ansible_connection=local
+
+[db]
+
+[bluetooth]
+broken-arrow
+
+[ethereum-dev]
+
+[ethereum-miner]

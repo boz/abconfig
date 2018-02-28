@@ -3,6 +3,7 @@
   pacaur:
     name: "{{item}}"
   with_items:
+    - ttf-dejavu
     - ttf-font-awesome-4
     - ttf-unifont
     - siji-git

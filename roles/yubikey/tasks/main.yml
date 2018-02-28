@@ -8,8 +8,10 @@
   tags: [yubikey,yubikey-manager]
 
 - name: install yubico authenticator (arch)
-  pacaur:
-    name: yubico-yubioath-desktop
+  # pacaur:
+  #   name: yubico-yubioath-desktop
+  debug:
+    msg: fix yubico authenticator
   when: ansible_pkg_mgr == "pacman"
   tags: [yubikey,yubico-authenticator]
 

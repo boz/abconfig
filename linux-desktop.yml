@@ -8,14 +8,16 @@
     - browser
     - x
     - xcwd
-    - polybar
     - teiler
     - i3
+    - urxvt
     - fonts
+    - rofi
+    - polybar
     - desktop-productivity
     - slack
     - spotify
+    - nvidia
 
-# - rofi (broken)
 # - polybar (broken)
 # - fluxgui
