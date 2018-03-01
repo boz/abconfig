@@ -23,6 +23,6 @@
 
 - name: install (arch)
   pacaur:
-    name: polybar
+    name: polybar-git
   when: ansible_pkg_mgr == "pacman"
   tags: [polybar]
