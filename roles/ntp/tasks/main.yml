@@ -1,0 +1,10 @@
+---
+
+- name: enable systemd-timesyncd
+  systemd:
+    name: systemd-timesyncd
+    enabled: yes
+    state: started
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [ntp,timesyncd]

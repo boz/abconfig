@@ -4,6 +4,7 @@
 - hosts: all
   roles:
     - package-manager
+    - ntp
     - fs-trim
     - docker
     - vagrant
