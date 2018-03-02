@@ -44,7 +44,7 @@
   copy:
     dest: "/etc/sysctl.d/userns.conf"
     content: |
-      kernel.unprivileged_userns_clone
+      kernel.unprivileged_userns_clone=1
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,docker]
