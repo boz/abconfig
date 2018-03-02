@@ -80,8 +80,7 @@ inherit = bar/base
 
 [bar/right]
 inherit = bar/base
-monitor = HDMI-0
-#monitor = DP-0
+monitor = DP-0
 
 [module/xwindow]
 type = internal/xwindow
