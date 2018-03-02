@@ -1,7 +1,6 @@
 monolith ansible_connection=local
 
 [db]
-monolith
 
 [bluetooth]
 monolith
@@ -10,4 +9,3 @@ monolith
 monolith
 
 [ethereum-miner]
-monolith
