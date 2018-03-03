@@ -42,3 +42,9 @@
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,system-monitor,htop]
 
+- name: install i7z (aur)
+  pacman:
+    name: i7z
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [system-monitor,i7z]
