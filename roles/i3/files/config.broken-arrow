@@ -131,11 +131,7 @@ bindsym $mod+c mode "container"
 # float authy
 for_window [class="Google-chrome" window_role="app"] floating enable
 
-#exec --no-startup-id polybar builtin
 exec --no-startup-id ~/.config/polybar/launch.sh
-
-# XXX: fix password copies.
-# exec --no-startup-id copyq
 
 bindsym XF86AudioRaiseVolume exec sh -c 'pactl set-sink-mute @DEFAULT_SINK@ false && pactl set-sink-volume @DEFAULT_SINK@ +5%'
 bindsym XF86AudioLowerVolume exec sh -c 'pactl set-sink-mute @DEFAULT_SINK@ false && pactl set-sink-volume @DEFAULT_SINK@ -5%'

@@ -11,3 +11,10 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,i3]
+
+- name: install i3lock (arch)
+  pacman:
+    name: i3lock
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,i3,i3lock]

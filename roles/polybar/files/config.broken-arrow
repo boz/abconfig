@@ -283,7 +283,7 @@ label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = lock
-menu-0-0-exec = i3lock
+menu-0-0-exec = i3lock -c "#222222"
 menu-0-1 = reboot
 menu-0-1-exec = menu-open-1
 menu-0-2 = power off
