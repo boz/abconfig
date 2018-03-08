@@ -28,7 +28,6 @@
     - k8s-minikube
     - trezor
     - music
-    - tex
     - slack
     - telegram
     - yubikey
@@ -62,3 +61,7 @@
 - hosts: bluetooth
   roles:
     - bluetooth
+
+- hosts: tex
+  roles:
+    - tex
