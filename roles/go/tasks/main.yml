@@ -91,3 +91,9 @@
   environment:
     GOPATH: "{{gopath}}"
   tags: [config-install,go,goreleaser]
+
+- name: install protobuf
+  pacman:
+    name: protobuf
+  become: true
+  tags: [config-install,go,protobuf]
