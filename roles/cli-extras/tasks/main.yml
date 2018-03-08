@@ -105,3 +105,9 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,dmidecode]
+
+- name: install heroku-cli (arch)
+  pacaur:
+    name: heroku-cli
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,cli-extras,heroku-cli]
