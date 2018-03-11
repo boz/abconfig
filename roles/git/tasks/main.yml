@@ -36,3 +36,31 @@
       export GITHUB_REPO_TOKEN={{github_repo_token}}
     mode: 0600
   tags: [config,git,github]
+
+- name: install custom command (git tracking-branch)
+  copy:
+    dest: "{{ homedir }}/bin/git-tracking-branch"
+    content: |
+      #!/bin/sh
+      git rev-parse --abbrev-ref --symbolic-full-name '@{u}'
+    mode: "0755"
+  tags: [config,git,git-command,tracking-branch]
+
+- name: install custom command (git reset-remote)
+  copy:
+    dest: "{{ homedir }}/bin/git-reset-remote"
+    content: |
+      #!/bin/sh
+      git reset --hard $(git tracking-branch)
+    mode: "0755"
+  tags: [config,git,git-command,tracking-branch]
+
+- name: install custom command completion (git tracking-branch)
+  copy:
+    dest: "{{ profiledir }}/50-git.zsh"
+    content: |
+      zstyle ':completion:*:*:git:*' user-commands \
+        tracking-branch:'current tracked remote branch'
+      zstyle ':completion:*:*:git:*' user-commands \
+        reset-remote:'reset to remote tracking branch head'
+  tags: [config,git,git-command]
