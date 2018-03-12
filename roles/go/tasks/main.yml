@@ -96,4 +96,5 @@
   pacman:
     name: protobuf
   become: true
+  when: ansible_pkg_mgr == "pacman"
   tags: [config-install,go,protobuf]
