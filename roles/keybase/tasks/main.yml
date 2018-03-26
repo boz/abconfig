@@ -1,0 +1,6 @@
+---
+- name: install keybase (aur)
+  pacaur:
+    name: keybase-bin
+  when: ansible_pkg_mgr == "pacman"
+  tags: [keybase]
