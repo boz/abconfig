@@ -169,3 +169,12 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # exec --no-startup-id i3-msg 'workspace $ws5; exec "i3-sensible-terminal -si -sw -sk -e  htop      "; workspace $ws1'
 # exec --no-startup-id i3-msg 'workspace $ws6; exec "chromium https://gmail.com"                     '
 # exec --no-startup-id i3-msg 'workspace $ws7; exec slack                                            '
+#
+
+exec --no-startup-id i3-msg '\
+  workspace 2:work; \
+  exec "i3-sensible-terminal -si -sw -sk"; \
+  workspace 1:home; \
+  exec "google-chrome"; \
+  exec slack; \
+  '
