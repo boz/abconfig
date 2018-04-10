@@ -24,5 +24,6 @@
     dest: "{{profiledir}}/50-yarn.sh"
     content: |
       export PATH="$PATH:$HOME/.yarn/bin"
+  become: "{{target_user}}"
   when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,nodejs,node]
+  tags: [config-install,nodejs,node,multiuser]

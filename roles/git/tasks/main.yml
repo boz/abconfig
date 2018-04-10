@@ -21,7 +21,8 @@
 - name: configure gitconfig
   template: dest={{homedir}}/.gitconfig
             src=gitconfig
-  tags: [config,git]
+  become: "{{target_user}}"
+  tags: [config,git,multiuser]
 
 - name: configure git credentials
   template: dest={{homedir}}/.git-credentials
@@ -44,7 +45,8 @@
       #!/bin/sh
       git rev-parse --abbrev-ref --symbolic-full-name '@{u}'
     mode: "0755"
-  tags: [config,git,git-command,tracking-branch]
+  become: "{{target_user}}"
+  tags: [config,git,git-command,tracking-branch,multiuser]
 
 - name: install custom command (git reset-remote)
   copy:
@@ -53,7 +55,8 @@
       #!/bin/sh
       git reset --hard $(git tracking-branch)
     mode: "0755"
-  tags: [config,git,git-command,tracking-branch]
+  become: "{{target_user}}"
+  tags: [config,git,git-command,tracking-branch,multiuser]
 
 - name: install custom command completion (git tracking-branch)
   copy:
@@ -63,4 +66,5 @@
         tracking-branch:'current tracked remote branch'
       zstyle ':completion:*:*:git:*' user-commands \
         reset-remote:'reset to remote tracking branch head'
-  tags: [config,git,git-command]
+  become: "{{target_user}}"
+  tags: [config,git,git-command,multiuser]

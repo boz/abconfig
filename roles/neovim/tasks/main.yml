@@ -65,27 +65,32 @@
     - "{{neovim.confdir}}"
     - "{{neovim.dein.basedir}}"
     - "{{neovim.dein.bundledir}}"
-  tags: [config-install,neovim]
+  become: "{{target_user}}"
+  tags: [config-install,neovim,multiuser]
 
 - name: check dein install
   stat: path={{neovim.dein.installdir}}
   register: have_dein
-  tags: [config-install,neovim,dein]
+  become: "{{target_user}}"
+  tags: [config-install,neovim,dein,multiuser]
 
 - name: install dein
   git: repo={{ neovim.dein.repository }}
        dest={{ neovim.dein.installdir }}
   when: not have_dein.stat.exists
-  tags: [config-install,neovim,dein]
+  become: "{{target_user}}"
+  tags: [config-install,neovim,dein,multiuser]
 
 - name: install init.vim
   template: src=init.vim
             dest={{neovim.basedir}}/init.vim
-  tags: [config,neovim]
+  become: "{{target_user}}"
+  tags: [config,neovim,multiuser]
 
 - name: install conf.d components
   template: src={{item}}
             dest={{neovim.confdir}}/{{item | basename}}
   with_fileglob:
     - "../templates/conf.d/*.nvim"
-  tags: [config,neovim]
+  become: "{{target_user}}"
+  tags: [config,neovim,multiuser]

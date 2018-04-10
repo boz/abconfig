@@ -22,14 +22,16 @@
 - name: check zprezto repository presence
   stat: path={{ zprezto_dir }}
   register: have_zprezto
-  tags: [config-install,zsh,zprezto]
+  become: "{{target_user}}"
+  tags: [config-install,zsh,zprezto,multiuser]
 
 - name: clone zprezto
   git: repo={{ zprezto_repo }}
        dest={{ zprezto_dir }}
        recursive=true
+  become: "{{target_user}}"
   when: not have_zprezto.stat.exists
-  tags: [config-install,zsh,zprezto]
+  tags: [config-install,zsh,zprezto,multiuser]
 
 - name: install zprezto
   file: state=link
@@ -42,20 +44,24 @@
     - zprofile
     - zshenv
     - zshrc
-  tags: [config-install,zsh,zprezto]
+  become: "{{target_user}}"
+  tags: [config-install,zsh,zprezto,multiuser]
 
 - name: create bin dir
   file:
     path: "{{homedir}}/bin"
     state: directory
-  tags: [config-install,zsh]
+  become: "{{target_user}}"
+  tags: [config-install,zsh,multiuser]
 
 - name: create profile dir
   file: path={{profiledir}} state=directory
-  tags: [config-install,zsh]
+  become: "{{target_user}}"
+  tags: [config-install,zsh,multiuser]
 
 - name: install base config
   copy: src={{item}}
         dest={{ profiledir }}/{{item | basename}}
   with_fileglob: "*.zsh"
-  tags: [config,zsh]
+  become: "{{target_user}}"
+  tags: [config,zsh,multiuser]

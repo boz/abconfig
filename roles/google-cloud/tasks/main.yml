@@ -11,4 +11,5 @@
     content: |
       source /opt/google-cloud-sdk/completion.zsh.inc
   when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,google-cloud,google-cloud-sdk]
+  become: "{{target_user}}"
+  tags: [config-install,google-cloud,google-cloud-sdk,multiuser]

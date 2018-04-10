@@ -53,12 +53,14 @@
 
 - name: create gopath
   file: path={{gopath}} state=directory
-  tags: [config-install,go]
+  become: "{{target_user}}"
+  tags: [config-install,go,multiuser]
 
 - name: configure shell $GOPATH
   template: dest={{ profiledir }}/10-gopath.sh
             src=gopath.sh
-  tags: [config,go]
+  become: "{{target_user}}"
+  tags: [config,go,multiuser]
 
 - name: install glide
   command: go get github.com/Masterminds/glide
@@ -66,7 +68,8 @@
     GOPATH: "{{gopath}}"
   args:
     creates: "{{gopath}}/bin/glide"
-  tags: [config-install,go,glide]
+  become: "{{target_user}}"
+  tags: [config-install,go,glide,multiuser]
 
 - name: install govendor
   command: go get github.com/kardianos/govendor
@@ -74,7 +77,8 @@
     GOPATH: "{{gopath}}"
   args:
     creates: "{{gopath}}/bin/govendor"
-  tags: [config-install,go,govendor]
+  become: "{{target_user}}"
+  tags: [config-install,go,govendor,multiuser]
 
 - name: install delve
   command: go get github.com/derekparker/delve/cmd/dlv
@@ -82,7 +86,8 @@
     creates: "{{gopath}}/bin/dlv"
   environment:
     GOPATH: "{{gopath}}"
-  tags: [config-install,go,delve]
+  become: "{{target_user}}"
+  tags: [config-install,go,delve,multiuser]
 
 - name: install goreleaser
   command: go get github.com/goreleaser/goreleaser
@@ -90,11 +95,13 @@
     creates: "{{gopath}}/bin/goreleaser"
   environment:
     GOPATH: "{{gopath}}"
-  tags: [config-install,go,goreleaser]
+  become: "{{target_user}}"
+  tags: [config-install,go,goreleaser,multiuser]
 
 - name: install protobuf
   pacman:
     name: protobuf
   become: true
   when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,go,protobuf]
+  become: "{{target_user}}"
+  tags: [config-install,go,protobuf,multiuser]

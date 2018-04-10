@@ -14,7 +14,8 @@
     repo: https://github.com/rbenv/rbenv.git
     update: no
     dest: "{{homedir}}/.rbenv"
-  tags: [config-install,rbenv]
+  become: "{{target_user}}"
+  tags: [config-install,rbenv,multiuser]
 
 - name: add zsh hook
   copy:
@@ -22,11 +23,13 @@
     content: |
       export PATH="{{homedir}}/.rbenv/bin:$PATH"
       eval "$(rbenv init -)"
-  tags: [config-install,rbenv]
+  become: "{{target_user}}"
+  tags: [config-install,rbenv,multiuser]
 
 - name: install ruby-build
   git:
     repo: https://github.com/rbenv/ruby-build.git
     update: no
     dest: "{{homedir}}/.rbenv/plugins/ruby-build"
-  tags: [config-install,rbenv]
+  become: "{{target_user}}"
+  tags: [config-install,rbenv,multiuser]

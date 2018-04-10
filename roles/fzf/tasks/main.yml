@@ -2,16 +2,19 @@
 - name: check installed
   stat: path={{fzf.binpath}}
   register: have_fzf
-  tags: [config-install,fzf]
+  become: "{{target_user}}"
+  tags: [config-install,fzf,multiuser]
 
 - name: install
   command: go get {{fzf.package}}
   when: not have_fzf.stat.exists
-  tags: [config-install,fzf]
   environment:
     GOPATH: "{{gopath}}"
+  become: "{{target_user}}"
+  tags: [config-install,fzf,multiuser]
 
 - name: configure
   template: dest={{profiledir}}/20-fzf.zsh
             src=fzf.zsh
-  tags: [config-install,fzf]
+  become: "{{target_user}}"
+  tags: [config-install,fzf,multiuser]

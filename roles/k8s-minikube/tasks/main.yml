@@ -8,7 +8,8 @@
     fi
   args:
     removes: "{{homedir}}/bin/minikube"
-  tags: [k8s-minikube,minikube]
+  become: "{{target_user}}"
+  tags: [k8s-minikube,minikube,multiuser]
 
 - name: download minikube (linux)
   get_url:
@@ -16,7 +17,8 @@
     dest: "{{homedir}}/bin/minikube"
     mode: "0755"
   when: ansible_system == "Linux"
-  tags: [k8s-minikube,minikube]
+  become: "{{target_user}}"
+  tags: [k8s-minikube,minikube,multiuser]
 
 - name: download minikube (osx)
   get_url:
@@ -31,7 +33,8 @@
     url: https://storage.googleapis.com/kubernetes-release/release/stable.txt
     return_content: yes
   register: kubectl_version
-  tags: [k8s-minikube,kubectl]
+  become: "{{target_user}}"
+  tags: [k8s-minikube,kubectl,multiuser]
 
 - name: remove old kubectl
   shell: |
@@ -41,7 +44,8 @@
     fi
   args:
     removes: "{{homedir}}/bin/kubectl"
-  tags: [k8s-minikube,kubectl]
+  become: "{{target_user}}"
+  tags: [k8s-minikube,kubectl,multiuser]
 
 - name: download kubectl (linux)
   get_url:
@@ -49,7 +53,8 @@
     dest: "{{homedir}}/bin/kubectl"
     mode: "0755"
   when: ansible_system == "Linux"
-  tags: [k8s-minikube,kubectl]
+  become: "{{target_user}}"
+  tags: [k8s-minikube,kubectl,multiuser]
 
 - name: download kubectl (osx)
   get_url:
@@ -64,7 +69,8 @@
     dest: "{{profiledir}}/20-kubectl.zsh"
     content: |
       eval "$(kubectl completion zsh)"
-  tags: [k8s-minikube,kubectl]
+  become: "{{target_user}}"
+  tags: [k8s-minikube,kubectl,multiuser]
 
 - name: install helm (osx)
   homebrew:
