@@ -111,3 +111,10 @@
     name: heroku-cli
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,heroku-cli]
+
+- name: install bc (arch)
+  pacman:
+    name: bc
+  when: ansible_pkg_mgr == "pacman"
+  become: true
+  tags: [config-install,cli-extras,bc]
