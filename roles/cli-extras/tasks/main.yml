@@ -118,3 +118,10 @@
   when: ansible_pkg_mgr == "pacman"
   become: true
   tags: [config-install,cli-extras,bc]
+
+- name: install ncdu (arch)
+  pacaur:
+    name: ncdu
+  when: ansible_pkg_mgr == "pacman"
+  become: true
+  tags: [config-install,cli-extras,ncdu]
