@@ -4,6 +4,7 @@
 - hosts: all
   roles:
     - package-manager
+    - python
     - ntp
     - fs-trim
     - docker

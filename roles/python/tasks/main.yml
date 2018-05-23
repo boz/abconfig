@@ -1,0 +1,8 @@
+---
+- name: install pipenv (arch)
+  pacman: name={{item}}
+  with_items:
+    - python-pipenv
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [python,pipenv]
