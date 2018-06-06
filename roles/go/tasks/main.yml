@@ -92,6 +92,14 @@
     GOPATH: "{{gopath}}"
   tags: [config-install,go,goreleaser]
 
+- name: install godownloader
+  command: go get github.com/goreleaser/godownloader
+  args:
+    creates: "{{gopath}}/bin/godownloader"
+  environment:
+    GOPATH: "{{gopath}}"
+  tags: [config-install,go,godownloader]
+
 - name: install protobuf
   pacman:
     name: protobuf
