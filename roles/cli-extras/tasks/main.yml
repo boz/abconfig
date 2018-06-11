@@ -33,8 +33,8 @@
   tags: [config-install,cli-extras,asciinema]
 
 - name: install asciinema (osx)
-  debug:
-    msg: missing asciinema {{ansible_pkg_mgr}}
+  homebrew:
+    name: asciinema
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,cli-extras,asciinema]
 
