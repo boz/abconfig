@@ -24,6 +24,7 @@ if dein#tap('vim-go')
     au FileType go nmap <Leader>ZZ :GoDeclsDir<cr>
   end
 
+  let g:go_fmt_command         = "goimports"
   let g:go_snippet_engine      = "neosnippet"
   let g:go_def_mode            = "godef"
 
@@ -32,9 +33,4 @@ if dein#tap('vim-go')
   let g:go_highlight_types     = 0
   let g:go_highlight_fields    = 0
   let g:go_dispatch_enabled    = 1
-
-  let g:go_fmt_command = "gofmt"
-  let g:go_fmt_options = {
-    \ 'gofmt': '-s',
-    \ }
 end
