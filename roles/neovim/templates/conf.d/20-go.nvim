@@ -19,9 +19,13 @@ if dein#tap('vim-go')
   au FileType go nmap <Leader>C <Plug>(go-callees)
   au FileType go nmap <Leader>gr <Plug>(go-referrers)
 
-  if dein#tap('ctrlp.vim')
-    au FileType go nmap <Leader>zz :GoDecls<cr>
-    au FileType go nmap <Leader>ZZ :GoDeclsDir<cr>
+  if dein#tap('ctrlp.vim') || dein#tap('fzf.vim')
+    au FileType go nmap <Leader>df :GoDecls<cr>
+    au FileType go nmap <Leader>dd :GoDeclsDir<cr>
+
+    if dein#tap('fzf.vim')
+      let g:go_decls_mode = 'fzf'
+    end
   end
 
   let g:go_fmt_command         = "goimports"
@@ -33,4 +37,7 @@ if dein#tap('vim-go')
   let g:go_highlight_types     = 0
   let g:go_highlight_fields    = 0
   let g:go_dispatch_enabled    = 1
+
+  " let g:go_term_enabled = 1
+  " let g:go_term_mode    = 'split'
 end
