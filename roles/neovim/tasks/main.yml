@@ -84,8 +84,8 @@
   tags: [config,neovim]
 
 - name: install conf.d components
-  template: src={{item}}
-            dest={{neovim.confdir}}/{{item | basename}}
+  copy: src={{item}}
+        dest={{neovim.confdir}}/{{item | basename}}
   with_fileglob:
-    - "../templates/conf.d/*.nvim"
+    - "../files/conf.d/*.nvim"
   tags: [config,neovim]

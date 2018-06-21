@@ -1,14 +1,12 @@
-let s:deindir   = "{{neovim.dein.installdir}}"
-let s:bundledir = "{{neovim.dein.bundledir}}"
 
-let &runtimepath .= ',' . s:deindir
+let &runtimepath .= ',' . g:abconfig_dein_dir
 
-if dein#load_state(s:bundledir)
-  call dein#begin(s:bundledir)
+if dein#load_state(g:abconfig_bundle_dir)
+  call dein#begin(g:abconfig_bundle_dir)
 
-  call dein#add(s:deindir)
+  call dein#add(g:abconfig_dein_dir)
 
-  if g:hasfzf
+  if g:abconfig_has_fzf
     call dein#add('junegunn/fzf.vim')
   end
 

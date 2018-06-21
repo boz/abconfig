@@ -1,0 +1,8 @@
+if dein#tap('vimtex')
+  if g:abconfig_pkg_mgr == 'homebrew'
+    let g:vimtex_view_method    = 'skim'
+    let g:vimtex_view_automatic = 1
+  else
+    let g:vimtex_view_method = 'zathura'
+  endif
+end

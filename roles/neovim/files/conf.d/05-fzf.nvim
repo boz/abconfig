@@ -1,0 +1,4 @@
+if executable('fzf') && isdirectory(g:abconfig_fzf_dir)
+  let g:abconfig_has_fzf = 1
+  let &runtimepath .= ',' . g:abconfig_fzf_dir
+end

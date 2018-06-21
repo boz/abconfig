@@ -1,7 +1,0 @@
-let s:fzfdir = '{{fzf.dir}}'
-let g:hasfzf = 0
-
-if executable('fzf') && isdirectory(s:fzfdir)
-  let g:hasfzf = 1
-  let &runtimepath .= ',' . s:fzfdir
-end
