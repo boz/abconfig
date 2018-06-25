@@ -45,6 +45,8 @@ autocmd BufEnter *.nvim :setlocal filetype=vim
 nnoremap <silent> <f2> :split  $MYVIMRC<cr>
 nnoremap <silent> <f3> :source $MYVIMRC<cr>
 
+inoremap jk <esc>
+
 " map <C-n> :lne<CR>
 " map <C-N> :lp<CR>
 
