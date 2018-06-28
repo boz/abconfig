@@ -15,6 +15,7 @@
   with_items:
     - nodejs
     - yarn
+    - npm
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,nodejs,node]

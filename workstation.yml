@@ -33,6 +33,7 @@
     - telegram
     - yubikey
     - keybase
+    - awscli
 
 - hosts: osx
   roles:
@@ -40,7 +41,6 @@
 
 - hosts: ovrclk-dev
   roles:
-    - awscli
     - ovrclk
 
 - hosts: db
