@@ -34,6 +34,7 @@
     - yubikey
     - keybase
     - awscli
+    - bats
 
 - hosts: osx
   roles:
