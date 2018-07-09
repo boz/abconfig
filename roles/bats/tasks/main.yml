@@ -1,9 +1,10 @@
 ---
-- name: checkout source
+- name: checkout source (arch)
   git:
     repo: https://github.com/bats-core/bats-core.git
     update: no
     dest: "{{codedir}}/bats"
+  when: ansible_pkg_mgr == "pacman"
   tags: [config-install,bats]
 
 - name: install (arch)
@@ -13,4 +14,10 @@
     creates: "/usr/local/bin/bats"
   become: true
   when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,bats]
+
+- name: install (osx)
+  homebrew:
+    name: bats-core
+  when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,bats]
