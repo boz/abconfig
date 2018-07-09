@@ -42,6 +42,12 @@
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,system-monitor,htop]
 
+- name: install htop (osx)
+  homebrew:
+    name: htop
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,system-monitor,htop]
+
 - name: install i7z (aur)
   pacman:
     name: i7z
