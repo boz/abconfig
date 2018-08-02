@@ -1,0 +1,13 @@
+---
+- name: install terraform (osx)
+  homebrew:
+    name: terraform
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,terraform]
+
+- name: install terraform (arch)
+  pacman:
+    name: terraform
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,terraform]

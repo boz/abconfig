@@ -35,6 +35,7 @@
     - keybase
     - awscli
     - bats
+    - terraform
 
 - hosts: osx
   roles:
