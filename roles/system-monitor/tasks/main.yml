@@ -54,3 +54,10 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [system-monitor,i7z]
+
+- name: install hdparm (aur)
+  pacman:
+    name: hdparm
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [system-monitor,hdparm]
