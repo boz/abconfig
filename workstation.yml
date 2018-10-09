@@ -36,6 +36,7 @@
     - awscli
     - bats
     - terraform
+    - media
 
 - hosts: osx
   roles:
