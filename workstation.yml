@@ -37,6 +37,7 @@
     - bats
     - terraform
     - media
+    - mandrin
 
 - hosts: osx
   roles:

@@ -13,6 +13,9 @@ URxvt.saveLines: 50000
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot
+
 ! solarized dark
 ! https://github.com/solarized/xresources/blob/master/Xresources.dark
 
