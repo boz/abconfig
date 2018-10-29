@@ -61,3 +61,16 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [system-monitor,hdparm]
+
+- name: install iperf3 (aur)
+  pacman:
+    name: iperf3
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [system-monitor,iperf3]
+
+- name: install iperf3 (osx)
+  homebrew:
+    name: iperf3
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [system-monitor,iperf3]
