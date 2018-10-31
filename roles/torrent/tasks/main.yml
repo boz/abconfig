@@ -1,0 +1,14 @@
+---
+- name: install transmission-cli
+  pacman:
+    name: transmission-cli
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [torrent,transmission,transmission-cli]
+
+- name: install transmission-remote-gtk
+  pacman:
+    name: transmission-remote-gtk
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [torrent,transmission,transmission-remote-gtk]
