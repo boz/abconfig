@@ -40,9 +40,8 @@
 
 - name: install firefox (arch)
   pacman:
-    name: "{{item}}"
+    name:
+      - firefox
   become: true
-  with_items:
-    - firefox
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,browser,firefox]

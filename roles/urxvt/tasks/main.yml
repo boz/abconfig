@@ -1,10 +1,9 @@
 ---
 - name: install urxvt
   pacman:
-    name: "{{item}}"
-  with_items:
-    - rxvt-unicode
-    - rxvt-unicode-terminfo
+    name:
+      - rxvt-unicode
+      - rxvt-unicode-terminfo
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [urxvt]

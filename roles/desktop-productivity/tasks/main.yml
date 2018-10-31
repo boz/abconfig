@@ -8,14 +8,13 @@
 
 - name: install zathura
   pacman:
-    name: "{{item}}"
-  with_items:
-    - zathura
-    - zathura-djvu
-    - zathura-pdf-mupdf
-    - zathura-ps
-    # needed for vimtex
-    - xdotool
+    name:
+      - zathura
+      - zathura-djvu
+      - zathura-pdf-mupdf
+      - zathura-ps
+      # needed for vimtex
+      - xdotool
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,desktop-productivity,zathura]

@@ -34,4 +34,6 @@ xsetroot -solid '#222222'
 
 xautolock -time 45 -locker 'i3lock -c "#222222"' &
 
+ibus-daemon --xim &
+
 exec i3 -V >> ~/i3log.log 2>&1

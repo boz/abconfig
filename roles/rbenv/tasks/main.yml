@@ -1,10 +1,9 @@
 ---
 - name: install lib dependencies
   apt:
-    name: "{{item}}"
-  with_items:
-    - libssl-dev
-    - libreadline-dev
+    name:
+      - libssl-dev
+      - libreadline-dev
   become: true
   when: ansible_pkg_mgr == "apt"
   tags: [config-install,rbenv]

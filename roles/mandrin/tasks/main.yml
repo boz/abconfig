@@ -9,25 +9,23 @@
 
 - name: install ibus (aur)
   pacman:
-    name: "{{item}}"
-  with_items:
-    - ibus
-    - ibus-qt
-    - ibus-libpinyin
-    - ibus-rime
-    - ibus-m17n
+    name:
+      - ibus
+      - ibus-qt
+      - ibus-libpinyin
+      - ibus-rime
+      - ibus-m17n
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [mandrin,ibus]
 
 - name: install mandrin fonts (aur)
   pacman:
-    name: "{{item}}"
-  with_items:
-    - adobe-source-han-sans-cn-fonts
-    - adobe-source-han-sans-tw-fonts
-    - adobe-source-han-serif-cn-fonts
-    - adobe-source-han-serif-tw-fonts
+    name:
+      - adobe-source-han-sans-cn-fonts
+      - adobe-source-han-sans-tw-fonts
+      - adobe-source-han-serif-cn-fonts
+      - adobe-source-han-serif-tw-fonts
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [mandrin,fonts]

@@ -1,20 +1,20 @@
 ---
 
 - name: install zsh (pacman)
-  pacman: name={{item}}
-  with_items:
-    - zsh
-    - zsh-completions
+  pacman:
+    name:
+      - zsh
+      - zsh-completions
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,zsh]
 
 - name: install zsh (apt)
-  apt: name={{item}}
-  with_items:
-    - zsh
-    - zsh-common
-    - zsh-doc
+  apt:
+    name:
+      - zsh
+      - zsh-common
+      - zsh-doc
   become: true
   when: ansible_pkg_mgr == "apt"
   tags: [config-install,zsh]

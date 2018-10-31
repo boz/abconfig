@@ -1,8 +1,7 @@
 ---
 - name: install bluetooth support
   pacman:
-    name: "{{item}}"
-  with_items: [bluez,bluez-utils]
+    name: [bluez,bluez-utils]
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,bluetooth,bluez]

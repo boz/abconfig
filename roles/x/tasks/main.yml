@@ -1,15 +1,15 @@
 ---
 - name: install x utilities
-  pacman: name={{item}}
-  with_items:
-    - xorg
-    - xorg-apps
-    - xorg-xinit
-    - xorg-xrandr
-    - xorg-xev
-    - xorg-xsetroot
-    - xorg-server
-    - xorg-docs
+  pacman:
+    name:
+      - xorg
+      - xorg-apps
+      - xorg-xinit
+      - xorg-xrandr
+      - xorg-xev
+      - xorg-xsetroot
+      - xorg-server
+      - xorg-docs
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,x]

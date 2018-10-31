@@ -9,13 +9,12 @@
 
 - name: install glances (aur)
   pacman:
-    name: "{{item}}"
-  with_items:
-    - glances
-    - hddtemp
-    - python-docker-py
-    - python-matplotlib
-    - python-netifaces
+    name:
+      - glances
+      - hddtemp
+      - python-docker-py
+      - python-matplotlib
+      - python-netifaces
   become: true
   when: false # FIXME ansible_pkg_mgr == "pacman"
   tags: [config-install,system-monitor,glances]

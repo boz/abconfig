@@ -1,21 +1,19 @@
 ---
 - name: install node (osx)
   homebrew:
-    name: "{{item}}"
     state: present
-  with_items:
-    - node
-    - yarn
+    name:
+      - node
+      - yarn
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,nodejs,node]
 
 - name: install node (aur)
   pacman:
-    name: "{{item}}"
-  with_items:
-    - nodejs
-    - yarn
-    - npm
+    name:
+      - nodejs
+      - yarn
+      - npm
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,nodejs,node]
