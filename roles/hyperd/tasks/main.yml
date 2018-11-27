@@ -1,0 +1,10 @@
+---
+
+- name: install hyperd (aur)
+  pacaur:
+    name: "{{item}}"
+  with_items:
+    - hyperd
+    - hyperstart-git
+  when: ansible_pkg_mgr == "pacman"
+  tags: [hyperd]
