@@ -1,10 +1,10 @@
 ---
 
-- name: install google chrome
-  homebrew_cask:
-    name: google-chrome
-  when: ansible_pkg_mgr == "homebrew"
-  tags: [config-install,osx,google-chrome]
+# - name: install google chrome
+#   homebrew_cask:
+#     name: google-chrome
+#   when: ansible_pkg_mgr == "homebrew"
+#   tags: [config-install,osx,google-chrome]
 
 - name: install iterm2
   homebrew_cask:
@@ -36,9 +36,9 @@
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,osx,vagrant]
 
-- name: install virtualbox
-  homebrew_cask:
-    name: "virtualbox"
-  when: ansible_pkg_mgr == "homebrew"
-  tags: [config-install,osx,virtualbox]
+# - name: install virtualbox
+#   homebrew_cask:
+#     name: "virtualbox"
+#   when: ansible_pkg_mgr == "homebrew"
+#   tags: [config-install,osx,virtualbox]
 
