@@ -11,3 +11,15 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [media,mpv]
+
+- name: install vlc (osx)
+  homebrew_cask:
+    name: vlc
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [media,vlc]
+
+- name: install mpv (osx)
+  homebrew:
+    name: mpv
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [media,mpv]

@@ -72,6 +72,10 @@
   roles:
     - tex
 
+- hosts: torrent
+  roles:
+    - torrent
+
 - hosts: codius-dev
   roles:
     - hyperd

@@ -12,3 +12,9 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [torrent,transmission,transmission-remote-gtk]
+
+- name: install transmission (osx)
+  homebrew_cask:
+    name: transmission
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [torrent,transmission]
