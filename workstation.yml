@@ -36,6 +36,8 @@
     - awscli
     - bats
     - terraform
+    - media
+    - mandrin
 
 - hosts: osx
   roles:
@@ -69,3 +71,7 @@
 - hosts: tex
   roles:
     - tex
+
+- hosts: codius-dev
+  roles:
+    - hyperd

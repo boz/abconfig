@@ -1,20 +1,19 @@
 ---
 - name: install git (apt)
-  apt: name={{item}}
-  with_items:
-    - git
-    - git-man
+  apt:
+    name:
+      - git
+      - git-man
   become: true
   when: ansible_pkg_mgr == "apt"
   tags: [config-install,git]
 
 - name: install git (aur)
   pacman:
-    name: "{{item}}"
+    name:
+      - git
+      - mercurial
   become: true
-  with_items:
-    - git
-    - mercurial
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,git]
 

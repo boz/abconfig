@@ -1,10 +1,10 @@
 ---
 - name: install go (pacman)
-  pacman: name={{item}}
-  with_items:
-    - go
-    - go-tools
-    - musl
+  pacman:
+    name:
+      - go
+      - go-tools
+      - musl
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,go]
@@ -17,9 +17,9 @@
   tags: [config-install,go]
 
 - name: install go package (apt)
-  apt: name={{item}}
-  with_items:
-    - golang-1.8
+  apt:
+    name:
+      - golang-1.8
   become: true
   when: ansible_pkg_mgr == "apt"
   tags: [config-install,go]

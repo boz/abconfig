@@ -1,10 +1,10 @@
 ---
 - name: install neovim (pacman)
-  pacman: name={{item}}
-  with_items:
-    - python-neovim
-    - neovim
-    - powerline-fonts
+  pacman:
+    name:
+      - python-neovim
+      - neovim
+      - powerline-fonts
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,neovim]
@@ -16,13 +16,13 @@
   tags: [config-install,neovim]
 
 - name: install neovim (apt)
-  apt: name={{item}}
-  with_items:
-    - neovim
-    - python-dev
-    - python-pip
-    - python3-dev
-    - python3-pip
+  apt:
+    name:
+      - neovim
+      - python-dev
+      - python-pip
+      - python3-dev
+      - python3-pip
   become: true
   when: ansible_pkg_mgr == "apt"
   tags: [config-install,neovim]
@@ -36,10 +36,9 @@
 
 - name: install neovim (osx)
   homebrew:
-    name: "{{item}}"
-  with_items:
-    - neovim
-    - python3
+    name:
+      - neovim
+      - python3
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,neovim]
 

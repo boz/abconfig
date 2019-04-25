@@ -1,8 +1,7 @@
 ---
 - name: install texlive (aur)
   pacman:
-    name: "{{item}}"
-  with_items: [texlive-bin,texlive-most]
+    name: [texlive-bin,texlive-most]
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [tex,texlive]

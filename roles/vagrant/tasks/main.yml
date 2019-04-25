@@ -1,10 +1,9 @@
 ---
 - name: install virtualbox
   pacman:
-    name: "{{item}}"
-  with_items:
-    - virtualbox
-    - virtualbox-host-dkms
+    name:
+      - virtualbox
+      - virtualbox-host-dkms
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,vagrant,virtualbox]

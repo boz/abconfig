@@ -45,6 +45,20 @@
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,cli-extras,unzip]
 
+- name: install convmv (arch)
+  pacman:
+    name: convmv
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,cli-extras,convmv]
+
+- name: install dos2unix (arch)
+  pacman:
+    name: dos2unix
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,cli-extras,dos2unix]
+
 - name: install jq (arch)
   pacman:
     name: jq

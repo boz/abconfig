@@ -2,11 +2,10 @@
 
 - name: install nvidia drivers (arch)
   pacman:
-    name: "{{item}}"
-  with_items:
-    - nvidia-dkms
-    - nvidia-utils
-    - nvidia-settings
+    name:
+      - nvidia-dkms
+      - nvidia-utils
+      - nvidia-settings
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [nvidia]

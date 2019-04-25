@@ -1,0 +1,4 @@
+night-market ansible_connection=local
+
+[osx]
+night-market

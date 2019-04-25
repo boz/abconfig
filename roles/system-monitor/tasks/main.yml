@@ -9,13 +9,12 @@
 
 - name: install glances (aur)
   pacman:
-    name: "{{item}}"
-  with_items:
-    - glances
-    - hddtemp
-    - python-docker-py
-    - python-matplotlib
-    - python-netifaces
+    name:
+      - glances
+      - hddtemp
+      - python-docker-py
+      - python-matplotlib
+      - python-netifaces
   become: true
   when: false # FIXME ansible_pkg_mgr == "pacman"
   tags: [config-install,system-monitor,glances]
@@ -54,3 +53,23 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [system-monitor,i7z]
+
+- name: install hdparm (aur)
+  pacman:
+    name: hdparm
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [system-monitor,hdparm]
+
+- name: install iperf3 (aur)
+  pacman:
+    name: iperf3
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [system-monitor,iperf3]
+
+- name: install iperf3 (osx)
+  homebrew:
+    name: iperf3
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [system-monitor,iperf3]

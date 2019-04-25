@@ -1,8 +1,8 @@
 ---
 - name: install awscli (apt)
-  apt: name={{item}}
-  with_items:
-    - awscli
+  apt:
+    name:
+      - awscli
   become: true
   when: ansible_pkg_mgr == "apt"
   tags: [config-install,awscli]

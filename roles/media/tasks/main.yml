@@ -1,0 +1,13 @@
+- name: install vlc (aur)
+  pacman:
+    name: vlc
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [media,vlc]
+
+- name: install mpv (aur)
+  pacman:
+    name: mpv
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [media,mpv]
