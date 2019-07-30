@@ -74,4 +74,4 @@
 
 - hosts: codius-dev
   roles:
-    - hyperd
+    # - hyperd
