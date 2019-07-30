@@ -13,7 +13,9 @@
 
 - name: install
   command: go run bootstrap.go
-  chdir: {{mage.dir}}
+  args:
+    chdir: "{{mage.dir}}"
+    creates: "{{mage.binpath}}"
   when: not have_mage.stat.exists
   tags: [config-install,mage]
   environment:
