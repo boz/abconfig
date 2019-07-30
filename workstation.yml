@@ -21,7 +21,7 @@
     - neovim
     - rbenv
     - travis
-    - pet
+    # - pet
     - wrk
     - qemu
     - system-monitor
@@ -29,7 +29,7 @@
     - k8s-minikube
     - trezor
     - music
-    - slack
+    # - slack
     - telegram
     - yubikey
     - keybase
@@ -75,3 +75,7 @@
 - hosts: codius-dev
   roles:
     # - hyperd
+
+- hosts: ww
+  roles:
+    - mage

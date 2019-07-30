@@ -1,0 +1,5 @@
+---
+mage:
+  package: github.com/magefile/mage
+  dir:     "{{gopath}}/src/github.com/magefile/mage"
+  binpath: "{{gopath}}/bin/mage"

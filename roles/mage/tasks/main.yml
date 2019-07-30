@@ -1,0 +1,26 @@
+---
+- name: check installed
+  stat: path={{mage.binpath}}
+  register: have_mage
+  tags: [config-install,mage]
+
+- name: download
+  command: go get -u {{mage.package}}
+  when: not have_mage.stat.exists
+  tags: [config-install,mage]
+  environment:
+    GOPATH: "{{gopath}}"
+
+- name: install
+  command: go run bootstrap.go
+  chdir: {{mage.dir}}
+  when: not have_mage.stat.exists
+  tags: [config-install,mage]
+  environment:
+    GOPATH: "{{gopath}}"
+
+- name: configure
+  copy:
+    dest: "{{profiledir}}/20-mage.sh"
+    content: "export MAGEFILE_VERBOSE=1\n"
+  tags: [config-install,mage]
