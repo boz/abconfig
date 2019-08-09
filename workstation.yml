@@ -38,6 +38,7 @@
     - terraform
     - media
     - mandrin
+    - shellcheck
 
 - hosts: osx
   roles:

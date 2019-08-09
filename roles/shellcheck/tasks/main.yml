@@ -1,0 +1,13 @@
+---
+- name: install (arch)
+  pacman:
+    name: shellcheck
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [install,shellcheck]
+
+- name: install (osx)
+  homebrew:
+    name: shellcheck
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [install,shellcheck]
