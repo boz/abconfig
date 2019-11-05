@@ -1,0 +1,4 @@
+whippet ansible_connection=local
+
+[we]
+whippet
