@@ -25,8 +25,8 @@ wego(){
       echo "$__wego_state"
       ;;
     *)
-      echo "usage: wego [on|off]" 2>&1
-      1
+      echo "usage: wego [on|off]" >&2
+      return 1
   esac
 }
 
