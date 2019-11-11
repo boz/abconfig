@@ -6,7 +6,7 @@ __wego_state=off
 wego(){
   case "${1:-status}" in
     on)
-      [ "$__wego_state" == "on" ] && return
+      [ "$__wego_state" = "on" ] && return
       export GO111MODULE=on
       export GOPROXY="https://${ARTIFACTORY_USER}:${ARTIFACTORY_APIKEY}@wework.jfrog.io/wework/api/go/go,direct"
       export GOPRIVATE="github.com/weconnect,github.com/WeConnect"
@@ -14,7 +14,7 @@ wego(){
       __wego_state=on
       ;;
     off)
-      [ "$__wego_state" == "off" ] && return
+      [ "$__wego_state" = "off" ] && return
       unset GO111MODULE
       unset GOPROXY
       unset GOPRIVATE
@@ -30,13 +30,15 @@ wego(){
   esac
 }
 
+__auto_wego(){
+  if git remote get-url origin 2>/dev/null | grep -i 'weconnect' >/dev/null ; then
+    wego on
+  else
+    wego off
+  fi
+}
+__auto_wego
+
 if test -v ZSH_VERSION; then
-  __auto_wego(){
-    if git remote get-url origin 2>/dev/null | grep -i 'weconnect' >/dev/null ; then
-      wego on
-    else
-      wego off
-    fi
-  }
   add-zsh-hook chpwd __auto_wego
 fi
