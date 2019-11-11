@@ -12,3 +12,18 @@
       source /opt/google-cloud-sdk/completion.zsh.inc
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,google-cloud,google-cloud-sdk]
+
+- name: install google cloud sdk (osx)
+  homebrew_cask:
+    name: google-cloud-sdk
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,google-cloud,google-cloud-sdk]
+
+- name: install zsh completion (osx)
+  copy:
+    dest: "{{profiledir}}/50-google-cloud.zsh"
+    content: |
+      source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+      source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+  when: ansible_pkg_mgr == "homebrew"
+  tags: [config-install,google-cloud,google-cloud-sdk]
