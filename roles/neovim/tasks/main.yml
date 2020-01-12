@@ -1,13 +1,13 @@
 ---
-- name: install neovim (pacman)
-  pacman:
-    name:
-      - python-neovim
-      - neovim
-      - powerline-fonts
-  become: true
-  when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,neovim]
+# - name: install neovim (pacman)
+#   pacman:
+#     name:
+#       - python-neovim
+#       - neovim
+#       - powerline-fonts
+#   become: true
+#   when: ansible_pkg_mgr == "pacman"
+#   tags: [config-install,neovim]
 
 - name: install neovim ppa (apt)
   apt_repository: repo=ppa:neovim-ppa/unstable

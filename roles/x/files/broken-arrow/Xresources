@@ -7,7 +7,7 @@ Xft.hinting: true
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 
-URxvt.font:  xft:DejaVuSansMono:size=14
+URxvt.font:  xft:WenQuanYi Micro Hei Mono:size=14,xft:DejaVuSansMono:size=14
 URxvt.scrollBar: False
 URxvt.saveLines: 50000
 URxvt.iso14755: false

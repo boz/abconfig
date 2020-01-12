@@ -37,7 +37,7 @@
     - bats
     - terraform
     - media
-    - mandrin
+    - mandarin
     - shellcheck
 
 - hosts: osx

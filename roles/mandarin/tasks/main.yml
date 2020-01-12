@@ -5,7 +5,7 @@
     name: anki
   become: true
   when: ansible_pkg_mgr == "pacman"
-  tags: [mandrin,anki]
+  tags: [mandarin,anki]
 
 - name: install ibus (aur)
   pacman:
@@ -17,18 +17,19 @@
       - ibus-m17n
   become: true
   when: ansible_pkg_mgr == "pacman"
-  tags: [mandrin,ibus]
+  tags: [mandarin,ibus]
 
-- name: install mandrin fonts (aur)
+- name: install mandarin fonts (aur)
   pacman:
     name:
       - adobe-source-han-sans-cn-fonts
       - adobe-source-han-sans-tw-fonts
       - adobe-source-han-serif-cn-fonts
       - adobe-source-han-serif-tw-fonts
+      - wqy-microhei
   become: true
   when: ansible_pkg_mgr == "pacman"
-  tags: [mandrin,fonts]
+  tags: [mandarin,fonts]
 
 - name: install taiwan fonts (aur)
   pacaur:
@@ -36,7 +37,7 @@
   with_items:
     - ttf-tw
   when: ansible_pkg_mgr == "pacman"
-  tags: [mandrin,taiwan-fonts]
+  tags: [mandarin,taiwan-fonts]
 
 - name: ibus shell config (aur)
   copy:
@@ -46,4 +47,4 @@
       export XMODIFIERS=@im=ibus
       export QT_IM_MODULE=ibus
   when: ansible_pkg_mgr == "pacman"
-  tags: [mandrin,ibus]
+  tags: [mandarin,ibus]

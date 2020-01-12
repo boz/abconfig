@@ -145,3 +145,10 @@
   when: ansible_pkg_mgr == "pacman"
   become: true
   tags: [config-install,cli-extras,ncdu]
+
+- name: install parallel (arch)
+  pacman:
+    name: parallel
+  when: ansible_pkg_mgr == "pacman"
+  become: true
+  tags: [config-install,cli-extras,parallel]
