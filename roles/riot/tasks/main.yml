@@ -1,0 +1,6 @@
+- name: install kbfs
+  pacman:
+    name: riot-desktop
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [riot]

@@ -39,6 +39,7 @@
     - media
     - mandarin
     - shellcheck
+    - riot
 
 - hosts: osx
   roles:
