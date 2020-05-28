@@ -29,6 +29,7 @@ if dein#tap('vim-go')
   end
 
   if dein#tap('deoplete.nvim')
+    set completeopt+=noselect
     call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
   endif
 
