@@ -73,7 +73,8 @@
   tags: [k8s-minikube,helm]
 
 - name: install helm (arch)
-  pacaur:
-    name: kubernetes-helm
+  pacman:
+    name: helm
+  become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [k8s-minikube,helm]
