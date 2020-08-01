@@ -1,7 +1,0 @@
----
-- name: configure golang
-  template:
-    dest: "{{profiledir}}/50-we.sh"
-    src: "we.sh"
-  tags: [config-install,we]
-            

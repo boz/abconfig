@@ -1,6 +1,7 @@
-- name: install kbfs
+---
+- name: install rustup
   pacman:
-    name: riot-desktop
+    name: rustup
   become: true
   when: ansible_pkg_mgr == "pacman"
-  tags: [riot]
+  tags: [rust]
