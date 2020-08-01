@@ -58,8 +58,8 @@
 - name: install pacaur
   aur: name={{item}} user={{ansible_user_id}} skip_pgp=yes
   with_items:
-    - cower
-    - pacaur-git
+    - auracle-git
+    - pacaur
   when: ansible_pkg_mgr == "pacman"
   tags: [bootstrap,package-manager]
 

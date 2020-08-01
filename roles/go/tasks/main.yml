@@ -60,21 +60,21 @@
             src=gopath.sh
   tags: [config,go]
 
-- name: install glide
-  command: go get -u github.com/Masterminds/glide
-  environment:
-    GOPATH: "{{gopath}}"
-  args:
-    creates: "{{gopath}}/bin/glide"
-  tags: [config-install,go,glide]
+# - name: install glide
+#   command: go get -u github.com/Masterminds/glide
+#   environment:
+#     GOPATH: "{{gopath}}"
+#   args:
+#     creates: "{{gopath}}/bin/glide"
+#   tags: [config-install,go,glide]
 
-- name: install govendor
-  command: go get -u github.com/kardianos/govendor
-  environment:
-    GOPATH: "{{gopath}}"
-  args:
-    creates: "{{gopath}}/bin/govendor"
-  tags: [config-install,go,govendor]
+# - name: install govendor
+#   command: go get -u github.com/kardianos/govendor
+#   environment:
+#     GOPATH: "{{gopath}}"
+#   args:
+#     creates: "{{gopath}}/bin/govendor"
+#   tags: [config-install,go,govendor]
 
 - name: install delve
   command: go get -u github.com/derekparker/delve/cmd/dlv
@@ -84,31 +84,31 @@
     GOPATH: "{{gopath}}"
   tags: [config-install,go,delve]
 
-- name: install goreleaser
-  command: go get -u github.com/goreleaser/goreleaser
-  args:
-    creates: "{{gopath}}/bin/goreleaser"
-  environment:
-    GOPATH: "{{gopath}}"
-  tags: [config-install,go,goreleaser]
+# - name: install goreleaser
+#   command: go get -u github.com/goreleaser/goreleaser
+#   args:
+#     creates: "{{gopath}}/bin/goreleaser"
+#   environment:
+#     GOPATH: "{{gopath}}"
+#   tags: [config-install,go,goreleaser]
 
-- name: install godownloader
-  command: go get -u github.com/goreleaser/godownloader
-  args:
-    creates: "{{gopath}}/bin/godownloader"
-  environment:
-    GOPATH: "{{gopath}}"
-  tags: [config-install,go,godownloader]
+# - name: install godownloader
+#   command: go get -u github.com/goreleaser/godownloader
+#   args:
+#     creates: "{{gopath}}/bin/godownloader"
+#   environment:
+#     GOPATH: "{{gopath}}"
+#   tags: [config-install,go,godownloader]
 
-- name: install dep
-  homebrew:
-    name: dep
-  when: ansible_pkg_mgr == "homebrew"
-  tags: [config-install,go,dep]
+# - name: install dep
+#   homebrew:
+#     name: dep
+#   when: ansible_pkg_mgr == "homebrew"
+#   tags: [config-install,go,dep]
 
-- name: install protobuf
-  pacman:
-    name: protobuf
-  become: true
-  when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,go,protobuf]
+# - name: install protobuf
+#   pacman:
+#     name: protobuf
+#   become: true
+#   when: ansible_pkg_mgr == "pacman"
+#   tags: [config-install,go,protobuf]

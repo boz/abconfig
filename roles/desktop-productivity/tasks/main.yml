@@ -1,35 +1,35 @@
 ---
-- name: install evince pdf viewer
-  pacman:
-    name: evince
-  become: true
-  when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,desktop-productivity,evince]
+# - name: install evince pdf viewer
+#   pacman:
+#     name: evince
+#   become: true
+#   when: ansible_pkg_mgr == "pacman"
+#   tags: [config-install,desktop-productivity,evince]
 
-- name: install zathura
-  pacman:
-    name:
-      - zathura
-      - zathura-djvu
-      - zathura-pdf-mupdf
-      - zathura-ps
-      # needed for vimtex
-      - xdotool
-  become: true
-  when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,desktop-productivity,zathura]
+# - name: install zathura
+#   pacman:
+#     name:
+#       - zathura
+#       - zathura-djvu
+#       - zathura-pdf-mupdf
+#       - zathura-ps
+#       # needed for vimtex
+#       - xdotool
+#   become: true
+#   when: ansible_pkg_mgr == "pacman"
+#   tags: [config-install,desktop-productivity,zathura]
 
-- name: install libreoffice
-  pacman:
-    name: libreoffice-fresh
-  become: true
-  when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,desktop-productivity,libreoffice]
+# - name: install libreoffice
+#   pacman:
+#     name: libreoffice-fresh
+#   become: true
+#   when: ansible_pkg_mgr == "pacman"
+#   tags: [config-install,desktop-productivity,libreoffice]
 
-- name: install mirage (image viewer)
-  debug:
-    msg: "TODO: fix mirage"
-  # pacaur:
-  #   name: mirage
-  when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,desktop-productivity,mirage]
+# - name: install mirage (image viewer)
+#   debug:
+#     msg: "TODO: fix mirage"
+#   # pacaur:
+#   #   name: mirage
+#   when: ansible_pkg_mgr == "pacman"
+#   tags: [config-install,desktop-productivity,mirage]

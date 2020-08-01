@@ -1,18 +1,18 @@
 ---
-- name: install chromium (arch)
-  pacman:
-    name: chromium
-  become: true
-  when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,browser,chromium]
+# - name: install chromium (arch)
+#   pacman:
+#     name: chromium
+#   become: true
+#   when: ansible_pkg_mgr == "pacman"
+#   tags: [config-install,browser,chromium]
 
-- name: chromium config (arch)
-  copy:
-    dest: "{{homedir}}/.config/chromium-flags.conf"
-    content: |
-      --force-device-scale-factor=2
-  when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,browser,chromium]
+# - name: chromium config (arch)
+#   copy:
+#     dest: "{{homedir}}/.config/chromium-flags.conf"
+#     content: |
+#       --force-device-scale-factor=2
+#   when: ansible_pkg_mgr == "pacman"
+#   tags: [config-install,browser,chromium]
 
 - name: install google chrome (arch)
   pacaur:
@@ -38,10 +38,10 @@
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,browser,chrome]
 
-- name: install firefox (arch)
-  pacman:
-    name:
-      - firefox
-  become: true
-  when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,browser,firefox]
+# - name: install firefox (arch)
+#   pacman:
+#     name:
+#       - firefox
+#   become: true
+#   when: ansible_pkg_mgr == "pacman"
+#   tags: [config-install,browser,firefox]

@@ -1,0 +1,5 @@
+powertop
+
+alacritty
+iw
+

@@ -1,0 +1,45 @@
+#!/bin/sh
+
+xrandr --setprovideroutputsource modesetting NVIDIA-G0
+xrandr --auto
+xrandr --dpi 96
+
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
+
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
+
+# start some nice programs
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+
+xset r rate 250 80
+xsetroot -solid '#222222'
+
+# xautolock -time 45 -locker 'i3lock -c "#222222"' &
+
+[ -f ~/.Xkeymap ] && xkbcomp ~/.Xkeymap "$DISPLAY"
+
+# ibus-daemon --xim &
+
+exec i3 -V >> ~/i3log.log 2>&1

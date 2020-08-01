@@ -1,2 +1,2 @@
 #!/bin/sh
-pass config/$(hostname)/vault
+pass config/$(hostnamectl --static)/vault

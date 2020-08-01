@@ -47,6 +47,8 @@ if dein#load_state(g:abconfig_bundle_dir)
 
   " call dein#add('dense-analysis/ale')
 
+  call dein#add('rust-lang/rust.vim')
+
   call dein#end()
   call dein#save_state()
 end

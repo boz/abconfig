@@ -10,15 +10,15 @@
   when: ansible_pkg_mgr == "pacman"
   tags: [nvidia]
 
-- name: install xorg config
-  copy:
-    dest: /etc/X11/xorg.conf.d/20-nvidia.conf
-    content: |-
-      Section "Device"
-          Identifier     "Nvidia Card"
-          Driver         "nvidia"
-          VendorName     "NVIDIA Corporation"
-      EndSection
-  become: true
-  when: ansible_pkg_mgr == "pacman"
-  tags: [nvidia]
+# - name: install xorg config
+#   copy:
+#     dest: /etc/X11/xorg.conf.d/20-nvidia.conf
+#     content: |-
+#       Section "Device"
+#           Identifier     "Nvidia Card"
+#           Driver         "nvidia"
+#           VendorName     "NVIDIA Corporation"
+#       EndSection
+#   become: true
+#   when: ansible_pkg_mgr == "pacman"
+#   tags: [nvidia]

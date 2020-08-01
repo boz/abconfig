@@ -1,7 +1,14 @@
 #!/bin/sh
 
-if [ -f "hosts/$(hostname -s)" ]; then
-  hosts="hosts/$(hostname -s)"
+if which hostnamectl; then
+  host="$(hostnamectl --static)"
+else
+  host="$(hostname -s)"
+fi
+
+
+if [ -f "hosts/$host" ]; then
+  hosts="hosts/$host"
 else
   hosts="hosts/default"
 fi

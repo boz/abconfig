@@ -57,6 +57,16 @@
   when: ansible_pkg_mgr == "homebrew"
   tags: [config-install,neovim]
 
+- name: install neovim (arch)
+  pacman:
+    name: "{{item}}"
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,neovim]
+  with_items:
+    - neovim
+    - python-neovim
+
 - name: create directories
   file: path={{item}} state=directory
   with_items:

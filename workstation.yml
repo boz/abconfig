@@ -20,7 +20,7 @@
     - fzf
     - neovim
     - rbenv
-    - travis
+    # - travis
     # - pet
     - wrk
     - qemu
@@ -30,14 +30,14 @@
     - trezor
     - music
     # - slack
-    - telegram
+    # - telegram
     - yubikey
     - keybase
-    - awscli
-    - bats
-    - terraform
+    # - awscli
+    # - bats
+    # - terraform
     - media
-    - mandarin
+    #- mandarin
     - shellcheck
     - riot
 

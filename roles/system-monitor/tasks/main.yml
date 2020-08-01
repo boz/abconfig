@@ -19,13 +19,13 @@
   when: false # FIXME ansible_pkg_mgr == "pacman"
   tags: [config-install,system-monitor,glances]
 
-- name: install ctop (aur)
-  pacaur:
-    name: "{{item}}"
-  with_items:
-    - ctop
-  when: ansible_pkg_mgr == "pacman"
-  tags: [config-install,system-monitor,ctop]
+# - name: install ctop (aur)
+#   pacaur:
+#     name: "{{item}}"
+#   with_items:
+#     - ctop
+#   when: ansible_pkg_mgr == "pacman"
+#   tags: [config-install,system-monitor,ctop]
 
 - name: install lsof (aur)
   pacman:
