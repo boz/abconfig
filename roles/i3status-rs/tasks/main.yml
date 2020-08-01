@@ -1,0 +1,21 @@
+---
+- name: install
+  pacman:
+    name: i3status-rust
+  become: true
+  when: ansible_pkg_mgr == "packman"
+  tags: [i3status-rs]
+
+- name: create config directory
+  file:
+    path: "{{config_dir}}/i3status-rs"
+    state: directory
+  tags: [i3status-rs]
+
+- name: install config
+  file:
+    path: "{{config_dir}}/i3status-rs/{{item | basename | regex_replace('^'+ansible_hostname+'\\.','')}}"
+    src: "{{item}}"
+    state: link
+  with_fileglob: "{{role_path}}/files/{{ansible_hostname}}.*.toml"
+  tags: [i3status-rs]

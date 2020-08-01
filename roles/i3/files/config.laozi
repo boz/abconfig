@@ -138,7 +138,7 @@ for_window [class="Google-chrome" window_role="app"] floating enable
 bar {
   font pango:DejaVu Sans Mono 24, FontAwesome 24
 
-  status_command /usr/bin/i3status-rs ~/.config/i3/i3status-rs.toml
+  status_command /usr/bin/i3status-rs ~/.config/i3status-rs/config.toml
   colors {
     separator #666666
     background #222222

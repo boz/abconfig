@@ -13,7 +13,7 @@
     - urxvt
     - fonts
     - rofi
-    - polybar
+    - i3status-rs
     - desktop-productivity
     - slack
     - spotify

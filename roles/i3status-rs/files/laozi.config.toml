@@ -1,0 +1,60 @@
+theme = "solarized-dark"
+icons = "awesome"
+
+[[block]]
+block    = "battery"
+interval = 10
+driver   = "upower"
+format   = "{percentage}%"
+
+[[block]]
+block = "bluetooth"
+mac   = "E5:CC:3C:4E:F2:B0"
+label = ""
+
+[[block]]
+block = "bluetooth"
+mac   = "2C:41:A1:4C:BC:67"
+label = ""
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "available"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{barchart} {utilization}%"
+
+# [[block]]
+# block = "nvidia_gpu"
+# show_temperature = true
+
+[[block]]
+block = "temperature"
+
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
