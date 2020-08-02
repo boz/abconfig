@@ -1,0 +1,6 @@
+---
+- name: install ledger live
+  pacaur:
+    name: ledger-live-bin
+  when: ansible_pkg_mgr == "packman"
+  tags: [ledger]

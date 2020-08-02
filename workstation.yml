@@ -78,3 +78,7 @@
 - hosts: codius-dev
   roles:
     # - hyperd
+
+- hosts: ledger
+  roles:
+    - ledger
