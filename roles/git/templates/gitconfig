@@ -1,25 +1,24 @@
 [user]
-	name  = {{git_user_name }}
-	email = {{git_user_email}}
+  name  = {{git_user_name }}
+  email = {{git_user_email}}
 
 [push]
-	default = current
+  default = current
 
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
-	unstage = reset HEAD --
-	p = pull
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+  unstage = reset HEAD --
+  p = pull
   checkpt = commit -am '[ci skip] checkpt'
 
-
 [credential]
-	helper = store
+  helper = store
 
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
 
-[pull]
-	ff = only
+[protocol "keybase"]
+  allow = always
