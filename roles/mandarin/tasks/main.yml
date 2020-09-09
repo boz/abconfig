@@ -11,7 +11,7 @@
   pacman:
     name:
       - ibus
-      - ibus-qt
+      # - ibus-qt
       - ibus-libpinyin
       - ibus-rime
       - ibus-m17n
@@ -22,11 +22,11 @@
 - name: install mandarin fonts (aur)
   pacman:
     name:
-      - adobe-source-han-sans-cn-fonts
-      - adobe-source-han-sans-tw-fonts
-      - adobe-source-han-serif-cn-fonts
-      - adobe-source-han-serif-tw-fonts
-      - wqy-microhei
+      # - adobe-source-han-sans-cn-fonts
+      # - adobe-source-han-sans-tw-fonts
+      # - adobe-source-han-serif-cn-fonts
+      # - adobe-source-han-serif-tw-fonts
+      # - wqy-microhei
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [mandarin,fonts]

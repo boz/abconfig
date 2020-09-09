@@ -2,3 +2,6 @@ laozi ansible_connection=local
 
 [ledger]
 laozi
+
+[mandarin]
+laozi

@@ -5,3 +5,18 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [rust]
+
+- name: add rustup components
+  command: rustup "{{item}}"
+  loop:
+    - component add rust-src
+    - component add rls
+    - component add clippy
+    - component add rust-docs
+    - component add rustfmt
+    - component add rust-std
+    - component add rust-analysis
+    - toolchain add nightly
+  tags: [rust]
+
+# cargo +nightly install racer

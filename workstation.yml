@@ -38,17 +38,12 @@
     # - bats
     # - terraform
     - media
-    #- mandarin
     - shellcheck
     - element
 
 - hosts: osx
   roles:
     - osx
-
-- hosts: ovrclk-dev
-  roles:
-    - ovrclk
 
 - hosts: db
   roles:
@@ -59,14 +54,6 @@
   roles:
     - racket
 
-- hosts: ethereum-dev
-  roles:
-    - ethereum-dev
-
-- hosts: ethereum-miner
-  roles:
-    - ethereum-miner
-
 - hosts: bluetooth
   roles:
     - bluetooth
@@ -75,10 +62,10 @@
   roles:
     - tex
 
-- hosts: codius-dev
-  roles:
-    # - hyperd
-
 - hosts: ledger
   roles:
     - ledger
+
+- hosts: mandarin
+  roles:
+    - mandarin
