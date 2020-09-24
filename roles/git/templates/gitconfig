@@ -22,3 +22,6 @@
 
 [protocol "keybase"]
   allow = always
+
+[pull]
+  ff = only
