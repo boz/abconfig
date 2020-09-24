@@ -12,3 +12,10 @@
   become: true
   when: ansible_pkg_mgr == "pacman"
   tags: [keybase]
+
+- name: install keybase
+  pacman:
+    name: keybase-gui
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [keybase]

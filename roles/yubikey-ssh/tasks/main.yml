@@ -1,0 +1,14 @@
+---
+- name: configure gpg-agent
+  file:
+    path: "{{homedir}}/.gnupg/gpg-agent.conf"
+    src: "{{role_path}}/files/gpg-agent.conf"
+    state: link
+  tags: [yubikey-ssh]
+
+- name: configure shell
+  file:
+    path: "{{profiledir}}/50-gpg-agent.sh"
+    src: "{{role_path}}/files/init.sh"
+    state: link
+  tags: [yubikey-ssh]

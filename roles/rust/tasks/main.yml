@@ -18,5 +18,7 @@
     - component add rust-analysis
     - toolchain add nightly
   tags: [rust]
+  when: false
+
 
 # cargo +nightly install racer
