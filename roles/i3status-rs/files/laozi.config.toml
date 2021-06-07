@@ -12,10 +12,10 @@ block = "bluetooth"
 mac   = "E5:CC:3C:4E:F2:B0"
 label = ""
 
-[[block]]
-block = "bluetooth"
-mac   = "2C:41:A1:4C:BC:67"
-label = ""
+# [[block]]
+# block = "bluetooth"
+# mac   = "2C:41:A1:4C:BC:67"
+# label = ""
 
 [[block]]
 block = "disk_space"
@@ -30,13 +30,13 @@ alert = 10.0
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{Mup}%"
-format_swap = "{SUp}%"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
 
 [[block]]
 block = "cpu"
 interval = 1
-format = "{barchart} {utilization}%"
+format = "{barchart} {utilization}"
 
 # [[block]]
 # block = "nvidia_gpu"

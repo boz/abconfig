@@ -3,6 +3,7 @@
 xrandr --setprovideroutputsource modesetting NVIDIA-G0
 xrandr --auto
 xrandr --dpi 96
+xinput set-button-map 14 1 0 3 4 5 6 7
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap

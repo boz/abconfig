@@ -35,6 +35,11 @@
     dest: "{{homedir}}/.config/chrome-flags.conf"
     content: |
       --force-device-scale-factor=2
+    # --ignore-gpu-blocklist
+    # --enable-gpu-rasterization
+    # --enable-zero-copy
+    # --enable-accelerated-video-decode
+    # --enable-vulkan
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,browser,chrome]
 
