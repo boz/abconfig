@@ -15,3 +15,10 @@
   when: ansible_pkg_mgr == "pacman"
   tags: [yubikey,yubico-authenticator]
 
+- name: enable pcscd
+  systemd:
+    name: pcscd.service
+    enabled: yes
+    state: started
+  when: ansible_service_mgr == "systemd"
+  tags: [yubikey]

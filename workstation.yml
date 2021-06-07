@@ -39,8 +39,8 @@
     # - terraform
     - media
     - shellcheck
-    # - element
     - yubikey-ssh
+    - direnv
 
 - hosts: osx
   roles:

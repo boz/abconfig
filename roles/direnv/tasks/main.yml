@@ -1,0 +1,14 @@
+---
+
+- name: install direnv (arch)
+  pacaur:
+    name: direnv
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,direnv]
+
+- name: install direnv shell hook
+  copy:
+    dest: "{{profiledir}}/60-direnv.zsh"
+    content: |
+      eval "$(direnv hook zsh)"
+  tags: [config,direnv]
