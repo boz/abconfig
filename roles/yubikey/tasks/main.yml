@@ -7,18 +7,18 @@
   when: ansible_pkg_mgr == "pacman"
   tags: [yubikey,yubikey-manager]
 
-- name: install yubico authenticator (arch)
-  # pacaur:
-  #   name: yubico-yubioath-desktop
-  debug:
-    msg: fix yubico authenticator
-  when: ansible_pkg_mgr == "pacman"
-  tags: [yubikey,yubico-authenticator]
+- name: configure scdaemon
+  lineinfile:
+    create: yes
+    path: "{{homedir}}/.gnupg/scdaemon.conf"
+    line: reader-port Yubico Yubi
+  tags: [yubikey]
 
 - name: enable pcscd
   systemd:
     name: pcscd.service
     enabled: yes
     state: started
+  become: true
   when: ansible_service_mgr == "systemd"
   tags: [yubikey]
