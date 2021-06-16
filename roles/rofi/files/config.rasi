@@ -1,0 +1,8 @@
+configuration {
+	font: "Dejavu Sans Mono 30";
+	separator-style: "solid";
+	color-normal: "#ffffff,#525d76,#f5f5f5,#5294e2,#ffffff";
+	color-urgent: "#ffffff,#dc322f,#f5f5f5,#5294e2,#dc322f";
+	color-active: "#ffffff,#c2cad0,#f5f5f5,#5294e2,#c2cad0";
+	color-window: "#ffffff,#f5f5f5";
+}

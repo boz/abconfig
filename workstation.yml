@@ -41,6 +41,8 @@
     - shellcheck
     - yubikey-ssh
     - direnv
+    - "1password"
+    - rofi
 
 - hosts: osx
   roles:

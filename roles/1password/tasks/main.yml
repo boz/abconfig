@@ -1,0 +1,7 @@
+---
+
+- name: install (arch)
+  pacaur:
+    name: 1password-beta-bin
+  when: ansible_pkg_mgr == "pacman"
+  tags: [1password]

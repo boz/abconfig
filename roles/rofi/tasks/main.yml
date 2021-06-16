@@ -11,3 +11,23 @@
     name: rofi
   when: ansible_pkg_mgr == "pacman"
   tags: [rofi]
+
+- name: configure
+  file:
+    path: "{{homedir}}/.config/rofi/config.rasi"
+    src: "{{role_path}}/files/config.rasi"
+    state: link
+  tags: [rofi]
+
+- name: install utilities
+  pacaur:
+    name: "{{item}}"
+  loop:
+    - rofi-dmenu
+    - # https://github.com/emlun/yubikey-oath-dmenu
+    - yubikey-oath-dmenu
+    - rofi-calc
+    - rofi-pass
+    - rofi-1pass
+  when: ansible_pkg_mgr == "pacman"
+  tags: [rofi]
