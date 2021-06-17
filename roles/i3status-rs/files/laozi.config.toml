@@ -5,7 +5,7 @@ icons = "awesome"
 block    = "battery"
 interval = 10
 driver   = "upower"
-format   = "{percentage}%"
+format   = "{percentage}"
 
 [[block]]
 block = "bluetooth"
@@ -44,7 +44,6 @@ format = "{barchart} {utilization}"
 
 [[block]]
 block = "temperature"
-
 
 [[block]]
 block = "load"
