@@ -1,3 +1,5 @@
+export PATH="${PATH:+${PATH}:}{{fzf.dir}}/bin"
+
 if [[ -f "{{fzf.dir}}/shell/completion.zsh" ]]; then
   source "{{fzf.dir}}/shell/completion.zsh"
 fi
