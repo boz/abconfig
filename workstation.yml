@@ -43,6 +43,7 @@
     - direnv
     - "1password"
     - rofi
+    - podman
 
 - hosts: osx
   roles:
