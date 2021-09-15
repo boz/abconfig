@@ -152,3 +152,31 @@
   when: ansible_pkg_mgr == "pacman"
   become: true
   tags: [config-install,cli-extras,parallel]
+
+- name: install bat (arch)
+  pacman:
+    name: bat
+  when: ansible_pkg_mgr == "pacman"
+  become: true
+  tags: [config-install,cli-extras,bat]
+
+- name: install fd (arch)
+  pacman:
+    name: fd
+  when: ansible_pkg_mgr == "pacman"
+  become: true
+  tags: [config-install,cli-extras,fd]
+
+- name: install sd (arch)
+  pacman:
+    name: sd
+  when: ansible_pkg_mgr == "pacman"
+  become: true
+  tags: [config-install,cli-extras,sd]
+
+- name: install dust (arch)
+  pacman:
+    name: dust
+  when: ansible_pkg_mgr == "pacman"
+  become: true
+  tags: [config-install,cli-extras,dust]
