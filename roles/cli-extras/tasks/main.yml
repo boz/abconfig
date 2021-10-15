@@ -180,3 +180,17 @@
   when: ansible_pkg_mgr == "pacman"
   become: true
   tags: [config-install,cli-extras,dust]
+
+- name: install zoxide (arch)
+  pacman:
+    name: zoxide
+  when: ansible_pkg_mgr == "pacman"
+  become: true
+  tags: [config-install,cli-extras,zoxide]
+
+- name: zoxide completion
+  copy:
+    dest: "{{profiledir}}/25-zoxide.zsh"
+    content: |
+      eval "$(zoxide init zsh)"
+  tags: [config-install,cli-extras,zoxide]
