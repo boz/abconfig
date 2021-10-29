@@ -6,9 +6,16 @@
   when: ansible_pkg_mgr == "pacman"
   tags: [config-install,alacritty]
 
+- name: create config directory
+  file:
+    path: "{{config_dir}}/alacritty"
+    state: directory
+  tags: [config-install,alacritty]
+
 - name: config
   file:
-    path: "{{config_dir}}/alacritty/alacritty.yml"
-    src: "{{role_path}}/files/alacritty.yml"
+    path: "{{config_dir}}/alacritty/{{item | basename | regex_replace('^'+ansible_hostname+'\\.','')}}"
+    src: "{{item}}"
     state: link
+  with_fileglob: "{{role_path}}/files/{{ansible_hostname}}.*.yml"
   tags: [config-install,alacritty]

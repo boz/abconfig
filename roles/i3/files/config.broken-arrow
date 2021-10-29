@@ -10,8 +10,8 @@ font pango:DejaVu Sans Mono 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal -cd "`$HOME/bin/xcwd`" -si -sw -sk
-bindsym $mod+Shift+Return exec i3-sensible-terminal -si -sw -sk
+bindsym $mod+Return exec exec alacritty --working-directory "`$HOME/bin/xcwd`"
+bindsym $mod+Shift+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -156,5 +156,5 @@ bindsym XF86KbdBrightnessUp   exec gmux_backlight +100
 bindsym XF86MonBrightnessDown exec gmux_backlight -100
 bindsym XF86MonBrightnessUp   exec gmux_backlight +100
 
-exec i3-msg 'workspace 2:work; exec i3-sensible-terminal -cd "$HOME" -si -sw -sk;'
-exec i3-msg 'workspace 1:home; exec google-chrome; exec slack; focus left;'
+# exec i3-msg 'workspace 2:work; exec i3-sensible-terminal -cd "$HOME" -si -sw -sk;'
+# exec i3-msg 'workspace 1:home; exec google-chrome; exec slack; focus left;'
