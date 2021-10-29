@@ -93,8 +93,10 @@
   tags: [config,neovim]
 
 - name: install conf.d components
-  copy: src={{item}}
-        dest={{neovim.confdir}}/{{item | basename}}
+  file:
+    src: "{{item}}"
+    path: "{{neovim.confdir}}/{{item | basename}}"
+    state: link
   with_fileglob:
-    - "../files/conf.d/*.nvim"
+    - "{{role_path}}/files/conf.d/*.nvim"
   tags: [config,neovim]
