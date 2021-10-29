@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if which hostnamectl>/dev/null; then
+if which hostnamectl >/dev/null; then
   host="$(hostnamectl --static)"
 else
   host="$(hostname -s)"

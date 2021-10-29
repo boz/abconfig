@@ -1,0 +1,14 @@
+---
+- name: install (arch)
+  pacman:
+    name: alacritty
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,alacritty]
+
+- name: config
+  file:
+    path: "{{config_dir}}/alacritty/alacritty.yml"
+    src: "{{role_path}}/files/alacritty.yml"
+    state: link
+  tags: [config-install,alacritty]

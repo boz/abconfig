@@ -20,6 +20,7 @@
     - fzf
     - neovim
     - rbenv
+    - alacritty
     # - travis
     # - pet
     - rust
