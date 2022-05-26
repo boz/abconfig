@@ -1,0 +1,12 @@
+[Unit]
+Description=Remove XHC resume from sleep
+Before=suspend.target
+#After=suspend.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sleep-disable-xhc
+StandardOutput=syslog
+
+[Install]
+WantedBy=sleep.target suspend.target

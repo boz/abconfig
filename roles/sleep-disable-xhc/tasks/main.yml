@@ -1,0 +1,15 @@
+
+---
+- name: install script
+  copy:
+    dest: /usr/bin/sleep-disable-xhc
+    src: sleep-disable-xhc
+    mode: "0755"
+
+- name: install systemd unit
+  copy:
+    dest: /usr/lib/systemd/system/sleep-disable-xhc.service
+    src: sleep-disable-xhc.service
+
+# daemon-reload
+# enable sleep-disable-xhc

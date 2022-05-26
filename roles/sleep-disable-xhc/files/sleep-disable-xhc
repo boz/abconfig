@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+if grep -q 'XHC\s\+.*enabled' /proc/acpi/wakeup; then
+  echo XHC > /proc/acpi/wakeup
+fi
