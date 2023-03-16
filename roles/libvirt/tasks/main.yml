@@ -1,0 +1,17 @@
+---
+# pacman install libvirt
+- name: install libvirt (arch)
+  pacman:
+    name:
+      - libvirt
+      - virt-install
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+
+- name: add user to libvirt group
+  user:
+    append: yes
+    groups: libvirt
+    name: "{{ansible_user_id}}"
+  become: true
+  when: ansible_pkg_mgr == "pacman"

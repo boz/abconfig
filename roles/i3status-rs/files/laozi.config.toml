@@ -1,16 +1,19 @@
+[icons]
+icons = "awesome4"
+
+[theme]
 theme = "solarized-dark"
-icons = "awesome"
 
-[[block]]
-block    = "battery"
-interval = 10
-driver   = "upower"
-format   = "{percentage}"
+# [[block]]
+# block    = "battery"
+# interval = 10
+# driver   = "upower"
+# format   = "{percentage}"
 
-[[block]]
-block = "bluetooth"
-mac   = "E5:CC:3C:4E:F2:B0"
-label = ""
+# [[block]]
+# block = "bluetooth"
+# mac   = "E5:CC:3C:4E:F2:B0"
+# label = ""
 
 # [[block]]
 # block = "bluetooth"
@@ -20,23 +23,21 @@ label = ""
 [[block]]
 block = "disk_space"
 path = "/"
-alias = "/"
 info_type = "available"
-unit = "GB"
+alert_unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
+format = " $icon   /: $available.eng(w:2) "
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = "{mem_used_percents}"
-format_swap = "{swap_used_percents}"
+format = " $icon $mem_total_used_percents.eng(w:2) "
+format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
 
 [[block]]
 block = "cpu"
 interval = 1
-format = "{barchart} {utilization}"
 
 # [[block]]
 # block = "nvidia_gpu"
@@ -48,12 +49,18 @@ block = "temperature"
 [[block]]
 block = "load"
 interval = 1
-format = "{1m}"
+#format = "{1m}"
 
 [[block]]
 block = "sound"
 
+# [[block]]
+# block = "time"
+# interval = 60
+# format = "%m/%d %I:%M"
 [[block]]
 block = "time"
 interval = 60
-format = "%m/%d %I:%M"
+[block.format]
+#short = "$icon $timestamp.datetime(f:'%m/%d %I:%M') "
+full  = "$icon $timestamp.datetime(f:'%m/%d %I:%M') "
