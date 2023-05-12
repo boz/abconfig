@@ -57,5 +57,7 @@ if dein#check_install()
   call dein#install()
 endif
 
-" colorscheme solarized
-colorscheme delek
+set termguicolors
+set background=dark
+colorscheme solarized
+" colorscheme delek
