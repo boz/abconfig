@@ -10,8 +10,8 @@ font pango:DejaVu Sans Mono 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec exec alacritty --working-directory "`$HOME/bin/xcwd`"
-bindsym $mod+Shift+Return exec alacritty
+bindsym $mod+Return exec exec kitty --working-directory "`$HOME/bin/xcwd`"
+bindsym $mod+Shift+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill

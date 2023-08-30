@@ -1,0 +1,23 @@
+---
+- name: install (arch)
+  pacman:
+    name:
+      - kitty
+      - kitty-terminfo
+      - kitty-shell-integration
+  become: true
+  when: ansible_pkg_mgr == "pacman"
+  tags: [config-install,kitty]
+
+- name: create config directory
+  file:
+    path: "{{config_dir}}/kitty"
+    state: directory
+  tags: [config-install,kitty]
+
+- name: config
+  file:
+    path: "{{config_dir}}/kitty/kitty.conf"
+    src: "{{role_path}}/files/kitty.conf"
+    state: link
+  tags: [config-install,kitty]
