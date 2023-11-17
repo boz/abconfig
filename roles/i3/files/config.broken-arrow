@@ -1,4 +1,5 @@
-set $mod Mod1
+# set $mod Mod1
+set $mod Mod4
 
 focus_follows_mouse no
 force_focus_wrapping yes
