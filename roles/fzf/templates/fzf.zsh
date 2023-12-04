@@ -1,11 +1,11 @@
 export PATH="${PATH:+${PATH}:}{{fzf.dir}}/bin"
 
-if [[ -f "{{fzf.dir}}/shell/completion.zsh" ]]; then
-  source "{{fzf.dir}}/shell/completion.zsh"
+if [[ -f "/usr/share/fzf/completion.zsh" ]]; then
+  source "/usr/share/fzf/completion.zsh"
 fi
 
-if [[ -f "{{fzf.dir}}/shell/key-bindings.zsh" ]]; then
-  source "{{fzf.dir}}/shell/key-bindings.zsh"
+if [[ -f "/usr/share/fzf/key-bindings.zsh" ]]; then
+  source "/usr/share/fzf/key-bindings.zsh"
 fi
 
 godirs() {

@@ -11,6 +11,13 @@
   lineinfile:
     create: yes
     path: "{{homedir}}/.gnupg/scdaemon.conf"
+    line: disable-ccid
+  tags: [yubikey]
+
+- name: configure scdaemon
+  lineinfile:
+    create: yes
+    path: "{{homedir}}/.gnupg/scdaemon.conf"
     line: reader-port Yubico Yubi
   tags: [yubikey]
 

@@ -1,15 +1,15 @@
 ---
-- name: check installed
-  stat: path={{fzf.binpath}}
-  register: have_fzf
-  tags: [config-install,fzf]
+# - name: check installed
+#   stat: path={{fzf.binpath}}
+#   register: have_fzf
+#   tags: [config-install,fzf]
+
 
 - name: install
-  command: go get {{fzf.package}}
-  when: not have_fzf.stat.exists
+  ansible.builtin.pacman:
+    name: fzf
   tags: [config-install,fzf]
-  environment:
-    GOPATH: "{{gopath}}"
+  when: ansible_pkg_mgr == "pacman"
 
 - name: configure
   template: dest={{profiledir}}/20-fzf.zsh
