@@ -4,11 +4,11 @@ icons = "awesome4"
 [theme]
 theme = "solarized-dark"
 
-# [[block]]
-# block    = "battery"
+[[block]]
+block    = "battery"
 # interval = 10
 # driver   = "upower"
-# format   = "{percentage}"
+format   = " $icon $percentage "
 
 # [[block]]
 # block = "bluetooth"

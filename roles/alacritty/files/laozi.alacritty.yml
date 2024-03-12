@@ -24,6 +24,11 @@
 #     cyan:    '#93a1a1'
 #     white:   '#fdf6e3'
 
+font:
+  family: DejaVu Sans Mono
+  style: Book
+  size: 20
+
 colors:
   # Default colors
   primary:
